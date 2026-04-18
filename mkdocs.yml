@@ -3,7 +3,7 @@ site_description: Documentação do projeto da disciplina GCES focado em contrib
 site_author: Grupo GCES
 theme:
   name: material
-  language: PT-BR
+  language: pt-BR
   logo: assets/favicoMEPA.png
   favicon: assets/favicoMEPA.png
 
