@@ -1,11 +1,15 @@
 site_name: GCES - MEPA
 site_description: Documentação do projeto da disciplina GCES focado em contribuições ao software livre MEPA.
 site_author: Grupo GCES
+repo_url: https://github.com/matheusperillo03/GCES-MEPA-GH_PAGES-2026-1
+repo_name: GCES MEPA - 2026.1
 theme:
   name: material
   language: pt-BR
   logo: assets/favicoMEPA.png
   favicon: assets/favicoMEPA.png
+  icon:
+    repo: fontawesome/brands/github
 
 
 nav:
