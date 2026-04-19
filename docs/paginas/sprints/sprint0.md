@@ -60,8 +60,110 @@ O terceiro é o **MEPA Infra**, que cuida da infraestrutura e do processo de dep
 
 ---
 
-# Subir ambiente
-Como subir ambiente e a experiencia do grupo ao subir ambiente (Quem conseguiu e etc)
+# Como Subir o Ambiente
+
+Durante a Sprint 0, todos os integrantes do grupo devem subir o ambiente de desenvolvimento localmente seguindo a documentação oficial do projeto. Esse processo é importante tanto para validar as instruções existentes quanto para identificar possíveis inconsistências e dependências que novos contribuidores possam encontrar.
+
+| Integrante | Ambiente Subiu |
+|---|---|
+| Bruno Cunha Vasconcelos de Araújo | ✅ |
+| Caio Lucas Messias Sabino | ✅ |
+| Gabriel Lima da Silva | ✅ |
+| José Oliveira | ✅ |
+| Lucas Heler Lopes | ✅ |
+| Marcos Vinícius Lima Bezerra | ✅ |
+| Matheus Barros do Nascimento | ✅ |
+| Matheus Moreira Lopes Perillo | ✅ |
+| Vitor Valerio Hoffmann | ✅ |
+
+## Pré-requisitos
+
+Antes de começar, certifique-se de ter instalado em sua máquina:
+
+- [Git](https://git-scm.com/)
+- [Docker](https://docs.docker.com/get-docker/) v20+
+- [Docker Compose](https://docs.docker.com/compose/install/) v2+
+
+---
+
+## 1. Faça fork dos repositórios
+
+Acesse cada repositório no GitLab e clique em **Fork** para criar uma cópia na sua conta. Todo o trabalho de contribuição é feito a partir do seu fork.
+
+- [mec-energia-api](https://gitlab.com/lappis-unb/projetos-energia/mec-energia/mec-energia-api)
+- [mec-energia-web](https://gitlab.com/lappis-unb/projetos-energia/mec-energia/mec-energia-web)
+
+## 2. Clone os forks localmente
+
+```bash
+# API
+git clone https://gitlab.com/SEU_USUARIO/mec-energia-api.git
+cd mec-energia-api
+git remote add upstream https://gitlab.com/lappis-unb/projetos-energia/mec-energia/mec-energia-api.git
+```
+
+```bash
+# Frontend
+git clone https://gitlab.com/SEU_USUARIO/mec-energia-web.git
+cd mec-energia-web
+git remote add upstream https://gitlab.com/lappis-unb/projetos-energia/mec-energia/mec-energia-web.git
+```
+
+## 3. Configure as variáveis de ambiente
+
+Em cada repositório, copie o arquivo de exemplo e ajuste os valores conforme necessário. Em desenvolvimento, os valores padrão do `.env.example` geralmente já funcionam sem alterações.
+
+```bash
+# Na API
+cp .env.example .env
+
+# No Web
+cp .env.example .env.local
+```
+
+## 4. Suba os containers
+
+```bash
+docker compose up
+```
+
+Para rodar em background sem travar o terminal:
+
+```bash
+docker compose up -d
+```
+
+Para acompanhar os logs em tempo real:
+
+```bash
+docker compose logs -f
+```
+
+## 5. Execute as migrations (somente API)
+
+Na primeira vez que subir a API, é necessário rodar as migrations para preparar o banco de dados:
+
+```bash
+docker compose run --rm api python manage.py migrate
+```
+
+## 6. Crie um superusuário (somente API)
+
+Para acessar o painel administrativo do Django:
+
+```bash
+docker compose run --rm api python manage.py createsuperuser
+```
+
+## URLs de acesso
+
+Com o ambiente no ar, os serviços ficam disponíveis nos seguintes endereços:
+
+| Serviço      | URL                         |
+|--------------|-----------------------------|
+| API          | http://localhost:8000       |
+| Admin Django | http://localhost:8000/admin |
+| Frontend     | http://localhost:3000       |
 
 ---
 
