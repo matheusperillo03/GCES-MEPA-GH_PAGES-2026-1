@@ -185,7 +185,6 @@ Descrever como foi o Onboarding com o MEPA (por a gravação talvez)
 
 | Data     | Versão | Descrição             | Autor               |
 | -------- | ------ | --------------------- | ------------------  |
-| 18/04/2026 | 0.1  | Estruturando a Sprint | Marcos Bezerra      |
-| 19/04/2026 | 0.2  | Adicionando Objetivo e descrição dos repositórios MEPA | Marcos Bezerra      |
-
-
+| 18/04/2026 | 0.1  | Estruturando a Sprint | [Marcos Bezerra](https://github.com/) |
+| 19/04/2026 | 0.2  | Adicionando Objetivo e descrição dos repositórios MEPA | [Marcos Bezerra](https://github.com/) |
+| 19/04/2026 | 0.3  | Adicionando como subir o ambiente | [Matheus Barros do Nascimento](https://github.com/Ninja-Haiyai) |
