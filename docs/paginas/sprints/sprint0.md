@@ -203,6 +203,13 @@ Issues: [mepa-web/-/work_items](https://gitlab.com/lappis-unb/projetos-energia/m
 
 ### Backend
 
+Nesse repositório é especificado que existem algumas formas de contribuição:
+
+- Abrir issues que reportam bugs;
+- Fechando problemas reportados em issues existentes;
+- Proposição de novas funcionalidades;
+- Ajudando na qualidade do código e manutenção;
+
 Issues: [mepa-api/-/work_items](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-api/-/work_items)
 
 Antes de contribuir, leia o [README](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-api/-/blob/development/README.md) e o [Código de Conduta](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-api/-/blob/development/CODE_OF_CONDUCT.md) do repositório.
