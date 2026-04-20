@@ -1,5 +1,4 @@
-#
-## Ata de Reunião 1
+# Ata de Reunião 1
 
 **Data:** 13/04/2026  
 **Horário de Início:** 16:00  
