@@ -1,4 +1,4 @@
-# Objetivo
+## Objetivo
 
 A Sprint 0 teve como principal objetivo preparar o grupo para iniciar as contribuições no projeto MEPA, estabelecendo um ponto de partida para o entendimento tanto do sistema quanto do fluxo de trabalho utilizado pela equipe mantenedora.
 
@@ -12,7 +12,7 @@ Também foi realizada uma análise inicial das issues disponíveis no repositór
 
 ---
 
-# Sobre o repositório
+## Sobre o repositório
 
 O projeto MEPA está organizado em um grupo no GitLab mantido pelo LabLivre, laboratório de software da Universidade de Brasília, que anteriormente era conhecido como LAPPIS. Esse grupo concentra os repositórios relacionados ao sistema, separando as responsabilidades entre **Web, API e infraestrutura**.
 
@@ -24,7 +24,7 @@ Essa organização em múltiplos repositórios ajuda a deixar o projeto mais mod
 
 ---
 
-## MEPA API
+### MEPA API
 
 <p align ="center">
     <img src="../assets/MEPAAPI.png" alt="Painel Web do MEPA">
@@ -34,7 +34,7 @@ O grupo do MEPA é composto por três repositórios principais. O primeiro é o 
 
 ---
 
-## MEPA Web
+### MEPA Web
 
 <p align ="center">
     <img src="../assets/MEPAweb.png" alt="Painel Web do MEPA">
@@ -50,7 +50,7 @@ O segundo é o **MEPA Web**, que representa o [frontend da aplicação](https://
 
 ---
 
-## MEPA Infra
+### MEPA Infra
 
 <p align ="center">
     <img src="../assets/MEPAinfra.png" alt="Painel Web do MEPA">
@@ -60,7 +60,7 @@ O terceiro é o **MEPA Infra**, que cuida da infraestrutura e do processo de dep
 
 ---
 
-# Como Subir o Ambiente
+## Como Subir o Ambiente
 
 Durante a Sprint 0, todos os integrantes do grupo devem subir o ambiente de desenvolvimento localmente seguindo a documentação oficial do projeto. Esse processo é importante tanto para validar as instruções existentes quanto para identificar possíveis inconsistências e dependências que novos contribuidores possam encontrar.
 
@@ -76,7 +76,7 @@ Durante a Sprint 0, todos os integrantes do grupo devem subir o ambiente de dese
 | Matheus Moreira Lopes Perillo | ✅ |
 | Vitor Valerio Hoffmann | ✅ |
 
-## Pré-requisitos
+### Pré-requisitos
 
 Antes de começar, certifique-se de ter instalado em sua máquina:
 
@@ -86,14 +86,14 @@ Antes de começar, certifique-se de ter instalado em sua máquina:
 
 ---
 
-## 1. Faça fork dos repositórios
+### 1. Faça fork dos repositórios
 
 Acesse cada repositório no GitLab e clique em **Fork** para criar uma cópia na sua conta. Todo o trabalho de contribuição é feito a partir do seu fork.
 
 - [mec-energia-api](https://gitlab.com/lappis-unb/projetos-energia/mec-energia/mec-energia-api)
 - [mec-energia-web](https://gitlab.com/lappis-unb/projetos-energia/mec-energia/mec-energia-web)
 
-## 2. Clone os forks localmente
+### 2. Clone os forks localmente
 
 ```bash
 # API
@@ -109,7 +109,7 @@ cd mec-energia-web
 git remote add upstream https://gitlab.com/lappis-unb/projetos-energia/mec-energia/mec-energia-web.git
 ```
 
-## 3. Configure as variáveis de ambiente
+### 3. Configure as variáveis de ambiente
 
 Em cada repositório, copie o arquivo de exemplo e ajuste os valores conforme necessário. Em desenvolvimento, os valores padrão do `.env.example` geralmente já funcionam sem alterações.
 
@@ -121,7 +121,7 @@ cp .env.example .env
 cp .env.example .env.local
 ```
 
-## 4. Suba os containers
+### 4. Suba os containers
 
 ```bash
 docker compose up
@@ -139,7 +139,7 @@ Para acompanhar os logs em tempo real:
 docker compose logs -f
 ```
 
-## 5. Execute as migrations (somente API)
+### 5. Execute as migrations (somente API)
 
 Na primeira vez que subir a API, é necessário rodar as migrations para preparar o banco de dados:
 
@@ -147,7 +147,7 @@ Na primeira vez que subir a API, é necessário rodar as migrations para prepara
 docker compose run --rm api python manage.py migrate
 ```
 
-## 6. Crie um superusuário (somente API)
+### 6. Crie um superusuário (somente API)
 
 Para acessar o painel administrativo do Django:
 
@@ -155,7 +155,7 @@ Para acessar o painel administrativo do Django:
 docker compose run --rm api python manage.py createsuperuser
 ```
 
-## URLs de acesso
+### URLs de acesso
 
 Com o ambiente no ar, os serviços ficam disponíveis nos seguintes endereços:
 
@@ -167,17 +167,17 @@ Com o ambiente no ar, os serviços ficam disponíveis nos seguintes endereços:
 
 ---
 
-# Como contribuir
+## Como contribuir
 É em formato de issue?
 
 ---
 
-# Mapa de Issues
+## Mapa de Issues
 Mapear as issues disponíveis e ranquear as "faceis"
 
 ---
 
-# Onboarding
+## Onboarding
 Descrever como foi o Onboarding com o MEPA (por a gravação talvez)
 
 ---
@@ -185,6 +185,6 @@ Descrever como foi o Onboarding com o MEPA (por a gravação talvez)
 
 | Data     | Versão | Descrição             | Autor               |
 | -------- | ------ | --------------------- | ------------------  |
-| 18/04/2026 | 0.1  | Estruturando a Sprint | [Marcos Bezerra](https://github.com/) |
-| 19/04/2026 | 0.2  | Adicionando Objetivo e descrição dos repositórios MEPA | [Marcos Bezerra](https://github.com/) |
+| 18/04/2026 | 0.1  | Estruturando a Sprint | [Marcos Bezerra](https://github.com/marcoslbz) |
+| 19/04/2026 | 0.2  | Adicionando Objetivo e descrição dos repositórios MEPA | [Marcos Bezerra](https://github.com/marcoslbz) |
 | 19/04/2026 | 0.3  | Adicionando como subir o ambiente | [Matheus Barros do Nascimento](https://github.com/Ninja-Haiyai) |

@@ -92,4 +92,4 @@ O projeto escolhido pelo grupo foi o **MEPA (Monitoramento de Energia em Platafo
 
 | Data     | Versão | Descrição             | Autor               |
 | -------- | ------ | --------------------- | ------------------  |
-| 18/04/2026 | 1.0    | Versão inicial        | Marcos Bezerra    |
+| 18/04/2026 | 1.0    | Versão inicial        | [Marcos Bezerra](https://github.com/marcoslbz)    |

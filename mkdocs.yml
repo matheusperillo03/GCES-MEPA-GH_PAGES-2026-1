@@ -19,7 +19,7 @@ nav:
   - Relatórios:
       - Relatório Sprint 0: paginas/relatorios/relatorio0.md
   - Reuniões:
-      - Ata 1: paginas/atas/ata0.md
+      - Ata 1: paginas/atas/ata1.md
   - Contribuições:
     - Marcos Bezerra: paginas/contribuicoes/marcos.md
     - Integrante 2: paginas/contribuicoes/nomeintegrante.md
@@ -37,7 +37,7 @@ markdown_extensions:
   - admonition
   - tables
   - toc:
-      permalink: true
+      permalink: false
 
 extra_css:
   - stylesheets/extra.css
