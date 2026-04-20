@@ -168,7 +168,46 @@ Com o ambiente no ar, os serviços ficam disponíveis nos seguintes endereços:
 ---
 
 ## Como contribuir
-É em formato de issue?
+
+O projeto aceita contribuições no [MEPA Web](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web) (frontend) e no [MEPA API](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-api) (backend) — o repositório de infraestrutura não está aberto a contribuições externas. O ponto de entrada são as **issues** de cada repositório.
+
+O fluxo de contribuição é o mesmo para ambos:
+
+1. Faça um fork e clone o repositório desejado, configurando o upstream:
+   ```bash
+   git clone https://gitlab.com/seu-usuario/<repositorio>.git
+   git remote add upstream https://gitlab.com/lappis-unb/projetos-energia/mepa/<repositorio>.git
+   ```
+
+2. Crie uma branch a partir da `main` seguindo o padrão `tipo/descricao-curta`:
+   ```bash
+   git checkout -b feat/nome-da-feature
+   ```
+
+3. Faça commits seguindo o padrão [Conventional Commits](https://www.conventionalcommits.org/):
+
+   | Tipo | Quando usar |
+   |------|-------------|
+   | `feat` | nova funcionalidade |
+   | `fix` | correção de bug |
+   | `docs` | alterações em documentação |
+   | `refactor` | refatoração sem mudança de comportamento |
+   | `test` | adição ou ajuste de testes |
+   | `chore` | tarefas de manutenção (deps, config) |
+
+4. Abra um **Merge Request** no repositório original referenciando a issue relacionada.
+
+### Frontend
+
+Issues: [mepa-web/-/work_items](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/work_items)
+
+### Backend
+
+Issues: [mepa-api/-/work_items](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-api/-/work_items)
+
+Antes de contribuir, leia o [README](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-api/-/blob/development/README.md) e o [Código de Conduta](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-api/-/blob/development/CODE_OF_CONDUCT.md) do repositório.
+
+
 
 ---
 
@@ -188,3 +227,4 @@ Descrever como foi o Onboarding com o MEPA (por a gravação talvez)
 | 18/04/2026 | 0.1  | Estruturando a Sprint | [Marcos Bezerra](https://github.com/marcoslbz) |
 | 19/04/2026 | 0.2  | Adicionando Objetivo e descrição dos repositórios MEPA | [Marcos Bezerra](https://github.com/marcoslbz) |
 | 19/04/2026 | 0.3  | Adicionando como subir o ambiente | [Matheus Barros do Nascimento](https://github.com/Ninja-Haiyai) |
+| 20/04/2026 | 0.4  | Adicionando como contribuir| [Caio Lucas Messias Sabino](https://github.com/caiomsabino) |
