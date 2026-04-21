@@ -36,10 +36,10 @@ O projeto escolhido pelo grupo foi o **MEPA (Monitoramento de Energia em Platafo
   </div>
 </a>
 
-<a href="https://github.com/--linkrepo--" style="text-decoration: none; color: inherit;">
+<a href="https://github.com/vitor-hoffmann" style="text-decoration: none; color: inherit;">
   <div style="text-align: center; background: #f5f5f5; padding: 20px; border-radius: 10px;">
-    <img src="assets/bruno.jpg" style="width: 120px; height: 120px; object-fit: cover; border-radius: 50%; border: 3px solid #F4A259;">
-    <h3>Nome integrante</h3>
+    <img src="https://avatars.githubusercontent.com/u/137011464?v=4" style="width: 120px; height: 120px; object-fit: cover; border-radius: 50%; border: 3px solid #F4A259;">
+    <h3>Vitor Valerio Hoffmann</h3>
   </div>
 </a>
 
@@ -93,3 +93,4 @@ O projeto escolhido pelo grupo foi o **MEPA (Monitoramento de Energia em Platafo
 | Data     | Versão | Descrição             | Autor               |
 | -------- | ------ | --------------------- | ------------------  |
 | 18/04/2026 | 1.0    | Versão inicial        | [Marcos Bezerra](https://github.com/marcoslbz)    |
+| 20/04/2026 | 1.1    | Se adiciona como integrante        | [Vitor Hoffmann](https://github.com/vitor-hoffmann)    |
