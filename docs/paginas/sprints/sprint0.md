@@ -281,6 +281,6 @@ Descrever como foi o Onboarding com o MEPA (por a gravação talvez)
 | -------- | ------ | --------------------- | ------------------  |
 | 18/04/2026 | 0.1  | Estruturando a Sprint | [Marcos Bezerra](https://github.com/marcoslbz) |
 | 19/04/2026 | 0.2  | Adicionando Objetivo e descrição dos repositórios MEPA | [Marcos Bezerra](https://github.com/marcoslbz) |
-| 19/04/2026 | 0.3  | Adicionando como subir o ambiente | [Matheus Barros do Nascimento](https://github.com/Ninja-Haiyai) |
+| 19/04/2026 | 0.3  | Adicionando como subir o ambiente | [Matheus Barros do Nascimento](https://github.com/Ninja-Haiyai) e [Matheus Perillo](https://github.com/matheusperillo03) |
 | 20/04/2026 | 0.4  | Adicionando como contribuir| [Caio Lucas Messias Sabino](https://github.com/caiomsabino) |
 | 21/04/2026 | 0.5  | Adicionando o mapa de issues| [Vitor Hoffmann](https://github.com/vitor-hoffmann) e [Ranni Heler](https://github.com/akaeranni) |
