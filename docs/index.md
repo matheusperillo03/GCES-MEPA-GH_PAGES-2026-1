@@ -79,10 +79,10 @@ O projeto escolhido pelo grupo foi o **MEPA (Monitoramento de Energia em Platafo
   </div>
 </a>
 
-<a href="https://github.com/--linkrepo--" style="text-decoration: none; color: inherit;">
+<a href="https://github.com/Jose1277/" style="text-decoration: none; color: inherit;">
   <div style="text-align: center; background: #f5f5f5; padding: 20px; border-radius: 10px;">
-    <img src="assets/bruno.jpg" style="width: 120px; height: 120px; object-fit: cover; border-radius: 50%; border: 3px solid #F4A259;">
-    <h3>Nome integrante</h3>
+    <img src="https://github.com/Jose1277.png" style="width: 120px; height: 120px; object-fit: cover; border-radius: 50%; border: 3px solid #F4A259;">
+    <h3>José Oliveira</h3>
   </div>
 </a>
 
@@ -99,3 +99,4 @@ O projeto escolhido pelo grupo foi o **MEPA (Monitoramento de Energia em Platafo
 | 21/04/2026 | 1.3    | Se adiciona como integrante        | [Matheus Barros](https://github.com/Ninja-Haiyai)    |
 | 21/04/2026 | 1.4    | Se adiciona como integrante        | [Matheus Perillo](https://github.com/matheusperillo03)    |
 | 22/04/2026 | 1.5    | Se adiciona como integrante        | [Bruno Vasconcelos](https://github.com/brunocva)    |
+|22/04/2026  | 1.6    | Se adiciona como integrante        | [Jose Oliveira](https://github.com/Jose1277/)    |
