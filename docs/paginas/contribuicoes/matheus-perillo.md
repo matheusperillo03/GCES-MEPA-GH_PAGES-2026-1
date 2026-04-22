@@ -45,11 +45,13 @@ O maior desafio foi a curva de aprendizado do GitLab e da estrutura do projeto, 
 ### Aprendizados
 
 Aprendi na prática a configurar os ambientes de infra, web e API, ganhando familiaridade com as tecnologias do projeto. Com o tempo, também fui ficando mais à vontade para analisar as issues abertas e entender quais priorizar, considerando complexidade, impacto e o quão bem definidas estão.
+
 ---
 
 ### Plano Pessoal para a Próxima Sprint
 
 Na próxima sprint, quero entender melhor como o projeto funciona por dentro, explorar a arquitetura com mais calma e ver como as peças se conectam. Com isso, espero chegar nas issues com mais confiança e conseguir resolvê-las de forma mais efetiva.
+
 ---
 
 ## Histórico de Versão
