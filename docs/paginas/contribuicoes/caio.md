@@ -22,7 +22,7 @@ Nesta sprint, o foco principal foi preparar a base para as próximas contribuiç
 | 19/04  | Análise dos 3 repositórios do grupo MEPA no GitLab | Estudo | [Repositório MEPA](https://gitlab.com/lappis-unb/projetos-energia/mepa) | Concluído✅ |
 | 19/04  | Estudo da contribuição dos repositórios | Estudo | [Repositório Front](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web) e [Repositório Back](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-api) | Concluído✅ |
 | 20/04  | Redação da seção "Como contribuir" na spring 0 | Doc | [Sprint 0](../sprints/sprint0.md) | Concluído✅ |
-| 20/04  | Redação da contribuição do aluno | Doc | [Caio](../contribicoes/caio.md) | Concluído✅ |
+| 20/04  | Redação da contribuição do aluno | Doc | [Caio](../contribuicoes/caio.md) | Concluído✅ |
 
 ### Maiores Avanços
 
