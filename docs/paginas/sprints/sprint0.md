@@ -219,7 +219,55 @@ Antes de contribuir, leia o [README](https://gitlab.com/lappis-unb/projetos-ener
 ---
 
 ## Mapa de Issues
-Mapear as issues disponíveis e ranquear as "faceis"
+Nesta sprint zero, foram selecionadas issues com foco em **entrada progressiva no projeto**, equilibrando tarefas rápidas com outras de complexidade intermediária.
+
+---
+
+### Issues Fáceis
+
+Essas tarefas possuem baixa complexidade e são ideais para início no projeto:
+
+* **#28 - Implementar âncora para o gráfico**
+  Melhora a navegação interna ao direcionar o usuário automaticamente ao gráfico ao interagir com o calendário, evitando confusão em páginas longas de análise.
+
+* **#29 - Implementar mensagens de erro caso não tenha dados do calendário**
+  Garante feedback adequado quando não houver retorno da API, evitando que a interface pareça quebrada ou sem resposta.
+
+* **#54 - Conferir e ajustar renderização da página de login**
+  Garante que a porta de entrada do sistema esteja polida.
+
+* **#18 - Implementar design do menu de navegação (aba lateral)**
+  Define a usabilidade de todo o projeto.
+
+* **#17 - Loading genérico para páginas**
+  Implementar o padrão de skeletons agora facilitará a percepção de performance nas próximas tarefas.
+
+---
+
+### Issues Médias
+
+Essas tasks exigem maior entendimento do sistema e envolvem integração ou lógica mais elaborada:
+
+* **#45 - Fazer aba de análise - Importando contratos**
+  Desenvolvimento da interface de análise com foco em visualização de dados, incluindo gráficos e indicadores para suporte à tomada de decisão.
+
+* **#44 - Fazer aba de fatura - Importando contratos**
+  Implementação de funcionalidades relacionadas à gestão de faturas, com integração ao backend e manipulação de dados financeiros.
+
+* **#56 - Ajustes na aba de performance**
+  Refinamento de componentes existentes, incluindo melhorias na exibição de dados, organização dos gráficos e ajustes visuais.
+
+* **#62 - Mostrar tipo de contrato nos relatórios**
+  Adiciona detalhamento aos relatórios ao incluir o tipo de contrato, melhorando a clareza e utilidade das informações apresentadas.
+
+* **#46 - Fazer aba de contratos - Importando contratos**
+  É o coração do dado; as outras abas dependem do que for feito aqui.
+
+* **#58 - Adequação aba de alertas e eventos**
+  Bom para padronizar o tratamento de estados de erro e avisos.
+
+* **#61 - Criar testes unitários**
+  Iniciar os testes neste bloco ajuda a garantir que a estrutura base do Next.js não quebre conforme o projeto escala.
 
 ---
 
@@ -235,3 +283,4 @@ Descrever como foi o Onboarding com o MEPA (por a gravação talvez)
 | 19/04/2026 | 0.2  | Adicionando Objetivo e descrição dos repositórios MEPA | [Marcos Bezerra](https://github.com/marcoslbz) |
 | 19/04/2026 | 0.3  | Adicionando como subir o ambiente | [Matheus Barros do Nascimento](https://github.com/Ninja-Haiyai) |
 | 20/04/2026 | 0.4  | Adicionando como contribuir| [Caio Lucas Messias Sabino](https://github.com/caiomsabino) |
+| 21/04/2026 | 0.5  | Adicionando o mapa de issues| [Vitor Hoffmann](https://github.com/vitor-hoffmann) e [Ranni Heler](https://github.com/akaeranni) |
