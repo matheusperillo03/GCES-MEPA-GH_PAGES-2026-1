@@ -272,7 +272,8 @@ Essas tasks exigem maior entendimento do sistema e envolvem integração ou lóg
 ---
 
 ## Onboarding
-Descrever como foi o Onboarding com o MEPA (por a gravação talvez)
+
+<iframe src="../../../assets/onboarding/onboarding.pdf" width="100%" height="600px" style="border: none;"></iframe>
 
 ---
 ## Histórico de Versão
@@ -285,4 +286,4 @@ Descrever como foi o Onboarding com o MEPA (por a gravação talvez)
 | 20/04/2026 | 1.3  | Adicionando como contribuir| [Caio Lucas Messias Sabino](https://github.com/caiomsabino) |
 | 21/04/2026 | 1.4  | Adicionando o mapa de issues| [Vitor Hoffmann](https://github.com/vitor-hoffmann) e [Ranni Heler](https://github.com/akaeranni) |
 | 22/04/2026 | 1.5  | Corrigir padronização do histórico de versão | [Matheus Perillo](https://github.com/matheusperillo03) |
-
+| 22/04/2026 | 1.6  | Adicionar PDF de onboarding | [Matheus Perillo](https://github.com/matheusperillo03) |
