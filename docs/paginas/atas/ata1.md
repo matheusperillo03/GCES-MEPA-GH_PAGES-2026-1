@@ -4,7 +4,7 @@
 **Horário de Início:** 16:00  
 **Horário de Término:** 18:00  
 **Local:** UnB - Sala S4  
-**Participantes:** Bruno, Caio, Gabriel, José, Lucas, Marcos, Matheus Nascimento, Matheus Perillo, Vitor
+**Participantes:** Bruno, Caio, Gabriel, José, Lucas, Marcos, Matheus Nascimento, Matheus Perillo, Vitor e Ranni Heller
 
 ---
 
