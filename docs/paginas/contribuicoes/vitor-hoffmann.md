@@ -20,7 +20,7 @@ Nesta sprint, o foco principal foi o estudo inicial da arquitetura do projeto ME
 | 17/04 | Configuração do ambiente de desenvolvimento (Linux) | Configuração | Local | Em andamento⏳ |
 | 18/04 | Investigação e mapeamento de issues (fácil, média e difícil) | Análise | Issues do Repositório | Concluído✅ |
 | 19/04 | Reunião com o Ranni para divisão das tarefas de documentação | Organização | Comunicação Interna | Concluído✅ |
-| 20/04 | Documentação de parte das issues mapeadas | Doc | GitHub Pages da equipe | Concluído✅ |
+| 21/04 | Documentação de parte das issues mapeadas | Doc | GitHub Pages da equipe | Concluído✅ |
 
 ### Maiores Avanços
 
