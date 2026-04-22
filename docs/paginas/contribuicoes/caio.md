@@ -53,3 +53,4 @@ Quero entender melhor as issues abertas nos repositórios e começar a contribui
 | Data     | Versão | Descrição             | Autor               |
 | -------- | ------ | --------------------- | ------------------  |
 | 20/04/2026 | 1.0    | Contribuição Caio Sabino       | [Caio Sabino](https://github.com/caiomsabino)    |
+| 21/04/2026 | 1.1    | Correção de link gerando warning       | [Matheus Perillo](https://github.com/matheusperillo03)    |
