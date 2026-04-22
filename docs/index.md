@@ -75,7 +75,7 @@ O projeto escolhido pelo grupo foi o **MEPA (Monitoramento de Energia em Platafo
 <a href="https://github.com/caiomsabino" style="text-decoration: none; color: inherit;">
   <div style="text-align: center; background: #f5f5f5; padding: 20px; border-radius: 10px;">
     <img src="https://github.com/caiomsabino.png" style="width: 120px; height: 120px; object-fit: cover; border-radius: 50%; border: 3px solid #F4A259;">
-    <h3>Nome integrante</h3>
+    <h3>Caio Sabino</h3>
   </div>
 </a>
 
