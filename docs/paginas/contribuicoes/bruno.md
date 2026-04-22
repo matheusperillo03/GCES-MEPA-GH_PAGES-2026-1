@@ -14,12 +14,12 @@ Nesta sprint, o foco principal foi preparar a base para as próximas contribuiç
 
 ### Atividades Realizadas
 
-
-
-| 18/04  | Estudo da estrutura do repositório MEPA | Estudo | [Repositório MEPA](https://gitlab.com/lappis-unb/projetos-energia/mepa) | Concluído✅ |
-| 18/04  | Análise dos 3 repositórios do grupo MEPA no GitLab | Estudo | [Repositório MEPA](https://gitlab.com/lappis-unb/projetos-energia/mepa) | Concluído✅ |
-| 18/04  | Estudo da estrutura do repositório MEPA | Estudo | [Repositório MEPA](https://gitlab.com/lappis-unb/projetos-energia/mepa) | Concluído✅ |
-| 21/04  | Revisão de documentação| Estudo | [Repositório GCES - MEPA](https://github.com/matheusperillo03/GCES-MEPA-GH_PAGES-2026-1) | Concluído✅ |
+| Data | Atividade | Tipo | Referência | Status |
+| ----- | --------- | ---- | ---------- | ------ |
+| 18/04 | Estudo da estrutura do repositório MEPA | Estudo | [Repositório MEPA](https://gitlab.com/lappis-unb/projetos-energia/mepa) | Concluído✅ |
+| 18/04 | Análise dos 3 repositórios do grupo MEPA no GitLab | Estudo | [Repositório MEPA](https://gitlab.com/lappis-unb/projetos-energia/mepa) | Concluído✅ |
+| 18/04 | Estudo da estrutura do repositório MEPA | Doc | [Repositório MEPA](https://gitlab.com/lappis-unb/projetos-energia/mepa) | Concluído✅ |
+| 21/04 | Revisão de documentação  sprint 0| Doc | [Repositório GCES - MEPA](https://github.com/matheusperillo03/GCES-MEPA-GH_PAGES-2026-1) | Concluído✅ |
 
 
 
