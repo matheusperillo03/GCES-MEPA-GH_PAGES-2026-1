@@ -50,10 +50,10 @@ O projeto escolhido pelo grupo foi o **MEPA (Monitoramento de Energia em Platafo
   </div>
 </a>
 
-<a href="https://github.com/--linkrepo--" style="text-decoration: none; color: inherit;">
+<a href="https://github.com/Ninja-Haiyai" style="text-decoration: none; color: inherit;">
   <div style="text-align: center; background: #f5f5f5; padding: 20px; border-radius: 10px;">
-    <img src="assets/bruno.jpg" style="width: 120px; height: 120px; object-fit: cover; border-radius: 50%; border: 3px solid #F4A259;">
-    <h3>Nome integrante</h3>
+    <img src="assets/integrantes/matheus_barros.png" style="width: 120px; height: 120px; object-fit: cover; border-radius: 50%; border: 3px solid #F4A259;">
+    <h3>Matheus Barros</h3>
   </div>
 </a>
 
@@ -95,3 +95,5 @@ O projeto escolhido pelo grupo foi o **MEPA (Monitoramento de Energia em Platafo
 | 18/04/2026 | 1.0    | Versão inicial        | [Marcos Bezerra](https://github.com/marcoslbz)    |
 | 20/04/2026 | 1.1    | Se adiciona como integrante        | [Vitor Hoffmann](https://github.com/vitor-hoffmann)    |
 | 21/04/2026 | 1.2    | Se adiciona como integrante        | [Ranni Heler](https://github.com/akaeranni)    |
+| 21/04/2026 | 1.3    | Se adiciona como integrante        | [Matheus Barros](https://github.com/Ninja-Haiyai)    |
+
