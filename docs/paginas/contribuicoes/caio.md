@@ -49,8 +49,49 @@ Quero entender melhor as issues abertas nos repositórios e começar a contribui
 
 ---
 
+## Sprint 1 - Documentação
+**Duração**: 27/04/2026 - 11/05/2026
+
+### Resumo da Sprint
+
+Nesta sprint, o foco principal foi procurar erros e avaliar a qualidade da documentação dos repositórios. Consegui encontrar pontos de melhora no repositório do frontend do projeto e tentei deixar informações mais claras para o usuário. Também entrei em contato com a Ana Carolina para entender como seria a nossa primeira atuação nessa sprint, repassando as informações ao grupo e atualizando o repositório interno do grupo conforme o tempo passa.
+
+### Atividades Realizadas
+
+| Data | Atividade | Tipo | Referência | Status |
+| ----- | --------- | ---------------------------------------- | --------------- | ------ |
+| 27/04  | Contato com o Ana Carolina para entender como seria prosseguida a contribuição no projeto | Solicitação | Não resultou em material concreto | Concluído✅ |
+| 05/05  | Contato com a Ana Carolina sobre a definição do formato da contribuição | Solicitação | Não resultou em material concreto | Concluído✅ |
+| 06/05  | Definição do escopo da sprint 1 sobre onde o grupo iria atuar | Solicitação | Não gerou material concreto | Concluído✅ |
+| 08/05  | Commit dentro do repositório fork sobre as alterações do README do repositório Web | Doc | [Commit repositório fork MEPA Web Caio Sabino](https://gitlab.com/caiomsabino/mepa-web/-/commit/e655b03d6d832313f9d92d7209359e23891bb7c3) | Concluído✅ |
+| 08/05  | Abertura do Merge Request para o repositório original | Doc | [Link Merge Request](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/56)  | Concluído✅ |
+
+
+### Maiores Avanços
+
+- Consegui alinhar junto à Ana como seria a atuação do time no projeto;
+- Consegui encontrar oportunidades de melhora dentro da documentação do repositório Web;
+- Criei meu primeiro Merge Request dentro do projeto;
+
+
+### Dificuldades
+
+A dificuldade maior foi em tentar encontrar pontos de melhora na documentação do MEPA Web. A documentação é bem intuitiva e bem sinalizada, então tentei analisar e decidi usar uma abordagem que explicitasse mais o entendimento que era explícito por parte do projeto.
+
+### Aprendizados
+
+Compreendi a necessidade de ter uma documentação clara e concisa, para que um usuário comum consiga entender e contribuir de forma autônoma. Também entendi sobre a necessidade de utilizar o padrão de commit e merge requests, visto que deixa muito claro nas seções responsáveis o que cada MR faz, o que cada commit faz, economizando horas de discovery e de gerenciamento de projeto.
+
+
+### Plano Pessoal para a Próxima Sprint
+
+Quero entender melhor as issues abertas nos repositórios e começar a contribuir de forma ativa e correta no projeto.
+
+---
+
 ## Histórico de Versão
 | Data     | Versão | Descrição             | Autor               |
 | -------- | ------ | --------------------- | ------------------  |
-| 20/04/2026 | 1.0    | Contribuição Caio Sabino       | [Caio Sabino](https://github.com/caiomsabino)    |
-| 21/04/2026 | 1.1    | Correção de link gerando warning       | [Matheus Perillo](https://github.com/matheusperillo03)    |
+| 20/04/2026 | 1.0    | Contribuição Caio Sabino sprint 0| [Caio Sabino](https://github.com/caiomsabino)    |
+| 21/04/2026 | 1.1    | Correção de link gerando warning| [Matheus Perillo](https://github.com/matheusperillo03)    |
+| 21/04/2026 | 1.2    | Contribuição Caio Sabino sprint 1| [Caio Sabino](https://github.com/caiomsabino)    |
