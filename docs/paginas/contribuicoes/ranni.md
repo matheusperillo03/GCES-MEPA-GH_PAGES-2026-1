@@ -61,8 +61,41 @@ Na próxima sprint, pretendo iniciar a implementação prática de pelo menos um
 
 ---
 
+## Sprint 1 - Refinamento da Documentação Técnica
+
+**Duração**: 27/04/2026 - 11/05/2026
+
+### Resumo da Sprint
+
+Este ciclo de trabalho foi dedicado à auditoria e expansão da documentação do repositório backend do SIGE (SIGE API). O objetivo central foi elevar o padrão de Experiência do Desenvolvedor (DX), transformando manuais técnicos densos em guias visuais e práticos que facilitem o ingresso de novos colaboradores no projeto.
+
+### Registro de Atividades
+
+| Data | Descrição da Atividade | Categoria | Referência | Status |
+| --- | --- | --- | --- | --- |
+| 27/04 | Alinhamento com a o grupo sobre a Ana Carolina para estabelecer o fluxo de contribuição no projeto | Reunião | N/A | Concluído ✅ |
+| 05/05 | Reunião de definição sobre o formato e os padrões técnicos das contribuições | Planejamento | N/A | Concluído ✅ |
+| 06/05 | Delimitação do escopo da Sprint 1, priorizando a documentação do servidor API | Estratégia | N/A | Concluído ✅ |
+| 10/05 | Implementação de melhorias no README (estrutura, endpoints e debug) no repositório fork | Documentação | [Link do Commit no Fork] | Concluído ✅ |
+| 10/05 | Submissão das melhorias para o repositório original via Merge Request | Integração | [Link do Merge Request] | Concluído ✅ |
+
+### Principais Conquistas
+
+* **Sincronia com a Coordenação**: Estabelecimento de uma comunicação clara com a Ana Carolina para garantir que as entregas estivessem alinhadas às expectativas do LAPPIS.
+* **Mapeamento de Lacunas**: Identificação de pontos cegos na documentação original, especificamente em relação à hierarquia de pastas e procedimentos de depuração.
+* **Contribuição Efetiva**: Finalização e envio do primeiro Merge Request contendo melhorias estruturais e guias de qualidade de código (Ruff e pre-commit).
+
+### Desafios Encontrados
+
+O principal obstáculo foi identificar oportunidades de melhoria real em uma documentação que já possuía uma ótima base. O desafio foi ir além do básico, focando em ferramentas que não estavam explicitadas, como a árvore de diretórios e o mapeamento rápido de endpoints, para reduzir a carga cognitiva de quem consulta o repositório pela primeira vez.
+
+### Lições Aprendidas
+
+A sprint reforçou a importância de documentar não apenas "o que" o sistema faz, mas "como" o desenvolvedor interage com ele no dia a dia. A inclusão de guias de monitoramento, logs e checklists de setup inicial provou ser essencial para tornar o projeto verdadeiramente acessível e sustentável.
+
 ## Histórico de Versão
 
 | Data       | Versão | Descrição                | Autor |
 | ---------- | ------ | ------------------------ | ----- |
 | 21/04/2026 | 1.0    | Versão inicial - Sprint 0 | [Ranni Heler](https://github.com/akaeranni) |
+| 10/05/2026 | 1.1    | Sprint 1 | [Ranni Heler](https://github.com/akaeranni) |
