@@ -76,8 +76,8 @@ Este ciclo de trabalho foi dedicado à auditoria e expansão da documentação d
 | 27/04 | Alinhamento com a o grupo sobre a Ana Carolina para estabelecer o fluxo de contribuição no projeto | Reunião | N/A | Concluído ✅ |
 | 05/05 | Reunião de definição sobre o formato e os padrões técnicos das contribuições | Planejamento | N/A | Concluído ✅ |
 | 06/05 | Delimitação do escopo da Sprint 1, priorizando a documentação do servidor API | Estratégia | N/A | Concluído ✅ |
-| 10/05 | Implementação de melhorias no README (estrutura, endpoints e debug) no repositório fork | Documentação | [Link do Commit no Fork] | Concluído ✅ |
-| 10/05 | Submissão das melhorias para o repositório original via Merge Request | Integração | [Link do Merge Request] | Concluído ✅ |
+| 10/05 | Implementação de melhorias no README (estrutura, endpoints e debug) no repositório fork | Documentação | [Link do Commit no Fork](https://gitlab.com/ranniheler/mepa-api-ranni/-/commit/f3a5fe24608cabc351a7117327d891473e2cc5ad) | Concluído ✅ |
+| 10/05 | Submissão das melhorias para o repositório original via Merge Request | Integração | [Link do Merge Request](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-api/-/merge_requests/31) | Concluído ✅ |
 
 ### Principais Conquistas
 
