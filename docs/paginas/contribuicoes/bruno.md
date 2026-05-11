@@ -88,8 +88,8 @@ Devido ao alto volume de demandas e à agenda corrida dos mantenedores, não foi
 ### Plano Pessoal para a Próxima Sprint
 
 - Acompanhar o MR aberto e responder a eventuais pedidos de ajuste.
-- Explorar o repositório `mepa-api` em busca de oportunidades semelhantes.
-- Se possível, evoluir para contribuições um pouco mais técnicas (pequenos ajustes de frontend).
+- Explorar o repositório `mepa` em busca de oportunidades semelhantes.
+- Se possível, evoluir para contribuições um pouco mais técnicas.
 
 ---
 
