@@ -50,7 +50,51 @@ Na próxima sprint, pretendo começar a me aprofundar mais nas issues do MEPA pa
 
 ---
 
+## Sprint 1 - Primeira Contribuição
+**Duração**: 27/04/2026 - 11/05/2026
+
+### Resumo da Sprint
+
+Nesta sprint, realizei minha primeira contribuição efetiva ao projeto MEPA, focada em documentação. A tarefa consistiu em corrigir erros de ortografia e acentuação no `README.md` do repositório `mepa-infra`. Além disso, durante o processo de submissão da contribuição, identifiquei um problema consistente no pipeline de CI/CD relacionado à autenticação do Terraform com o backend remoto. 
+
+Devido ao alto volume de demandas e à agenda corrida dos mantenedores, não foi possível que eles preparassem issues específicas para nossa equipe(que seriam relacionadas a testes), conforme havia sido alinhado inicialmente. Diante disso, fomos orientados a buscar por issues simples, como por exemplo aquelas com ênfase na documentação do MEPA (web, api e infra). Foi nos dado um certo grau de liberdade para escolher como contribuir.
+
+### Atividades Realizadas
+
+| Data | Atividade | Tipo | Referência | Status |
+|------|-----------|------|------------|--------|
+| 28/04 | Análise de issues disponíveis nos repositórios MEPA | Estudo | [MEPA Infra](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-infra/-/tree/main) | Concluído ✅ |
+| 08/05 | Correção de erros de português no README do repositório fork `mepa-infra` | Código/Doc | [Commit](https://gitlab.com/marcoslbz/mepa-infra/-/commit/81edad51fb7f77f252e572b9762add80101bc1b6) | Concluído ✅ |
+| 08/05 | Criação de branch `docs/fix-readme` e abertura de Merge Request | Código/Doc | [MR !1](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-infra/-/merge_requests/1) | Concluído ✅ |
+| 08/05 | Identificação e análise do erro de pipeline (`Error loading state: HTTP remote state endpoint requires auth`) | Estudo | [Pipeline #2510707040](https://gitlab.com/marcoslbz/mepa-infra/-/pipelines/2510707040) | Concluído ✅ |
+
+### Maiores Avanços
+
+- **Primeira contribuição efetiva**: Consegui abrir um Merge Request com correções reais no README do projeto.
+- **Identificação de problema estrutural**: Ao tentar validar o pipeline, percebi que o job `init_backend` falha com erro de autenticação no estado remoto do Terraform. Esse erro não tem relação com minha alteração – ele ocorre em qualquer commit, incluindo a branch `main` do repositório original. Essa descoberta pode se transformar em uma issue futura de infraestrutura, com bom potencial de contribuição para as próximas sprints.
+![alt text](assets/pipeline.png)
+![alt text](assets/pipeline2.png)
+- **Aprendizado sobre fluxo de MR**: Como tenho mais familiaridade com o Github, nessa issue pude aprender melhor como funciona o fluxo no Gitlab com criação e exclusão de forks e abertura de Merge Requests.
+
+### Dificuldades
+
+- **Processo de exclusão e recriação do fork**: Por engano, deletei meu fork para tentar resolver o problema do pipeline, o que gerou atraso (o fork ficou agendado para exclusão). Aprendi que é melhor restaurar o fork ao invés de deletá-lo.
+
+### Aprendizados
+
+- **Boas práticas de nomenclatura de branches**: Pude aplicar o padrão `docs/fix-readme` para refletir o tipo de mudança, seguindo o padrão de boas práticas adotado amplamente por repositórios Open Source. A correta nomeação de branchs e commits pode facilitar o aceite de MRs em qualquer repositório.
+- **Resiliência**: Contribuir em um projeto ativo com mantenedores ocupados exige paciência e autonomia para investigar problemas não documentados.
+
+### Plano Pessoal para a Próxima Sprint
+
+- **Acompanhar o MR aberto**: Verificar se os mantenedores irão revisar e aprovar a correção do README, respondendo a eventuais pedidos de alteração.
+- **Propor uma issue para corrigir o erro do Pipeline**: Com base na análise feita, pretendo redigir uma issue detalhada no repositório `mepa-infra` sugerindo a correção do pipeline `init-backend`.
+- **Buscar nova tarefa de documentação**: Caso haja tempo, procurar outros arquivos com problemas semelhantes (acentuação, clareza) nos repositórios `mepa-web` e `mepa-api`.
+
+---
+
 ## Histórico de Versão
 | Data     | Versão | Descrição             | Autor               |
 | -------- | ------ | --------------------- | ------------------  |
-| 20/04/2026 | 1.0    | Versão inicial - Sprint 0        | [Marcos Bezerra](https://github.com/marcoslbz)    |
+| 20/04/2026 | 1.0.0    | Versão inicial - Sprint 0        | [Marcos Bezerra](https://github.com/marcoslbz)    |
+| 10/05/2026 | 1.1.0    | Sprint 1     | [Marcos Bezerra](https://github.com/marcoslbz)    |
