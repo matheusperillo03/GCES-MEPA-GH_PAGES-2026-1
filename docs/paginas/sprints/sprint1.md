@@ -25,6 +25,18 @@ No MEPA API, foram propostas as seguintes melhorias no README:
 
 Essas alterações visam elevar a experiência do desenvolvedor (DX), tornando o processo de configuração, uso da API e manutenção do backend muito mais ágil e intuitivo para quem está chegando ao projeto.
 
+## MEPA Web
+
+No MEPA WEB, foram propostas as seguintes informações no README:
+
+- Adição da seção **"Problemas comuns" (Troubleshooting)** com soluções práticas para erros frequentes durante a configuração do ambiente de desenvolvimento:
+  - Porta 3001 já está em uso (comando para identificar e matar o processo);
+  - API não responde (verificação de container e variável `NEXT_PUBLIC_API_URL`);
+  - Limpar cache e rebuildar containers (`make clean-dev`, `make build-dev`, `make start-dev`);
+  - Ver logs em tempo real (`docker compose logs -f`);
+  - Pular hooks do Git em situações de emergência (`HUSKY=0 git commit`).
+
+Essas alterações visam reduzir a dependência de mantenedores para dúvidas repetitivas, oferecendo um guia rápido de autoatendimento para novos contribuidores que enfrentarem problemas na primeira configuração do projeto.
 ---
 ## Histórico de Versão
 
@@ -32,4 +44,5 @@ Essas alterações visam elevar a experiência do desenvolvedor (DX), tornando o
 | -------- | ------ | --------------------- | ------------------  |
 | 08/05/2026 | 1.0  | Estruturando a Sprint e adicioando a colaboração | [Caio Sabino](https://github.com/caiomsabino) |
 | 10/05/2026 | 1.1  | Adicionando as melhorias propostas no MEPA API | [Ranni heler](https://github.com/Akaeranni) |
+| 11/05/2026 | 1.2 | Adicionando seção de Problemas Comuns no README do MEPA Web | [Bruno Vasconcelos](https://github.com/brunocva) |
 
