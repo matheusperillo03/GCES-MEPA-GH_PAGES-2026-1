@@ -50,7 +50,51 @@ Na próxima sprint, pretendo começar a me aprofundar mais nas issues do MEPA pa
 
 ---
 
+## Sprint 1 - Primeira Contribuição
+**Duração**: 27/04/2026 - 11/05/2026
+
+### Resumo da Sprint
+
+Nesta sprint, realizei minha primeira contribuição efetiva ao projeto MEPA, focada em documentação. A tarefa consistiu em adicionar uma seção de "Problemas comuns" (Troubleshooting) no `README.md` do repositório **mepa-web**. Durante o processo, também identifiquei que meu fork estava privado e precisei ajustar a visibilidade - uma lição importante para contribuições futuras.
+
+Devido ao alto volume de demandas e à agenda corrida dos mantenedores, não foi possível que eles preparassem issues específicas para nossa equipe. Diante disso, fomos orientados a buscar contribuições mais acessíveis, como melhorias na documentação dos repositórios MEPA (web, api e infra).
+
+### Atividades Realizadas
+
+| Data | Atividade | Status |
+|------|-----------|--------|
+| 08/05 | Exploração dos repositórios MEPA para identificar pontos de melhoria | ✅ |
+| 10/05 | Fork do `mepa-web` (inicialmente privado, depois ajustado para público) | ✅ |
+| 10/05 | Configuração de chave SSH no GitLab | ✅ |
+| 10/05 | Criação da branch `docs/troubleshooting` e edição do README | ✅ |
+| 11/05 | Abertura do Merge Request para a branch `develop` | ✅ |
+
+### Maiores Avanços
+
+- **Primeiro MR no GitLab**: Embora já tenha familiaridade com Git e GitHub, foi minha primeira contribuição usando GitLab. Aprendi as diferenças práticas: onde ficam os forks, como configurar upstream e o fluxo de abertura de MRs.
+- **Fork privado → público**: Errei a visibilidade do fork e precisei corrigir. Aprendi que, para contribuições open source, o fork precisa ser público.
+- **Seção de Troubleshooting**: Contribuí com um guia prático para problemas comuns (porta ocupada, API não responde, rebuild de containers, logs), preenchendo uma lacuna que dificultava o onboarding de novos contribuidores.
+
+### Dificuldades
+
+- **Fork privado por engano**: Percebi apenas depois de abrir o MR que meu fork estava privado, ajustei a visibilidade a tempo para dar visibilidade a outros contribuidores.
+- **Autenticação no GitLab**: Diferente do GitHub, o GitLab não aceita senha no terminal, resolvi configurando chave SSH, que é mais simples e definitiva para resolver os problemas que estava tendo com autenticação com o GitLab.
+
+### Aprendizados
+
+- **Pipeline falhou, mas não impede**: Assim como outros MRs do grupo, o pipeline de CI/CD falhou. Como minha alteração foi apenas em documentação, entendi que isso não invalida a contribuição.
+- **Fork precisa ser público**: Lição simples, mas fácil de esquecer na primeira vez.
+
+### Plano Pessoal para a Próxima Sprint
+
+- Acompanhar o MR aberto e responder a eventuais pedidos de ajuste.
+- Explorar o repositório `mepa-api` em busca de oportunidades semelhantes.
+- Se possível, evoluir para contribuições um pouco mais técnicas (pequenos ajustes de frontend).
+
+---
+
 ## Histórico de Versão
 | Data     | Versão | Descrição             | Autor               |
 | -------- | ------ | --------------------- | ------------------  |
 | 20/04/2026 | 1.0    | Versão inicial - Sprint 0        | [Bruno Vasconcelos](https://github.com/brunocva)    |
+| 11/05/2026 | 1.0 | Versão inicial - Sprint 1 | [Bruno Vasconcelos](https://github.com/brunocva) |
