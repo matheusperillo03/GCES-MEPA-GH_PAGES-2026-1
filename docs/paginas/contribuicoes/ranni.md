@@ -93,9 +93,85 @@ O principal obstáculo foi identificar oportunidades de melhoria real em uma doc
 
 A sprint reforçou a importância de documentar não apenas "o que" o sistema faz, mas "como" o desenvolvedor interage com ele no dia a dia. A inclusão de guias de monitoramento, logs e checklists de setup inicial provou ser essencial para tornar o projeto verdadeiramente acessível e sustentável.
 
+## Sprint 2 - Testes de Relatórios e Eventos
+
+**Duração**: 12/05/2026 - 25/05/2026
+
+### Resumo da Sprint
+
+Nesta sprint, minha atuação foi focada principalmente na implementação e expansão da suíte de testes do módulo de medidores do MEPA Web, com ênfase especial nos fluxos de relatórios técnicos, eventos e componentes utilizados pelos geradores de PDF.
+
+A atividade foi realizada com base na issue originalmente levantada por um colega da equipe, utilizando-a como referência para estruturar os cenários necessários e ampliar a cobertura dos componentes mais críticos do sistema.
+
+Além da criação dos testes, também foi necessário desenvolver mocks para módulos específicos do Next.js, permitindo que os testes fossem executados corretamente dentro do ambiente do Vitest.
+
+---
+
+### Registro de Atividades
+
+| Data  | Descrição da Atividade                                                                         | Categoria    | Referência           | Status      |
+| ----- | ---------------------------------------------------------------------------------------------- | ------------ | -------------------- | ----------- |
+| 17/05 | Estudo da estrutura dos componentes de relatório técnico e eventos                             | Estudo       | MEPA Web             | Concluído ✅ |
+| 23/05 | Análise da issue de testes utilizada como base para implementação                              | Planejamento | Issue #73            | Concluído ✅ |
+| 23/05 | Criação de mocks para módulos do Next.js (`next/navigation`, `next/image`, `next/cache`, etc.) | Infra/Testes | Repositório MEPA Web | Concluído ✅ |
+| 23/05 | Implementação de testes para actions e páginas de relatório técnico                            | Testes       | [MR Sprint 2](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/77)         | Concluído ✅ |
+| 24/05 | Implementação de testes para componentes de eventos e summaries                                | Testes       | [MR Sprint 2](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/77)          | Concluído ✅ |
+| 24/05 | Implementação de testes para filtros, tabelas e estados de loading/error                       | Testes       | [MR Sprint 2](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/77)          | Concluído ✅ |
+| 24/05 | Ajustes de responsividade e estabilização da suíte de testes                                   | Refatoração  | [MR Sprint 2](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/77)            | Concluído ✅ |
+| 25/05 | Revisão final e preparação do Merge Request                                                    | Integração   | [MR Sprint 2](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/77)            | Concluído ✅ |
+
+---
+
+### Principais Conquistas
+
+* Expansão significativa da cobertura de testes do módulo de medidores.
+* Criação de uma infraestrutura de mocks reutilizáveis para o ambiente Next.js no Vitest.
+* Implementação de testes para fluxos críticos relacionados a:
+
+  * relatórios técnicos
+  * summaries
+  * tabelas de eventos
+  * filtros
+  * error boundaries
+  * loading states
+* Maior estabilidade da suíte de testes para futuras implementações no projeto.
+* Pequena melhoria visual na responsividade do seletor de período da tabela de eventos.
+
+---
+
+### Desafios Encontrados
+
+A principal dificuldade desta sprint foi lidar com dependências do Next.js dentro do ambiente de testes. Muitos componentes dependiam diretamente de APIs como `next/navigation`, `next/image` e `next/headers`, o que exigiu a criação de mocks específicos para evitar falhas durante a execução.
+
+Outro desafio foi estruturar testes para componentes assíncronos e estados de carregamento sem tornar os cenários frágeis ou excessivamente acoplados à implementação interna.
+
+---
+
+### Lições Aprendidas
+
+Durante esta sprint, aprofundei bastante meu entendimento sobre testes em aplicações React/Next.js utilizando Vitest e React Testing Library.
+
+Também aprendi mais sobre:
+
+* isolamento de dependências em testes
+* mocking de módulos do Next.js
+* validação de fluxos assíncronos
+* estratégias para testes de componentes complexos e interativos
+
+Além disso, foi uma experiência importante trabalhar a partir de uma issue originalmente levantada por outro integrante da equipe, adaptando e expandindo a proposta inicial conforme as necessidades reais encontradas no projeto.
+
+---
+
+### Plano Pessoal para a Próxima Sprint
+
+Na próxima sprint, pretendo continuar contribuindo diretamente no MEPA Web, focando mais em funcionalidades práticas do sistema e aprofundando o contato com fluxos de frontend mais complexos, especialmente envolvendo visualização de dados e experiência do usuário.
+
+---
+
 ## Histórico de Versão
 
-| Data       | Versão | Descrição                | Autor |
-| ---------- | ------ | ------------------------ | ----- |
+| Data       | Versão | Descrição                 | Autor                                       |
+| ---------- | ------ | ------------------------- | ------------------------------------------- |
 | 21/04/2026 | 1.0    | Versão inicial - Sprint 0 | [Ranni Heler](https://github.com/akaeranni) |
-| 10/05/2026 | 1.1    | Sprint 1 | [Ranni Heler](https://github.com/akaeranni) |
+| 10/05/2026 | 1.1    | Sprint 1                  | [Ranni Heler](https://github.com/akaeranni) |
+| 25/05/2026 | 1.2    | Sprint 2                  | [Ranni Heler](https://github.com/akaeranni) |
