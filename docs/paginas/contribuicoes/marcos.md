@@ -93,8 +93,62 @@ Devido ao alto volume de demandas e à agenda corrida dos mantenedores, não foi
 
 ---
 
+## Sprint 2 - Testes do Módulo Painel
+**Duração**: 11/05/2026 - 25/05/2026
+
+**MR Aberto na Sprint**: [MR !79](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/79)
+
+### Resumo da Sprint
+
+Nesta sprint, participei da cobertura de testes do módulo **Painel** do MEPA-Web. O módulo estava com cobertura praticamente zero, especialmente nas actions (comunicação com a API) e nos componentes de interface que lidam com alertas, gráficos e favoritos. O objetivo foi garantir que as principais funcionalidades – exibição de métricas energéticas, modal de alertas, navegação entre entidades favoritas e loading states – estivessem protegidas contra regressões.
+
+### Atividades Realizadas
+
+| Data | Atividade | Tipo | Referência | Status |
+|------|-----------|------|------------|--------|
+| 13/05 | Análise da cobertura atual do módulo Painel (Vitest UI) | Estudo | `pnpm test:coverage src/app/painel` | Concluído ✅ |
+| 15/05 | Implementação dos testes para `action.ts` (4 funções principais) | Código | `action.test.ts` | Concluído ✅ |
+| 17/05 | Criação dos testes do componente `alerts-modal-content.tsx` | Código | `alerts-modal-content.test.tsx` | Concluído ✅ |
+| 20/05 | Testes da página principal `page.tsx` (com mocks de hooks e componentes) | Código | `page.test.tsx` | Concluído ✅ |
+| 22/05 | Testes dos skeletons (`loading.tsx` e `painel-skeleton.tsx`) | Código | `loading.test.tsx`, `painel-skeleton.test.tsx` | Concluído ✅ |
+| 24/05 | Execução da suíte de testes e verificação da cobertura final | Validação | `pnpm test:coverage src/app/painel` | Concluído ✅ |
+| 25/05 | Documentação da sprint no diário de bordo e no `sprint2.md` da equipe | Documentação | [Issue #75](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/work_items/75) | Concluído ✅ |
+
+### Maiores Avanços
+
+- **Aumento expressivo da cobertura**: O módulo Painel saltou de **0% para 76%** de cobertura de linhas.
+
+###  Evolução da Cobertura – Painel
+
+**Antes da Sprint 2:**
+
+![cobertura antes](assets/marcos/antes.png)
+
+*Legenda: módulo Painel praticamente sem testes (0% de cobertura).*
+
+**Depois da Sprint 2:**
+
+![cobertura depois](assets/marcos/depois.png)
+![cobertura depois](assets/marcos/paineldepois.png)
+![cobertura depois](assets/marcos/componentsdepois.png)
+
+### Aprendizados
+
+- **Estratégia de testes para páginas complexas**: Aprendi a separar o que deve ser testado em unidade (actions, componentes puros) do que exige integração com mocks (páginas com hooks e roteamento).
+- **Importância de testar estados de carregamento e erro**: Os skeletons e a mensagem de erro do `page.tsx` são fundamentais para a experiência do usuário; os testes garantiram que eles aparecem nos momentos certos.
+- **Organização de mocks reutilizáveis**: Criei um arquivo `__mocks__/next-navigation.ts` e o reutilizei em vários testes, o que economizou tempo e padronizou os mocks.
+
+### Plano Pessoal para a Próxima Sprint
+
+- Investigar outras áreas com baixa cobertura,.
+- Investigar mais afundo o problema no pipeline do MEPA-Infra
+
+
+---
+
 ## Histórico de Versão
 | Data     | Versão | Descrição             | Autor               |
 | -------- | ------ | --------------------- | ------------------  |
 | 20/04/2026 | 1.0.0    | Versão inicial - Sprint 0        | [Marcos Bezerra](https://github.com/marcoslbz)    |
 | 10/05/2026 | 1.1.0    | Sprint 1     | [Marcos Bezerra](https://github.com/marcoslbz)    |
+| 25/05/2026 | 1.2.0    | Sprint 2     | [Marcos Bezerra](https://github.com/marcoslbz)    |

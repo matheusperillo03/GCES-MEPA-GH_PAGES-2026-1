@@ -39,6 +39,8 @@ Componente React client-side que orquestra a geração e o download/preview do P
 
 **Resultado:** 9 testes  — LH ~22% · Branches ~18% (A cobertura do FinancialReportActions é baixa pois o arquivo exporta dois helpers puros, sanitizeFileName e buildPdfFileName, que são as únicas funções testadas nesta MR. Esses helpers concentram toda a lógica de negócio relevante do arquivo: normalização de nomes de arquivo com diacríticos, remoção de caracteres reservados de filesystem e montagem do nome final do PDF com mês zero-padded e fallback de entidade.)
 
+---
+
 ## Issue 74
 
 Foi identificado que o módulo de Medidores não possuía cobertura adequada de testes automatizados em páginas, eventos e ficha técnica, acumulando 536 linhas sem cobertura. A issue foi dividida entre integrantes da equipe para ampliar a confiabilidade dos fluxos principais do módulo.
@@ -78,6 +80,7 @@ Também foram adicionados mocks reutilizáveis para módulos do Next.js (`next/n
 * validação de loading, erro, estados vazios e interações
 * estabilização da suíte de testes do módulo de Medidores
 
+---
 
 ## Issue 75
 
@@ -103,15 +106,26 @@ Os arquivos contemplados foram:
 
 _A ser preenchido por Matheus Barros._
 
----
-
 ### Painel
 
-_A ser preenchido por Marcos Bezerra._
+O módulo Painel apresentava cobertura muito baixa, especialmente nos componentes de interface e nas actions que fazem a ponte com a API. A falta de testes dificultava a manutenção e aumentava o risco de regressões em funcionalidades críticas, como exibição de métricas, gráfico de energia mensal, favoritos e alertas de medidores.
+
+Os arquivos criados foram:
+
+- `action.test.ts`
+- `alerts-modal-content.test.tsx`
+- `loading.test.tsx`
+- `page.test.tsx`
+- `painel-skeleton.test.tsx`
+
+**Resultado:**  
+- 5 novos arquivos de teste adicionados  
+- Cobertura do módulo Painel: **0% → 76,8%** ✅  
+- Cobertura do módulo painel/components: **0% → 100%** ✅
 
 ---
 
-## Issue 78
+## Issue - 78
 
 Foi adicionado cobertura automatizada. A ideia foi proteger principalmente a montagem dos dados, a renderização dos documentos e parte da lógica de exportação, reduzindo o risco de regressão nessas telas que geram PDF. Como esses fluxos têm bastante regra de negócio e dependem de renderização de PDF, a proposta foi separar o que dá para testar de forma confiável em unit tests e o que depende de APIs reais de browser.
 
@@ -181,6 +195,8 @@ O que foi testado:
 - As Actions não foram cobertas por completo de propósito, porque parte da lógica depende de APIs de browser como `requestAnimationFrame`, `document.fonts.ready`, `URL.createObjectURL` e `window.open`.
 - A cobertura adicionada protege o que mais importa nesses fluxos: transformação dos dados, estrutura do PDF e helpers de exportação.
 - O relatório financeiro foi o mais completo nesta rodada, com validação de dados, documento e helpers de exportação.
+
+---
 
 | Data     | Versão | Descrição             | Autor               |
 | -------- | ------ | --------------------- | ------------------  |
