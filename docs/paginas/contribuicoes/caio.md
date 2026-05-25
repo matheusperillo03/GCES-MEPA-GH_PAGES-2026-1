@@ -89,9 +89,50 @@ Quero entender melhor as issues abertas nos repositórios e começar a contribui
 
 ---
 
+## Sprint 2 - Documentação
+**Duração**: 12/05/2026 - 25/05/2026
+
+### Resumo da Sprint
+
+Nesta sprint, o foco principal foi descobrir mais sobre o repositório do MEPA Web e aumentar a cobertura de testes dele. Conseguimos entrar em contato com o time e nos foi dada permissão para ir atrás de possíveis testes necessários. Com isso, conseguimos ter acesso à cobertura dee testes e buscar ramos de atuação nos testes de softwares unitários.
+
+### Atividades Realizadas
+
+| Data | Atividade | Tipo | Referência | Status |
+| ----- | --------- | ---------------------------------------- | --------------- | ------ |
+| 13/05  | Contato com o grupo atuante para saber como podemos atuar no projeto | Solicitação | Não resultou em material concreto | Concluído✅ |
+| 19/05  | Separação de possíveis temas de issues com base no coverage, dentro do nosso grupo | Decisão interna | Não resultou em material concreto | Concluído✅ |
+| 22/05  | Abertura de uma issue sobre testes relacionados às features de relatórios e geradores PDF | Doc | [Issue #73](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/work_items/73) | Concluído✅ |
+| 24/05  | Abertura de um MR que resolve parte da Issue 73| Teste | [MR Caio Sabino](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/75) | Concluído✅ |
+
+
+### Maiores Avanços
+
+- Criei um MR que aumenta a cobertura de testes unitários do projeto;
+- Abri minha primeira issue no projeto;
+- Entendi melhor o funcionamento do frontend em si.
+
+
+### Dificuldades
+
+A dificuldade esteve primeiramente em achar arquivos de testes que pudessem ser relevantes para fins de acréscimo. Depois a dificuldade foi em tentar entender a lógica em como os arquivos se relacionam e como eu posso alterá-los.
+
+### Aprendizados
+
+Compreendi a importância da padronização de Issues e MRs para a manutenção de um repositório. Também entendi como a cobertura de testes deve ser levada em consideração para o andamento do projeto, sendo ela um marcador importante para medir a qualidade e escalabilidade desse projeto.
+
+
+### Plano Pessoal para a Próxima Sprint
+
+Quero entender se vamos continuar buscando mais implementações de testes automatizados ou se vamos contribuir com issues abertas no momento. Quero continuar contribuindo ativamente com o projeto.
+
+---
+
+
 ## Histórico de Versão
 | Data     | Versão | Descrição             | Autor               |
 | -------- | ------ | --------------------- | ------------------  |
 | 20/04/2026 | 1.0    | Contribuição Caio Sabino sprint 0| [Caio Sabino](https://github.com/caiomsabino)    |
 | 21/04/2026 | 1.1    | Correção de link gerando warning| [Matheus Perillo](https://github.com/matheusperillo03)    |
-| 21/04/2026 | 1.2    | Contribuição Caio Sabino sprint 1| [Caio Sabino](https://github.com/caiomsabino)    |
+| 10/05/2026 | 1.2    | Contribuição Caio Sabino sprint 1| [Caio Sabino](https://github.com/caiomsabino)    |
+| 24/05/2026 | 1.2    | Contribuição Caio Sabino sprint 2| [Caio Sabino](https://github.com/caiomsabino)    |
