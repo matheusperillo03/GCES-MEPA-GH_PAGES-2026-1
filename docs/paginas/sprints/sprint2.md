@@ -39,6 +39,46 @@ Componente React client-side que orquestra a geração e o download/preview do P
 
 **Resultado:** 9 testes  — LH ~22% · Branches ~18% (A cobertura do FinancialReportActions é baixa pois o arquivo exporta dois helpers puros, sanitizeFileName e buildPdfFileName, que são as únicas funções testadas nesta MR. Esses helpers concentram toda a lógica de negócio relevante do arquivo: normalização de nomes de arquivo com diacríticos, remoção de caracteres reservados de filesystem e montagem do nome final do PDF com mês zero-padded e fallback de entidade.)
 
+## Issue 74
+
+Foi identificado que o módulo de Medidores não possuía cobertura adequada de testes automatizados em páginas, eventos e ficha técnica, acumulando 536 linhas sem cobertura. A issue foi dividida entre integrantes da equipe para ampliar a confiabilidade dos fluxos principais do módulo.
+
+### Medidores
+
+Os testes implementados contemplaram principalmente:
+
+* páginas base de medidores
+* layout e loading states
+* fluxo de relatório técnico
+* componentes de eventos
+* tabelas, filtros e summaries
+* error boundaries
+* interações principais do usuário
+
+Os arquivos contemplados incluem:
+
+actions.test.ts
+layout.test.tsx
+loading.test.tsx
+page.test.tsx
+technical-report-client.test.tsx
+event-list.test.tsx
+event-summary.test.tsx
+event-table.test.tsx
+correlated-events.test.tsx
+filter.test.tsx
+events-card.test.tsx
+
+Também foram adicionados mocks reutilizáveis para módulos do Next.js (`next/navigation`, `next/image`, `next/link`, `next/cache` e `next/headers`) para estabilizar a execução dos testes no Vitest.
+
+### Resultado:
+
+* 14 novos arquivos de teste adicionados
+* cobertura expandida para páginas e componentes críticos do módulo
+* validação de loading, erro, estados vazios e interações
+* estabilização da suíte de testes do módulo de Medidores
+
+
 ## Issue 75
 
 Foi identificado que os módulos de Pessoas, Mapa e Painel não possuíam cobertura adequada de testes automatizados — com 954 linhas instrumentáveis e coberturas variando de 0% a 49%. Com isso, as tarefas foram divididas entre três integrantes, cada um responsável por um módulo distinto.
@@ -77,3 +117,4 @@ _A ser preenchido por Marcos Bezerra._
 | -------- | ------ | --------------------- | ------------------  |
 | 24/05/2026 | 1.0  | Estruturando a Sprint e adicioando a colaboração | [Caio Sabino](https://github.com/caiomsabino) |
 | 24/05/2026 | 1.1  | Adiciona documentação da Issue 75 (parte Mapa) | [Matheus Perillo](https://github.com/matheusperillo03) |
+| 5/05/2026 | 1.2  | Adiciona documentação da Issue 74| [Ranni Heler](https://github.com/akaeranni) |
