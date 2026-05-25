@@ -103,11 +103,7 @@ Os arquivos contemplados foram:
 
 # MR: Issue #78 — Testes de Relatórios PDF
 
-Foi adicionado cobertura automatizada. A ideia foi proteger principalmente a montagem dos dados, a renderização dos documentos e parte da lógica de exportação, reduzindo o risco de regressão nessas telas que geram PDF.
-
-## Contexto
-
-A Issue #78 surgiu porque os relatórios PDF ainda estavam com pouca ou nenhuma cobertura automatizada. Como esses fluxos têm bastante regra de negócio e dependem de renderização de PDF, a proposta foi separar o que dá para testar de forma confiável em unit tests e o que depende de APIs reais de browser.
+Foi adicionado cobertura automatizada. A ideia foi proteger principalmente a montagem dos dados, a renderização dos documentos e parte da lógica de exportação, reduzindo o risco de regressão nessas telas que geram PDF. Como esses fluxos têm bastante regra de negócio e dependem de renderização de PDF, a proposta foi separar o que dá para testar de forma confiável em unit tests e o que depende de APIs reais de browser.
 
 ## Decisões
 
