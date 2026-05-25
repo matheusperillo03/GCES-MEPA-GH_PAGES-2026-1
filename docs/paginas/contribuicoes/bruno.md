@@ -93,8 +93,50 @@ Devido ao alto volume de demandas e à agenda corrida dos mantenedores, não foi
 
 ---
 
+## Sprint 2
+
+Nesta sprint, o foco foi aumentar a cobertura de testes dos relatórios PDF do MEPA Web (Financeiro, Técnico e Sustentabilidade). Após identificar que esses fluxos estavam com pouca ou nenhuma cobertura automatizada, assumi a responsabilidade por essa parte dentro da Issue #78.
+
+Atividades Realizadas
+
+| Data | Atividade | Tipo | Referência | Status |
+|------|-----------|------|------------|--------|
+| 21/05 | Análise dos arquivos dos relatórios PDF sem testes | Estudo | Issue #78 | Concluído ✅ |
+| 21/05 | Estruturação da Issue #78 | Doc | Issue #78 | Concluído ✅ |
+| 22/05 | Implementação dos testes para `buildFinancialReportPdfData.ts` | Teste | MR !78 | Concluído ✅ |
+| 22/05 | Implementação dos testes para `FinancialReportPdfDocument.tsx` | Teste | MR !78 | Concluído ✅ |
+| 23/05 | Implementação dos testes para `FinancialReportPdfActions.tsx` (helpers puros) | Teste | MR !78 | Concluído ✅ |
+| 24/05 | Implementação dos testes para relatórios Técnico e Sustentabilidade | Teste | MR !78 | Concluído ✅ |
+| 25/05 | Abertura do MR !78 | Teste | MR !78 | Concluído ✅ |
+
+Maiores Avanços
+
+- Criei o MR !78 com testes para 9 arquivos (3 relatórios × 3 arquivos cada), totalizando 39+ testes;
+- Alcancei cobertura de ~90-100% nas funções puras (`buildPdfData`) e componentes PDF (`Document`);
+- Aprendi a mockar o `@react-pdf/renderer` de forma DOM-safe para testar componentes React que renderizam PDF;
+- Documentei as limitações das `Actions` (dependências de browser), mantendo transparência técnica no MR.
+
+Dificuldades
+
+O maior desafio foi lidar com as dependências de browser nas `Actions`. As funções `captureFigure`, `waitForChartRender` e `captureAllFigures` dependem de `requestAnimationFrame`, `document.fonts.ready`, `URL.createObjectURL` e `window.open` — APIs que não existem no ambiente Node do Vitest sem simulação pesada. Decidi focar nos helpers puros (`sanitizeFileName` e `buildPdfFileName`) que concentram a lógica de negócio relevante (normalização de nome de arquivo, zero-padding do mês, fallback de entidade).
+
+Outro desafio foi mockar o `@react-pdf/renderer` de forma que o componente `FinancialReportPdfDocument` conseguisse renderizar sem quebrar, preservando os elementos `Document`, `Page` e `Text` para asserções estruturais.
+
+Aprendizados
+
+Aprendi na prática como testar componentes React que usam bibliotecas de renderização pesada como `@react-pdf/renderer`, usando stubs DOM-safe e snapshots versionados. Entendi que nem sempre vale a pena forçar cobertura em trechos que dependem de APIs de browser — é melhor isolar o que é realmente testável e documentar o restante.
+
+Também ficou claro que cobertura de linhas sozinha não conta toda a história: as `Actions` têm baixa cobertura (~22%), mas os helpers puros exportados estão totalmente testados, e a lógica de transformação (`buildPdfData`) e renderização (`Document`) estão protegidas contra regressões.
+
+Plano Pessoal para a Próxima Sprint
+
+Quero acompanhar o feedback do time sobre o MR !78 e incorporar as sugestões de revisão. Também quero entender se a abordagem de "testar o que é realmente testável e documentar limitações" foi bem recebida, e se podemos aplicar a mesma estratégia para outros módulos com dependências de browser.
+
+---
+
 ## Histórico de Versão
 | Data     | Versão | Descrição             | Autor               |
 | -------- | ------ | --------------------- | ------------------  |
 | 20/04/2026 | 1.0    | Versão inicial - Sprint 0        | [Bruno Vasconcelos](https://github.com/brunocva)    |
-| 11/05/2026 | 1.0 | Versão inicial - Sprint 1 | [Bruno Vasconcelos](https://github.com/brunocva) |
+| 11/05/2026 | 1.1 | Versão inicial - Sprint 1 | [Bruno Vasconcelos](https://github.com/brunocva) |
+| 25/05/2026 | 1.2 | Versão inicial - Sprint 2 | [Bruno Vasconcelos](https://github.com/brunocva) |
