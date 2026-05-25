@@ -39,8 +39,41 @@ Componente React client-side que orquestra a geração e o download/preview do P
 
 **Resultado:** 9 testes  — LH ~22% · Branches ~18% (A cobertura do FinancialReportActions é baixa pois o arquivo exporta dois helpers puros, sanitizeFileName e buildPdfFileName, que são as únicas funções testadas nesta MR. Esses helpers concentram toda a lógica de negócio relevante do arquivo: normalização de nomes de arquivo com diacríticos, remoção de caracteres reservados de filesystem e montagem do nome final do PDF com mês zero-padded e fallback de entidade.)
 
+## Issue 75
+
+Foi identificado que os módulos de Pessoas, Mapa e Painel não possuíam cobertura adequada de testes automatizados — com 954 linhas instrumentáveis e coberturas variando de 0% a 49%. Com isso, as tarefas foram divididas entre três integrantes, cada um responsável por um módulo distinto.
+
+### Mapa
+
+O módulo de Mapa possuía cobertura de 49% no módulo principal e 21% nos componentes, com três arquivos pesados (`map-explorer`, `map-explorer-markers` e `map-explorer-sidebar`) praticamente sem testes.
+
+Os arquivos contemplados foram:
+
+- `entity-icons.ts`
+- `page.tsx`
+- `map-explorer-sidebar.tsx`
+- `map-explorer.tsx`
+- `map-explorer-markers.tsx`
+
+**O que foi testado:** callbacks de marcadores (`onMarkerClick`, `onMeterClick`); renderização do mapa e da sidebar; alternância de visualizações; mock do Leaflet com exports nomeados e default simultâneos; mock de `next/dynamic` com resolução assíncrona; rollback otimista e tratamento de erros.
+
+**Resultado:** 63 novos testes em 5 arquivos — Mapa (total): 49% → **91%** ✅ · Mapa/components (total): 21% → **78%** ✅ — Metas atingidas (mapa ≥80%, mapa/components ≥70%)
+
+---
+
+### Pessoas
+
+_A ser preenchido por Matheus Barros._
+
+---
+
+### Painel
+
+_A ser preenchido por Marcos Bezerra._
+
+---
 
 | Data     | Versão | Descrição             | Autor               |
 | -------- | ------ | --------------------- | ------------------  |
 | 24/05/2026 | 1.0  | Estruturando a Sprint e adicioando a colaboração | [Caio Sabino](https://github.com/caiomsabino) |
-
+| 24/05/2026 | 1.1  | Adiciona documentação da Issue 75 (parte Mapa) | [Matheus Perillo](https://github.com/matheusperillo03) |
