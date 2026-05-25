@@ -54,8 +54,53 @@ Na próxima sprint, quero entender melhor como o projeto funciona por dentro, ex
 
 ---
 
+## Sprint 2 - Testes
+**Duração**: 12/05/2026 - 25/05/2026
+
+### Resumo da Sprint
+
+Nesta sprint, o foco foi aumentar a cobertura de testes do módulo de **Mapa** do MEPA Web, que estava em apenas 49% no módulo principal e 21% nos componentes. Após entrar em contato com o time e obter acesso ao relatório de cobertura (`lcov.info`), identifiquei os três arquivos mais críticos sem testes (`map-explorer`, `map-explorer-markers` e `map-explorer-sidebar`) e assumi a responsabilidade por esse módulo dentro da [Issue #75](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/work_items/75), que foi dividida entre três integrantes.
+
+### Atividades Realizadas
+
+| Data | Atividade | Tipo | Referência | Status |
+| ----- | --------- | ---------------------------------------- | --------------- | ------ |
+| 13/05  | Reunião com o grupo atuante para saber como podemos atuar no projeto | Solicitação | Não resultou em material concreto | Concluído✅ |
+| 19/05  | Separação de possíveis temas de issues com base no coverage, dentro do nosso grupo | Decisão interna | Não resultou em material concreto | Concluído✅ |
+| 20/05  | Análise do relatório de cobertura e identificação dos arquivos do módulo Mapa sem testes | Estudo | [Issue #75](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/work_items/75) | Concluído✅ |
+| 21/05  | Estruturação da [Issue #75](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/work_items/75) | Doc | [Issue #75](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/work_items/75) | Concluído✅ |
+| 21/05  | Estudo da estrutura do módulo Mapa e das dependências externas (Leaflet, next/dynamic) | Estudo | [MR #76](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/76) | Concluído✅ |
+| 22/05  | Implementação dos testes para `entity-icons.ts`, `page.tsx` e `map-explorer-sidebar.tsx` | Teste | [MR #76](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/76) | Concluído✅ |
+| 23/05  | Implementação dos testes para `map-explorer.tsx` e `map-explorer-markers.tsx` | Teste | [MR #76](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/76) | Concluído✅ |
+| 25/05  | Abertura da [Issue #75](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/work_items/75) | Doc | [Issue #75](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/work_items/75) | Concluído✅ |
+| 25/05  | Abertura do [MR #76](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/76) | Teste | [MR #76](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/76) | Concluído✅ |
+
+
+### Maiores Avanços
+
+- Criei o [MR #76](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/76) com 63 novos testes em 5 arquivos, elevando a cobertura do módulo Mapa de **49% para 91%** e dos componentes de **21% para 78%**, atingindo ambas as metas da issue;
+- Abri minha primeira issue no projeto, a [Issue #75](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/work_items/75);
+- Aprendi a mockar bibliotecas complexas como o Leaflet (exports nomeados e default simultâneos) e o `next/dynamic` com resolução assíncrona no ambiente Vitest.
+
+
+### Dificuldades
+
+O maior desafio foi lidar com as dependências externas do módulo. O **Leaflet** exige um mock que cubra tanto os exports nomeados quanto o export default ao mesmo tempo, e o **`next/dynamic`** precisou de tratamento especial para simular a resolução assíncrona de componentes no ambiente de testes. Além disso, entender como os arquivos `map-explorer`, `map-explorer-sidebar` e `map-explorer-markers` se integram entre si — via callbacks (`onMarkerClick`, `onMeterClick`) e estado compartilhado — exigiu bastante leitura do código antes de escrever qualquer teste.
+
+### Aprendizados
+
+Aprendi na prática como estruturar testes para componentes React com dependências pesadas de browser e bibliotecas de mapa. Entendi como o rollback otimista funciona no frontend e como testá-lo de forma confiável. Também ficou claro que a cobertura de linhas sozinha não conta toda a história — é preciso garantir que os cenários de erro e os fluxos alternativos também sejam exercitados.
+
+
+### Plano Pessoal para a Próxima Sprint
+
+Quero entender se vamos continuar buscando mais implementações de testes automatizados ou se vamos contribuir com issues funcionais abertas no momento. Também quero acompanhar o feedback do time sobre o MR #76 e incorporar as sugestões de revisão.
+
+---
+
 ## Histórico de Versão
 
 | Data       | Versão | Descrição                 | Autor |
 | ---------- | ------ | ------------------------- | ----- |
 | 21/04/2026 | 1.0    | Versão inicial - Sprint 0 | [Matheus Perillo](https://github.com/matheusperillo03) |
+| 24/05/2026 | 1.1    | Contribuição para a Sprint 2 | [Matheus Perillo](https://github.com/matheusperillo03) |
