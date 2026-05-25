@@ -99,7 +99,7 @@ Os arquivos contemplados foram:
 
 **Resultado:** 63 novos testes em 5 arquivos — Mapa (total): 49% → **91%** ✅ · Mapa/components (total): 21% → **78%** ✅ — Metas atingidas (mapa ≥80%, mapa/components ≥70%)
 
-# Issue - 78
+## Issue - 78
 
 Foi adicionado cobertura automatizada. A ideia foi proteger principalmente a montagem dos dados, a renderização dos documentos e parte da lógica de exportação, reduzindo o risco de regressão nessas telas que geram PDF. Como esses fluxos têm bastante regra de negócio e dependem de renderização de PDF, a proposta foi separar o que dá para testar de forma confiável em unit tests e o que depende de APIs reais de browser.
 
