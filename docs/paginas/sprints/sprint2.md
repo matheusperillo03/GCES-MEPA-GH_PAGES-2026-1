@@ -99,20 +99,32 @@ Os arquivos contemplados foram:
 
 **Resultado:** 63 novos testes em 5 arquivos — Mapa (total): 49% → **91%** ✅ · Mapa/components (total): 21% → **78%** ✅ — Metas atingidas (mapa ≥80%, mapa/components ≥70%)
 
-## Issue - 78
+### Pessoas
+
+_A ser preenchido por Matheus Barros._
+
+---
+
+### Painel
+
+_A ser preenchido por Marcos Bezerra._
+
+---
+
+## Issue 78
 
 Foi adicionado cobertura automatizada. A ideia foi proteger principalmente a montagem dos dados, a renderização dos documentos e parte da lógica de exportação, reduzindo o risco de regressão nessas telas que geram PDF. Como esses fluxos têm bastante regra de negócio e dependem de renderização de PDF, a proposta foi separar o que dá para testar de forma confiável em unit tests e o que depende de APIs reais de browser.
 
-## Decisões
+### Decisões
 
 - Cobrir primeiro a lógica de transformação de dados dos relatórios.
 - Testar a renderização dos documentos PDF com mocks seguros para `@react-pdf/renderer`.
 - Cobrir apenas os helpers puros das Actions quando a parte restante dependia de APIs de browser.
 - Evitar testes frágeis em trechos que dependem de comportamento nativo do navegador, como captura de imagem, abertura de janela e geração de blob.
 
-## Detalhes por relatório
+### Detalhes por relatório
 
-### Relatório Financeiro
+#### Relatório Financeiro
 
 Arquivos cobertos:
 - `buildFinancialReportPdfData`
@@ -138,7 +150,7 @@ O que foi testado:
   - cerca de 18% de branches
   - cobre apenas os helpers puros exportados
 
-### Relatório Técnico
+#### Relatório Técnico
 
 Arquivos cobertos:
 - `buildTechnicalReportPdfData`
@@ -151,7 +163,7 @@ O que foi testado:
 - validação da árvore final gerada
 - cobertura parcial das Actions, priorizando o que é realmente testável sem browser real
 
-### Relatório de Sustentabilidade
+#### Relatório de Sustentabilidade
 
 Arquivos cobertos:
 - `buildSustainabilityReportPdfData`
@@ -164,23 +176,11 @@ O que foi testado:
 - validação da estrutura final gerada
 - cobertura parcial das Actions, na mesma linha do relatório técnico
 
-## Observações
+### Observações
 
 - As Actions não foram cobertas por completo de propósito, porque parte da lógica depende de APIs de browser como `requestAnimationFrame`, `document.fonts.ready`, `URL.createObjectURL` e `window.open`.
 - A cobertura adicionada protege o que mais importa nesses fluxos: transformação dos dados, estrutura do PDF e helpers de exportação.
 - O relatório financeiro foi o mais completo nesta rodada, com validação de dados, documento e helpers de exportação.
-
-### Pessoas
-
-_A ser preenchido por Matheus Barros._
-
----
-
-### Painel
-
-_A ser preenchido por Marcos Bezerra._
-
----
 
 | Data     | Versão | Descrição             | Autor               |
 | -------- | ------ | --------------------- | ------------------  |
