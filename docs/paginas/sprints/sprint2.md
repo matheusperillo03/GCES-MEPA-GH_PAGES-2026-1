@@ -101,6 +101,81 @@ Os arquivos contemplados foram:
 
 ---
 
+# MR: Issue #78 — Testes de Relatórios PDF
+
+Foi adicionado cobertura automatizada. A ideia foi proteger principalmente a montagem dos dados, a renderização dos documentos e parte da lógica de exportação, reduzindo o risco de regressão nessas telas que geram PDF.
+
+## Contexto
+
+A Issue #78 surgiu porque os relatórios PDF ainda estavam com pouca ou nenhuma cobertura automatizada. Como esses fluxos têm bastante regra de negócio e dependem de renderização de PDF, a proposta foi separar o que dá para testar de forma confiável em unit tests e o que depende de APIs reais de browser.
+
+## Decisões
+
+- Cobrir primeiro a lógica de transformação de dados dos relatórios.
+- Testar a renderização dos documentos PDF com mocks seguros para `@react-pdf/renderer`.
+- Cobrir apenas os helpers puros das Actions quando a parte restante dependia de APIs de browser.
+- Evitar testes frágeis em trechos que dependem de comportamento nativo do navegador, como captura de imagem, abertura de janela e geração de blob.
+
+## Detalhes por relatório
+
+### Relatório Financeiro
+
+Arquivos cobertos:
+- `buildFinancialReportPdfData`
+- `FinancialReportPdfDocument`
+- `FinancialReportPdfActions`
+
+O que foi testado:
+- `buildFinancialReportPdfData`
+  - 25 testes
+  - cerca de 90% de LH
+  - cerca de 82% de branches
+  - valida a transformação completa do payload
+  - cobre helpers internos, fallbacks e montagem das tabelas
+- `FinancialReportPdfDocument`
+  - 5 testes
+  - 100% de LH
+  - cerca de 95% de branches
+  - valida a estrutura renderizada do documento
+  - inclui 1 snapshot versionado
+- `FinancialReportPdfActions`
+  - 9 testes
+  - cerca de 22% de LH
+  - cerca de 18% de branches
+  - cobre apenas os helpers puros exportados
+
+### Relatório Técnico
+
+Arquivos cobertos:
+- `buildTechnicalReportPdfData`
+- `TechnicalReportPdfDocument`
+- `TechnicalReportPdfActions`
+
+O que foi testado:
+- transformação dos dados do relatório técnico em estrutura tipada para PDF
+- renderização do documento com `@react-pdf/renderer`
+- validação da árvore final gerada
+- cobertura parcial das Actions, priorizando o que é realmente testável sem browser real
+
+### Relatório de Sustentabilidade
+
+Arquivos cobertos:
+- `buildSustainabilityReportPdfData`
+- `SustainabilityReportPdfDocument`
+- `SustainabilityReportPdfActions`
+
+O que foi testado:
+- montagem dos dados do relatório de sustentabilidade
+- renderização do documento PDF
+- validação da estrutura final gerada
+- cobertura parcial das Actions, na mesma linha do relatório técnico
+
+## Observações
+
+- As Actions não foram cobertas por completo de propósito, porque parte da lógica depende de APIs de browser como `requestAnimationFrame`, `document.fonts.ready`, `URL.createObjectURL` e `window.open`.
+- A cobertura adicionada protege o que mais importa nesses fluxos: transformação dos dados, estrutura do PDF e helpers de exportação.
+- O relatório financeiro foi o mais completo nesta rodada, com validação de dados, documento e helpers de exportação.
+
 ### Pessoas
 
 _A ser preenchido por Matheus Barros._
@@ -117,4 +192,5 @@ _A ser preenchido por Marcos Bezerra._
 | -------- | ------ | --------------------- | ------------------  |
 | 24/05/2026 | 1.0  | Estruturando a Sprint e adicioando a colaboração | [Caio Sabino](https://github.com/caiomsabino) |
 | 24/05/2026 | 1.1  | Adiciona documentação da Issue 75 (parte Mapa) | [Matheus Perillo](https://github.com/matheusperillo03) |
-| 5/05/2026 | 1.2  | Adiciona documentação da Issue 74| [Ranni Heler](https://github.com/akaeranni) |
+| 25/05/2026 | 1.2  | Adiciona documentação da Issue 74| [Ranni Heler](https://github.com/akaeranni) |
+| 25/05/2026 | 1.3  | Adiciona documentação da Issue 78| [Bruno Vasconcelos](https://github.com/brunocva) |
