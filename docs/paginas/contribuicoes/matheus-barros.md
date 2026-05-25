@@ -96,10 +96,64 @@ Nesta sprint, realizei minha primeira contribuição efetiva ao projeto MEPA, co
 - **Buscar novas contribuições**: Explorar outros pontos de melhoria nos repositórios do MEPA, avançando para contribuições mais técnicas conforme o projeto evolui.
 ---
  
+## Sprint 2 - Testes Unitários
+**Duração**: 12/05/2026 - 25/05/2026
+ 
+### Resumo da Sprint
+ 
+Nesta sprint, minha contribuição foi focada em **testes unitários para componentes do módulo `pessoas`** do MEPA Web. Identifiquei 4 componentes sem cobertura de testes e implementei uma suíte completa para cada um, elevando a cobertura do diretório de 27% para aproximadamente 47%.
+ 
+---
+ 
+### Atividades Realizadas
+ 
+| Data | Atividade | Tipo | Referência | Status |
+|------|-----------|------|------------|--------|
+| 12/05 | Análise dos componentes sem cobertura de testes no módulo `pessoas` | Estudo | [Repositório MEPA Web](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web) | Concluído ✅ |
+| 18/05 | Implementação de testes para `ResendActivationButton` (8 testes) | Teste | [MR](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests) | Concluído ✅ |
+| 19/05 | Implementação de testes para `SendPasswordResetButton` (9 testes) | Teste | [MR](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests) | Concluído ✅ |
+| 21/05 | Implementação de testes para `BlockToggleButton` (12 testes) | Teste | [MR](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests) | Concluído ✅ |
+| 23/05 | Implementação de testes para `PeopleFeedbackToast` (7 testes) | Teste | [MR](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests) | Concluído ✅ |
+ 
+---
+ 
+### Maiores Avanços
+ 
+- **36 novos testes implementados** para os 4 componentes sem cobertura, elevando a cobertura do diretório `pessoas` de 27% para ~47%.
+- **`ResendActivationButton`**: Cobertos renderização condicional por status, chamada da action e toast de sucesso/erro com mensagens padrão (8 testes).
+- **`SendPasswordResetButton`**: Cobertos guarda das condições `active + email`, chamada da action e toast de sucesso/erro com mensagens padrão (9 testes).
+- **`BlockToggleButton`**: Cobertos `isSelf`, status inválido, bloquear/desbloquear, confirm dialog, actions e toasts de sucesso/erro (12 testes).
+- **`PeopleFeedbackToast`**: Cobertos `emitPeopleToast` (evento + sessionStorage), exibição de toast, fechamento e restauração ao montar (7 testes).
+ 
+---
+ 
+### Dificuldades
+ 
+- **Compreensão do comportamento assíncrono dos componentes**: Alguns componentes dependiam de eventos customizados e sessionStorage, exigindo atenção especial ao ciclo de vida e à ordem de execução nos testes.
+- **Configuração do ambiente de testes**: Ajustar mocks para actions, toasts e eventos do DOM exigiu estudo da documentação do Vitest e das convenções do projeto.
+ 
+---
+ 
+### Aprendizados
+ 
+- **Testes unitários com Vitest e Testing Library**: Aprofundei meu conhecimento em como testar componentes Vue com renderização condicional, eventos customizados e interações com o sessionStorage.
+- **Cobertura de código como métrica de qualidade**: Aprendi a interpretar relatórios de cobertura e a priorizar componentes com maior risco e menor cobertura.
+- **Boas práticas de mock**: Aprendi a isolar dependências externas (actions, toasts, APIs do browser) para garantir testes determinísticos e de fácil manutenção.
+ 
+---
+ 
+### Plano Pessoal para a Próxima Sprint
+ 
+- **Acompanhar o MR aberto**: Monitorar a revisão dos mantenedores e responder a eventuais pedidos de ajuste nos testes.
+- **Ampliar a cobertura**: Identificar outros módulos do MEPA Web com cobertura abaixo do esperado e propor novas contribuições de testes ou funcionalidades.
+ 
+---
+ 
 ## Histórico de Versão
  
 | Data       | Versão | Descrição                 | Autor |
 | ---------- | ------ | ------------------------- | ----- |
 | 21/04/2026 | 1.0    | Versão inicial - Sprint 0 | [Matheus Barros](https://github.com/Ninja-Haiyai) |
 | 11/05/2026 | 1.1    | Adiciona Sprint 1 | [Matheus Barros](https://github.com/Ninja-Haiyai) |
+| 25/05/2026 | 1.2    | Adiciona Sprint 2 | [Matheus Barros](https://github.com/Ninja-Haiyai) |
  

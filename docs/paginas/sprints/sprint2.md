@@ -104,7 +104,23 @@ Os arquivos contemplados foram:
 
 ### Pessoas
 
-_A ser preenchido por Matheus Barros._
+O módulo de Pessoas apresentava cobertura de 27% nos componentes, com 4 arquivos sem nenhum teste. A contribuição focou em cobrir esses componentes restantes, elevando a confiabilidade do módulo e reduzindo o risco de regressões em fluxos críticos de gerenciamento de usuários.
+
+Os arquivos contemplados foram:
+
+- `ResendActivationButton.tsx`
+- `SendPasswordResetButton.tsx`
+- `BlockToggleButton.tsx`
+- `PeopleFeedbackToast.tsx`
+
+**O que foi testado:**
+
+- `ResendActivationButton`: renderização condicional por status, chamada da action e toast de sucesso/erro com mensagens padrão (8 testes).
+- `SendPasswordResetButton`: guarda das condições `active + email`, chamada da action e toast de sucesso/erro com mensagens padrão (9 testes).
+- `BlockToggleButton`: `isSelf`, status inválido, bloquear/desbloquear, confirm dialog, actions e toasts de sucesso/erro (12 testes).
+- `PeopleFeedbackToast`: `emitPeopleToast` (evento + sessionStorage), exibição de toast, fechamento e restauração ao montar (7 testes).
+
+**Resultado:** 36 novos testes em 4 arquivos — pessoas/components: **27% → ~47%** ✅
 
 ### Painel
 
@@ -204,3 +220,4 @@ O que foi testado:
 | 24/05/2026 | 1.1  | Adiciona documentação da Issue 75 (parte Mapa) | [Matheus Perillo](https://github.com/matheusperillo03) |
 | 25/05/2026 | 1.2  | Adiciona documentação da Issue 74| [Ranni Heler](https://github.com/akaeranni) |
 | 25/05/2026 | 1.3  | Adiciona documentação da Issue 78| [Bruno Vasconcelos](https://github.com/brunocva) |
+| 25/05/2026 | 1.4  | Adiciona documentação da Issue 75 (parte Pessoas) | [Matheus Barros](https://github.com/Ninja-Haiyai) |
