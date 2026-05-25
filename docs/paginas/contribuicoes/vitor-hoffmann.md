@@ -86,9 +86,75 @@ Nesta sprint, realizei minha primeira contribuição efetiva ao projeto MEPA, co
 
 ---
 
+## Sprint 2 - Testes de Cobertura do Módulo de Medidores
+**Duração**: 12/05/2026 - 25/05/2026
+
+### Resumo da Sprint
+
+Nesta sprint, atuei diretamente na implementação da suíte de testes unitários do módulo de medidores do MEPA Web (`mepa-web`), em colaboração com o Ranni. O trabalho foi iniciado com um estudo aprofundado do repositório para entender os padrões de teste já existentes, a configuração do Vitest e as convenções adotadas pelos mantenedores.
+
+A partir desse estudo, identifiquei os módulos que careciam de cobertura e estruturei o trabalho como um conjunto de issues independentes, cada uma correspondendo a um módulo específico, para que os demais integrantes do grupo também pudessem contribuir de forma paralela e organizada.
+
+A implementação foi feita junto com o Ranni, cobrindo os fluxos principais dos componentes de relatório técnico, eventos e suas respectivas interfaces de usuário.
+
+---
+
+### Atividades Realizadas
+
+| Data  | Descrição da Atividade                                                                          | Categoria    | Referência                                                                 | Status       |
+| ----- | ----------------------------------------------------------------------------------------------- | ------------ | -------------------------------------------------------------------------- | ------------ |
+| 17/05 | Estudo da estrutura do repositório `mepa-web` e dos padrões de teste existentes                 | Estudo       | MEPA Web                                                                   | Concluído ✅  |
+| 20/05 | Análise dos módulos sem cobertura e levantamento dos cenários necessários                       | Planejamento | MEPA Web                                                                   | Concluído ✅  |
+| 21/05 | Divisão do trabalho em issues independentes por módulo, para distribuição entre o grupo         | Organização  | [MR Sprint 2](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/77) | Concluído ✅  |
+| 23/05 | Implementação dos testes dos componentes de relatório técnico (`report-button`, `technical-report`) | Testes    | [MR Sprint 2](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/77) | Concluído ✅  |
+| 24/05 | Implementação dos testes dos componentes de eventos (`event-list`, `event-table`, `event-summary`, `filter`) | Testes | [MR Sprint 2](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/77) | Concluído ✅  |
+| 24/05 | Implementação dos testes de métricas numéricas e visão geral (`numeric-measurements`, `overview-page`) | Testes | [MR Sprint 2](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/77) | Concluído ✅  |
+| 25/05 | Revisão da cobertura, ajuste de casos limite e preparação do Merge Request                      | Integração   | [MR Sprint 2](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/77) | Concluído ✅  |
+
+---
+
+### Principais Conquistas
+
+- **Cobertura acima de 90% de branches** nos módulos-alvo do projeto, incluindo:
+  - `src/app/medidores` — 93,75% de cobertura de branches
+  - `src/app/medidores/[medidorId]/components` — 91,09% de cobertura de branches
+  - `src/app/medidores/[medidorId]/eventos/components` — 92,63% de cobertura de branches
+  - `src/app/medidores/[medidorId]/ficha-tecnica` — 100% de cobertura de branches
+- **563 testes passando** ao final da sprint, distribuídos em 75 arquivos de teste.
+- **Organização em issues**: a divisão do trabalho em tarefas independentes por módulo facilitou a contribuição paralela dos demais integrantes do grupo.
+- Criação de uma infraestrutura sólida de mocks para módulos externos (`@react-pdf/renderer`, `html-to-image`, `swr`, `lucide-react`, componentes de UI internos), tornando os testes isolados e estáveis.
+
+---
+
+### Desafios Encontrados
+
+O principal desafio foi entender a fundo como cada componente se comporta em diferentes estados (carregando, com erro, com dados, sem dados) para criar cenários de teste representativos sem torná-los frágeis.
+
+Outro ponto complexo foi a cobertura de branches em operadores `??` e condicionais ternários cujas ramificações alternativas são logicamente inalcançáveis — nesses casos, foi necessário identificar quais branches realmente valiam o esforço de teste e quais eram proteções defensivas do código sem impacto prático.
+
+A configuração de mocks para componentes assíncronos (como o gerador de PDF) exigiu o uso de `vi.useFakeTimers()` e `vi.runAllTimersAsync()` para simular corretamente o fluxo de geração e download de arquivos.
+
+---
+
+### Lições Aprendidas
+
+- **Leitura de relatórios de cobertura**: aprendi a interpretar relatórios V8 de cobertura, distinguindo branches inalcançáveis de branches simplesmente não testados, o que torna o trabalho muito mais direcionado.
+- **Mocking estratégico**: entendi como isolar dependências externas de forma eficiente, evitando que os testes dependam de comportamentos de bibliotecas de terceiros.
+- **Testes de componentes assíncronos e com timers**: o uso de `waitFor`, `vi.useFakeTimers` e `vi.runAllTimersAsync` foi fundamental para testar fluxos que envolvem debounce, polling e geração de arquivos.
+- **Colaboração orientada a tarefas**: a divisão prévia do trabalho em issues bem delimitadas facilitou muito a colaboração com o Ranni e reduziu conflitos de código durante a integração.
+
+---
+
+### Plano Pessoal para a Próxima Sprint
+
+Na próxima sprint, pretendo continuar contribuindo no MEPA Web, com foco em funcionalidades práticas do sistema. Quero aprofundar o contato com fluxos mais complexos de frontend, especialmente os relacionados à visualização de dados e à experiência do usuário em telas de análise.
+
+---
+
 ## Histórico de Versão
 
 | Data       | Versão | Descrição                          | Autor                                                       |
 | ---------- | ------ | ---------------------------------- | ----------------------------------------------------------- |
 | 21/04/2026 | 1.0    | Versão inicial - Sprint 0          | [Vitor Hoffmann](https://github.com/vitor-hoffmann)         |
-| 11/05/2026 | 1.1    | Adiciona Sprint 1                           | [Vitor Hoffmann](https://github.com/vitor-hoffmann)         |
+| 11/05/2026 | 1.1    | Adiciona Sprint 1                  | [Vitor Hoffmann](https://github.com/vitor-hoffmann)         |
+| 25/05/2026 | 1.2    | Adiciona Sprint 2                  | [Vitor Hoffmann](https://github.com/vitor-hoffmann)         |
