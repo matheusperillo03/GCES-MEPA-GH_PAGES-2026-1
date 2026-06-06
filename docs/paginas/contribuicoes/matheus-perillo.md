@@ -98,9 +98,50 @@ Quero entender se vamos continuar buscando mais implementações de testes autom
 
 ---
 
+## Sprint 3 - Testes
+**Duração**: 26/05/2026 - 08/06/2026
+
+### Resumo da Sprint
+
+Nesta sprint, o foco foi cobrir módulos que estavam com 0% de cobertura de testes: os **componentes raiz** (`src/components`), os **gráficos** (`src/components/charts`) e os **stories** (`src/stories`). Esses módulos somavam 1.086 linhas instrumentáveis sem qualquer proteção contra regressões. Abri a [Issue #76](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/work_items/76) para formalizar o escopo e criei o [MR #86](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/86) cobrindo todos os módulos da issue.
+
+### Atividades Realizadas
+
+| Data | Atividade | Tipo | Referência | Status |
+| ----- | --------- | ---------------------------------------- | --------------- | ------ |
+| 26/05  | Análise do relatório de cobertura e identificação dos módulos sem testes | Estudo | [Issue #76](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/work_items/76) | Concluído✅ |
+| 27/05  | Estruturação da [Issue #76](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/work_items/76) | Doc | [Issue #76](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/work_items/76) | Concluído✅ |
+| 27/05  | Estudo da estrutura dos módulos de componentes raiz e gráficos | Estudo | [MR #86](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/86) | Concluído✅ |
+| 28/05  | Implementação dos testes para `src/components` (ErrorBoundary, MetricCard, ReportsDateFilter, LoadingSuspense) | Teste | [MR #86](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/86) | Concluído✅ |
+| 30/05  | Implementação dos testes para `src/components/charts` (MonthlyEnergyChart, ChartCard) | Teste | [MR #86](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/86) | Concluído✅ |
+| 02/06  | Implementação dos smoke tests para os módulos de `src/stories` (23 arquivos) | Teste | [MR #86](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/86) | Concluído✅ |
+| 04/06  | Abertura da [Issue #76](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/work_items/76) | Doc | [Issue #76](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/work_items/76) | Concluído✅ |
+| 05/06  | Abertura do [MR #86](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/86) | Teste | [MR #86](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/86) | Concluído✅ |
+
+### Maiores Avanços
+
+- Criei o [MR #86](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/86) com **+590 testes em 31 arquivos**, zerando a dívida de cobertura de 5 módulos e atingindo todas as metas da [Issue #76](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/work_items/76);
+- Aprendi a mockar bibliotecas de visualização complexas como o `recharts` e a testar componentes com polling assíncrono via `swr`;
+- Implementei smoke tests para 23 arquivos `.stories.tsx`, estabelecendo uma camada de proteção para os contratos visuais do projeto.
+
+### Dificuldades
+
+O maior desafio foi lidar com a complexidade dos módulos de gráficos. O `MonthlyEnergyChart` (494 linhas) e o `ChartCard` (261 linhas) possuem lógica densa de normalização de séries temporais, zoom e polling em tempo real, exigindo mocks cuidadosos do `recharts` e do `swr` para evitar testes frágeis. O `ErrorBoundary`, por ser um componente de classe com retry, também demandou uma abordagem diferente das habituais com componentes funcionais.
+
+### Aprendizados
+
+Aprendi como estruturar testes para componentes com estado assíncrono e polling, entendendo quando usar `waitFor` e `act` corretamente. Também entendi melhor o papel dos stories como contratos visuais e como smoke tests podem ser uma estratégia eficiente para cobrir rapidamente um grande volume de arquivos com baixo custo de manutenção.
+
+### Plano Pessoal para a Próxima Sprint
+
+Quero acompanhar o feedback do time sobre o [MR #86](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/86) e incorporar as sugestões de revisão. Também quero avaliar se ainda há módulos críticos sem cobertura ou se é hora de migrar para contribuições funcionais no projeto.
+
+---
+
 ## Histórico de Versão
 
 | Data       | Versão | Descrição                 | Autor |
 | ---------- | ------ | ------------------------- | ----- |
 | 21/04/2026 | 1.0    | Versão inicial - Sprint 0 | [Matheus Perillo](https://github.com/matheusperillo03) |
 | 24/05/2026 | 1.1    | Contribuição para a Sprint 2 | [Matheus Perillo](https://github.com/matheusperillo03) |
+| 05/06/2026 | 1.2    | Contribuição para a Sprint 3 | [Matheus Perillo](https://github.com/matheusperillo03) |
