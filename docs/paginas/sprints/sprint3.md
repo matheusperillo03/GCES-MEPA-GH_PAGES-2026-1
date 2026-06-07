@@ -54,6 +54,45 @@ Os módulos de stories (`src/stories/blocks`, `src/stories/__fixtures__` e `src/
 
 ---
 
+## Issue 78
+
+Foi mapeado que os módulos que compõem o ecossistema do Design System — incluindo componentes de interface de usuário (`src/components/ui`) e carregamento estrutural (`src/components/skeletons`) — contavam com uma cobertura crítica inicial de apenas ~15%, totalizando 968 linhas instrumentáveis. Para solucionar essa defasagem, a suíte de testes foi expandida com a criação de **45 novos arquivos de teste** (43 para a UI e 2 para Skeletons), adicionando **411 novos casos de teste** totalmente integrados e validados.
+
+### Design System: UI + Skeletons
+
+O escopo desta issue abrangeu 947 linhas do módulo `ui` e 21 linhas do módulo `skeletons`, garantindo a confiabilidade desde elementos primitivos até estruturas complexas de navegação e exibição de dados.
+
+Os principais arquivos e fluxos contemplados foram:
+
+- **Componentes Primitivos:** Garantia de comportamento e renderização de estados de componentes base (como `Badge`, `Button`, `Input`, `Switch`, entre outros).
+- **Componentes Complexos de Interface:**
+  - `Sidebar`: Comportamento de alternância responsiva (mobile/desktop/none), acionamento via atalhos de teclado e validação das propriedades do hook `useSidebar`.
+  - `Chart`: Resolução de chaves de configuração nativas (`nameKey`, `labelKey`), tratamento de payloads customizados e integração estrutural com mocks adaptados para o `ResponsiveContainer` da biblioteca `recharts`.
+  - `ConditionalLayout`: Validação dos fluxos lógicos e isolamento de renderização nas ramificações de autenticação (`auth`) e aplicação (`app`).
+  - Estruturas de controle e popovers avançados: `StandardDrawer`, `Form`, `Select`, `DropdownMenu`, `Calendar` e `DateFilterSelectPopover`.
+- **Mocks e Infraestrutura:** Configuração de mocks específicos para simular o comportamento de `pointer-capture` exigido pelo Radix UI, além do isolamento de dependências de `next/navigation`, `next/image` e `sonner`.
+
+**O que foi testado:** Renderização rigorosa livre de falhas estruturais, fluxos condicionais defensivos, acionamento de callbacks internos, formatação e tratamento dinâmico de dados e respostas visuais de componentes de esqueleto.
+
+**Resultado:**
+
+| Módulo | Stmts | Branch | Funcs | Lines | Antes | Meta |
+| ------ | ----- | ------ | ----- | ----- | ----- | ---- |
+| `src/components/ui` | 98,93% | 90,20% | 98,95% | 99,07% | ~15% | ≥90% ✅ |
+| `src/components/skeletons` | 100,00% | 100,00% | 100,00% | 100,00% | ~15% | ≥90% ✅ |
+| **Total do Escopo** | **98,95%** | **90,40%** | **99,00%** | **99,08%** | **~15%** | **≥90% ✅** |
+
+> 💡 **Nota de Execução:** Visando manter a árvore de configurações original do projeto intacta, o arquivo `vitest.config.mts` não foi modificado. Devido a isso, os arquivos `.stories.tsx` continuam sendo computados no relatório de cobertura padrão da aplicação. Para inspecionar o índice real e isolado dos componentes de código do Design System (desconsiderando os stories), pode-se executar o comando em linha:
+> ```bash
+> pnpm exec vitest run --coverage \
+>   --coverage.include='src/components/ui/**' \
+>   --coverage.include='src/components/skeletons/**' \
+>   --coverage.exclude='**/*.stories.tsx'
+> ```
+
+---
+
 | Data     | Versão | Descrição             | Autor               |
 | -------- | ------ | --------------------- | ------------------  |
 | 05/06/2026 | 1.0  | Estruturando a Sprint 3 e adicionando a documentação da Issue 76 | [Matheus Perillo](https://github.com/matheusperillo03) |
+| 07/06/2026 | 1.1  | Adicionando a documentação da Issue 78 (Design System: UI + Skeletons) | [Vitor Hoffmann](https://github.com/vitor-hoffmann) |
