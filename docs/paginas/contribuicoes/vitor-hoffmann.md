@@ -101,15 +101,15 @@ A implementação foi feita junto com o Ranni, cobrindo os fluxos principais dos
 
 ### Atividades Realizadas
 
-| Data  | Descrição da Atividade                                                                          | Categoria    | Referência                                                                 | Status       |
-| ----- | ----------------------------------------------------------------------------------------------- | ------------ | -------------------------------------------------------------------------- | ------------ |
-| 17/05 | Estudo da estrutura do repositório `mepa-web` e dos padrões de teste existentes                 | Estudo       | MEPA Web                                                                   | Concluído ✅  |
-| 20/05 | Análise dos módulos sem cobertura e levantamento dos cenários necessários                       | Planejamento | MEPA Web                                                                   | Concluído ✅  |
-| 21/05 | Divisão do trabalho em issues independentes por módulo, para distribuição entre o grupo         | Organização  | [MR Sprint 2](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/77) | Concluído ✅  |
-| 23/05 | Implementação dos testes dos componentes de relatório técnico (`report-button`, `technical-report`) | Testes    | [MR Sprint 2](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/77) | Concluído ✅  |
-| 24/05 | Implementação dos testes dos componentes de eventos (`event-list`, `event-table`, `event-summary`, `filter`) | Testes | [MR Sprint 2](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/77) | Concluído ✅  |
-| 24/05 | Implementação dos testes de métricas numéricas e visão geral (`numeric-measurements`, `overview-page`) | Testes | [MR Sprint 2](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/77) | Concluído ✅  |
-| 25/05 | Revisão da cobertura, ajuste de casos limite e preparação do Merge Request                      | Integração   | [MR Sprint 2](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/77) | Concluído ✅  |
+| Data  | Descrição da Atividade                                                                                          | Categoria    | Referência                                                                 | Status       |
+| ----- | --------------------------------------------------------------------------------------------------------------- | ------------ | -------------------------------------------------------------------------- | ------------ |
+| 17/05 | Estudo da estrutura do repositório `mepa-web` e dos padrões de teste existentes                                 | Estudo       | MEPA Web                                                                   | Concluído ✅  |
+| 20/05 | Análise dos módulos sem cobertura e levantamento dos cenários necessários                                       | Planejamento | MEPA Web                                                                   | Concluído ✅  |
+| 21/05 | Divisão do trabalho em issues independentes por módulo, para distribuição entre o grupo                         | Organização  | [MR Sprint 2](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/77) | Concluído ✅  |
+| 23/05 | Implementação dos testes dos componentes de relatório técnico (`report-button`, `technical-report`)             | Testes       | [MR Sprint 2](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/77) | Concluído ✅  |
+| 24/05 | Implementação dos testes dos componentes de eventos (`event-list`, `event-table`, `event-summary`, `filter`)    | Testes       | [MR Sprint 2](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/77) | Concluído ✅  |
+| 24/05 | Implementação dos testes de métricas numéricas e visão geral (`numeric-measurements`, `overview-page`)          | Testes       | [MR Sprint 2](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/77) | Concluído ✅  |
+| 25/05 | Revisão da cobertura, ajuste de casos limite e preparação do Merge Request                                      | Integração   | [MR Sprint 2](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/77) | Concluído ✅  |
 
 ---
 
@@ -143,11 +143,53 @@ A configuração de mocks para componentes assíncronos (como o gerador de PDF) 
 - **Testes de componentes assíncronos e com timers**: o uso de `waitFor`, `vi.useFakeTimers` e `vi.runAllTimersAsync` foi fundamental para testar fluxos que envolvem debounce, polling e geração de arquivos.
 - **Colaboração orientada a tarefas**: a divisão prévia do trabalho em issues bem delimitadas facilitou muito a colaboração com o Ranni e reduziu conflitos de código durante a integração.
 
----
-
 ### Plano Pessoal para a Próxima Sprint
 
 Na próxima sprint, pretendo continuar contribuindo no MEPA Web, com foco em funcionalidades práticas do sistema. Quero aprofundar o contato com fluxos mais complexos de frontend, especialmente os relacionados à visualização de dados e à experiência do usuário em telas de análise.
+
+---
+
+## Sprint 3 - Design System, Skeletons e Componentes Core
+**Duração**: 26/05/2026 - 07/06/2026
+
+### Resumo da Sprint
+
+Nesta sprint, o grande objetivo foi consolidar a estabilidade da interface do usuário atacando dívidas técnicas críticas em módulos fundamentais: o Design System (`src/components/ui`), os Skeletons de carregamento, e os Componentes Raiz/Gráficos (Issues 76 e 78).
+
+Para lidar com o volume e a complexidade do ecossistema do Design System (quase 1.000 linhas de código sem cobertura), adotei uma abordagem metódica. Primeiro, dediquei um tempo substancial para **estudar cada componente isoladamente**, entendendo seu papel na interface e suas dependências. Em seguida, **pensei e planejei a arquitetura dos mocks** necessários para não engessar o código (especialmente com bibliotecas como Radix UI e Recharts). Por fim, **implementei ativamente os testes**, iterando até garantir que todos os fluxos condicionais e estados visuais estivessem garantidos.
+
+### Atividades Realizadas
+
+| Data  | Descrição da Atividade                                                                                          | Categoria    | Referência                                                                 | Status       |
+| ----- | --------------------------------------------------------------------------------------------------------------- | ------------ | -------------------------------------------------------------------------- | ------------ |
+| 27/05 | Estudo profundo da arquitetura do Design System (módulos UI e Skeletons) e das dependências externas            | Estudo       | MEPA Web (Issue 78)                                                        | Concluído ✅  |
+| 29/05 | Planejamento da estratégia de mocks para Radix UI (`pointer-capture`), Next.js (`navigation`) e Recharts        | Planejamento | MEPA Web                                                                   | Concluído ✅  |
+| 02/06 | Implementação de testes em componentes de interface complexos (`Sidebar`, `Chart`, `ConditionalLayout`, `Form`) | Testes       | Issue 78                                                                   | Concluído ✅  |
+| 04/06 | Execução e ajuste fino de testes unitários para a Issue 76 (Root Components, Charts, e Stories)                 | Testes       | Issue 76                                                                   | Concluído ✅  |
+| 05/06 | Validação global de métricas e testes de regressão (45 novos arquivos, 411 testes)                              | Integração   | Execução Local / CLI                                                       | Concluído ✅  |
+
+### Maiores Avanços
+
+- **Expansão massiva da suíte de testes:** Criação de 45 novos arquivos de teste (43 para a UI e 2 para Skeletons), adicionando **411 novos casos de teste** ao repositório.
+- **Salto de cobertura crítico:** O módulo de Design System e Skeletons saltou de uma cobertura pífia (~15%) para **99,07% em linhas e 90,40% em branches**, superando a meta estabelecida.
+- **Teste de componentes estruturais complexos:** Consegui mockar e testar fluxos difíceis, como a resolução de chaves e formatação dentro do componente abstrato `Chart` e o gerenciamento de eventos responsivos da `Sidebar`.
+- Apoio na validação dos componentes raiz (Issue 76), ajudando a tirar módulos inteiros da inércia (0% → +70%).
+
+### Dificuldades
+
+A maior dificuldade foi lidar com componentes da UI baseados em bibliotecas terceiras não-triviais. Testar os popovers, seletores de data e tooltips construídos em cima do **Radix UI** exigiu o desenvolvimento de um workaround específico de "pointer-capture" para evitar que os eventos de ponteiro falhassem durante a renderização no ambiente de teste (`happy-dom`).
+
+Outro gargalo considerável foi estruturar os testes para o componente **Chart**, que encapsula lógicas de `recharts`. Foi necessário forjar payloads customizados e chaves de configuração (`nameKey`, `labelKey`) para garantir que as funções de transformação rodassem perfeitamente, além de lidar com o `ResponsiveContainer` que costuma se comportar mal fora de um ambiente de navegador real.
+
+### Aprendizados
+
+- **Análise Reversa de Dependências:** Aprendi que, para testar wrappers de UI complexos de forma efetiva, primeiro é necessário dissecar como a biblioteca de base (como Radix ou Recharts) interage com o DOM virtual.
+- **Respeito à configuração global (Vitest):** Entendi a importância de não alterar os padrões globais (como tentar excluir agressivamente os `.stories.tsx` do arquivo de configuração oficial) para favorecer minhas próprias métricas de PR, preferindo aplicar esses filtros em comandos paralelos pelo CLI (`--coverage.exclude`) para provar o valor entregue sem sujar o `vitest.config.mts` do mantenedor.
+- **O tripé do desenvolvimento TDD tardio:** A validação metodológica de *"Estudar -> Planejar o mock -> Implementar a asserção"* se provou extremamente mais rápida a longo prazo do que tentar codar testes reativos baseados apenas em tentativa e erro.
+
+### Plano Pessoal para a Próxima Sprint
+
+Com a robustez dos componentes base e do Design System muito bem estabelecida, o foco agora é auxiliar no refinamento final do repositório para o encerramento do semestre letivo, realizando eventuais polimentos de código que restarem ou apoiando na revisão de Merge Requests dos meus colegas.
 
 ---
 
@@ -158,3 +200,4 @@ Na próxima sprint, pretendo continuar contribuindo no MEPA Web, com foco em fun
 | 21/04/2026 | 1.0    | Versão inicial - Sprint 0          | [Vitor Hoffmann](https://github.com/vitor-hoffmann)         |
 | 11/05/2026 | 1.1    | Adiciona Sprint 1                  | [Vitor Hoffmann](https://github.com/vitor-hoffmann)         |
 | 25/05/2026 | 1.2    | Adiciona Sprint 2                  | [Vitor Hoffmann](https://github.com/vitor-hoffmann)         |
+| 07/06/2026 | 1.3    | Adiciona Sprint 3                  | [Vitor Hoffmann](https://github.com/vitor-hoffmann)         |
