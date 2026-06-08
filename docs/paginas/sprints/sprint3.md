@@ -54,6 +54,27 @@ Os módulos de stories (`src/stories/blocks`, `src/stories/__fixtures__` e `src/
 
 ---
 
+## Issue 77
+
+Foi identificado que o módulo `src/app/admin/components` apresentava diversos arquivos com cobertura de testes baixa ou nula, abrangendo desde componentes de nós do diagrama até as telas de gestão do painel administrativo. A [Issue #77](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/work_items/77) foi aberta pelo Marcos, que resolveu parte dela através do [MR !85](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/85), e o restante do escopo foi resolvido através do [MR !88](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/88).
+
+### Componentes do Painel Administrativo
+
+Os arquivos contemplados no MR !88 foram:
+
+- `entity-node.tsx`
+- `canvas-controls.tsx`
+- `admin-unified-page.tsx`
+- `meters-management.tsx`
+
+**O que foi testado:** renderização condicional dos nós do diagrama (handles de conexão, contagem de filhos e medidores, fallback de tradução); navegação entre as abas do painel administrativo com sincronização da URL e preservação das abas já visitadas; zoom, criação de nós, undo e limpeza de histórico do canvas; busca, filtragem por aba e estados de carregamento/erro/vazio da listagem de medidores.
+
+**Resultado:** os quatro arquivos saltaram de **0%** para praticamente **100%** de cobertura em statements, branches, functions e lines.
+
+> 💡 A única branch não coberta de `entity-node.tsx` (linha 186, `parentId ?? null`) é um fallback defensivo inalcançável, já que o bloco só é renderizado quando `parentId !== null && parentId !== undefined`.
+
+---
+
 ## Issue 78
 
 Foi mapeado que os módulos que compõem o ecossistema do Design System — incluindo componentes de interface de usuário (`src/components/ui`) e carregamento estrutural (`src/components/skeletons`) — contavam com uma cobertura crítica inicial de apenas ~15%, totalizando 968 linhas instrumentáveis. Para solucionar essa defasagem, a suíte de testes foi expandida com a criação de **45 novos arquivos de teste** (43 para a UI e 2 para Skeletons), adicionando **411 novos casos de teste** totalmente integrados e validados.
@@ -96,3 +117,4 @@ Os principais arquivos e fluxos contemplados foram:
 | -------- | ------ | --------------------- | ------------------  |
 | 05/06/2026 | 1.0  | Estruturando a Sprint 3 e adicionando a documentação da Issue 76 | [Matheus Perillo](https://github.com/matheusperillo03) |
 | 07/06/2026 | 1.1  | Adicionando a documentação da Issue 78 (Design System: UI + Skeletons) | [Vitor Hoffmann](https://github.com/vitor-hoffmann) |
+| 07/06/2026 | 1.2  | Adicionando a documentação da Issue 77 (Admin Components) | [Caio Sabino](https://github.com/caiomsabino) |

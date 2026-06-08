@@ -128,6 +128,44 @@ Quero entender se vamos continuar buscando mais implementações de testes autom
 
 ---
 
+## Sprint 3 - Testes do Painel Administrativo
+**Duração**: 26/05/2026 - 07/06/2026
+
+### Resumo da Sprint
+
+Nesta sprint, dei continuidade à frente de testes automatizados, atuando na [Issue #77](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/work_items/77), aberta pelo Marcos, que mapeou a baixa cobertura dos componentes do painel administrativo (`src/app/admin/components`). Implementei testes para os arquivos `entity-node.tsx`, `meters-management.tsx`, `admin-unified-page.tsx` e `canvas-controls.tsx`, que estavam com 0% de cobertura, contemplando cenários de renderização condicional dos nós do diagrama, navegação entre as abas do painel com sincronização da URL, interações do canvas (zoom, criação de nós, undo e limpeza de histórico) e estados de busca, filtragem e carregamento/erro/vazio da listagem de medidores.
+
+### Atividades Realizadas
+
+| Data | Atividade | Tipo | Referência | Status |
+| ----- | --------- | ---------------------------------------- | --------------- | ------ |
+| 05/06  | Análise da Issue #77 e levantamento dos arquivos do `admin/components` sem cobertura de testes | Estudo | [Issue #77](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/work_items/77) | Concluído✅ |
+| 06/06  | Implementação dos testes de `entity-node.tsx` e `canvas-controls.tsx` | Teste | [MR Caio Sabino](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/88) | Concluído✅ |
+| 06/06  | Implementação dos testes de `admin-unified-page.tsx` e `meters-management.tsx` | Teste | [MR Caio Sabino](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/88) | Concluído✅ |
+| 07/06  | Geração do relatório de cobertura e abertura do Merge Request relacionado à Issue #77 | Teste | [MR Caio Sabino](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/88) | Concluído✅ |
+
+
+### Maiores Avanços
+
+- Levei a cobertura de quatro arquivos do painel administrativo de 0% para praticamente 100% em statements, branches, functions e lines;
+- Consegui testar fluxos mais complexos de interação, como zoom, criação de nós e undo/limpeza de histórico do canvas;
+- Aprofundei meu entendimento sobre o módulo `admin` do MEPA Web, que ainda era novo para mim.
+
+
+### Dificuldades
+
+A maior dificuldade foi entender a fundo a lógica de renderização condicional dos nós do diagrama e a sincronização das abas do painel administrativo com a URL, já que isso exigiu simular cenários de navegação e estados que não ficam tão evidentes só lendo o componente. Também precisei investigar com cuidado uma branch de `entity-node.tsx` que continuava sem cobertura, para confirmar que se tratava de um fallback defensivo inalcançável e não de um teste faltando.
+
+### Aprendizados
+
+Aprendi a diferenciar quando uma branch não coberta representa de fato uma lacuna de teste ou apenas uma proteção defensiva do código que nunca é exercitada na prática, e a documentar essa decisão de forma clara no MR. Também reforcei a importância de dar continuidade a issues já abertas pelo time, mantendo a cobertura de testes do projeto em evolução constante.
+
+
+### Plano Pessoal para a Próxima Sprint
+
+Quero continuar contribuindo com testes em outros componentes que ainda têm baixa cobertura e ajudar na revisão dos MRs abertos pelo restante do grupo conforme o semestre se encerra.
+
+---
 
 ## Histórico de Versão
 | Data     | Versão | Descrição             | Autor               |
@@ -136,3 +174,4 @@ Quero entender se vamos continuar buscando mais implementações de testes autom
 | 21/04/2026 | 1.1    | Correção de link gerando warning| [Matheus Perillo](https://github.com/matheusperillo03)    |
 | 10/05/2026 | 1.2    | Contribuição Caio Sabino sprint 1| [Caio Sabino](https://github.com/caiomsabino)    |
 | 24/05/2026 | 1.2    | Contribuição Caio Sabino sprint 2| [Caio Sabino](https://github.com/caiomsabino)    |
+| 07/06/2026 | 1.2    | Contribuição Caio Sabino sprint 3| [Caio Sabino](https://github.com/caiomsabino)    |
