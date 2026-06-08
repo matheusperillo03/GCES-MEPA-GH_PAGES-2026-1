@@ -168,6 +168,93 @@ Na próxima sprint, pretendo continuar contribuindo diretamente no MEPA Web, foc
 
 ---
 
+## Sprint 3 - Testes: Core — Hooks, Utils e Lib
+
+**Duração**: 26/05/2026 - 08/06/2026
+
+### Resumo da Sprint
+
+Nesta sprint, a contribuição foi focada na implementação de testes unitários para as camadas centrais do MEPA Web: **lib/errors**, **utils** e **hooks**. Essas camadas concentram lógica de negócio reutilizada em toda a aplicação — tratamento de erros da API, formatação de datas e valores monetários e controle de estado de formulários — e até então não possuíam cobertura de testes.
+
+A sprint envolveu análise dos arquivos fonte, estudo dos padrões de teste já estabelecidos no projeto e implementação de **67 testes distribuídos em 6 arquivos**, todos executados com sucesso através do `vitest run`.
+
+---
+
+### Registro de Atividades
+
+| Data | Descrição da Atividade | Categoria | Referência | Status |
+|------|------------------------|------------|------------|--------|
+| 05/06 | Análise da issue e levantamento dos arquivos core sem cobertura de testes | Planejamento | [Issue #79](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/work_items/79) | Concluído ✅ |
+| 06/06 | Estudo dos padrões de teste existentes no projeto (estrutura, nomenclatura e uso de mocks) | Estudo | Repositório MEPA Web | Concluído ✅ |
+| 07/06 | Implementação dos testes para `error-parser.ts` e helpers de categoria | Testes | [MR Sprint 3](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/89) | Concluído ✅ |
+| 07/06 | Implementação dos testes para `dateUtils.ts` (formatação, validação e zoom de intervalo) | Testes | [MR Sprint 3](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/89) | Concluído ✅ |
+| 07/06 | Implementação dos testes para `currency.ts` e `pv-availability.ts` | Testes | [MR Sprint 3](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/89) | Concluído ✅ |
+| 08/06 | Implementação dos testes para `useDebounce` e `useDateValidation` com fake timers | Testes | [MR Sprint 3](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/89) | Concluído ✅ |
+| 08/06 | Revisão final, ajustes de estilo e submissão do Merge Request | Integração | [MR Sprint 3](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/89) | Concluído ✅ |
+
+---
+
+### Principais Conquistas
+
+* Cobertura de testes implementada para **6 arquivos core** que não possuíam testes anteriormente.
+* Criação de **67 testes unitários**, todos passando, cobrindo os seguintes módulos:
+
+  * **error-parser.ts**
+    * Extração de mensagens de múltiplos formatos de erro (string, `Error`, objetos de API)
+    * Correspondência por status HTTP com precedência sobre mensagem
+    * Categorização completa e helpers de conveniência
+
+  * **dateUtils.ts**
+    * Formatação de início e fim de dia
+    * Cálculo de diferença em horas
+    * Validação de intervalos
+    * Lógica de zoom de gráficos
+    * Formatação de datas para exibição
+
+  * **currency.ts**
+    * Formatação monetária utilizando locale `pt-BR`
+    * Suporte a unidades customizadas
+
+  * **pv-availability.ts**
+    * Mapeamento de status fotovoltaicos
+    * Concatenação de hints
+    * Formatação de métricas e tratamento de valores nulos
+
+  * **useDebounce**
+    * Comportamento de debounce com timers simulados
+    * Cancelamento de chamadas intermediárias
+    * Cleanup ao desmontar componentes
+
+  * **useDateValidation**
+    * Estado inicial
+    * Validação de datas
+    * Controle de erros por índice
+    * Reset de estado
+
+---
+
+### Desafios Encontrados
+
+O principal desafio foi lidar com funções que dependem internamente de `new Date()`, como `canZoomOut` e `getDateRange`. Para garantir testes determinísticos independentemente da data de execução, foi necessário utilizar `vi.setSystemTime` do Vitest para fixar o relógio do sistema durante os cenários de teste.
+
+Outro ponto de atenção foi compreender o comportamento real de alguns padrões de regex presentes em `error-parser`. Por exemplo, a string `"gateway timeout"` corresponde ao padrão `/timeout/` antes de atingir `/504|gateway timeout/`, sendo categorizada como **connection** e não **server**. Os testes precisaram refletir o comportamento efetivo da implementação em vez do comportamento intuitivamente esperado.
+
+---
+
+### Lições Aprendidas
+
+Esta sprint aprofundou o entendimento sobre testes de hooks React utilizando `renderHook` e `act` da React Testing Library, especialmente em cenários envolvendo estado assíncrono e controle de tempo.
+
+Também reforçou a importância de estudar previamente os padrões já consolidados no projeto. A estrutura existente — descrições em português, organização dos blocos de teste e convenções de escrita — serviu como guia para manter consistência com o restante da suíte de testes.
+
+---
+
+### Plano Pessoal para a Próxima Sprint
+
+Na próxima sprint, pretendo ampliar a cobertura para os arquivos de **services** e expandir os testes dos hooks mais complexos, como `useChartData` e `useEntityDetail`, que envolvem operações de busca de dados e transformação de informações para consumo pela interface.
+
+---
+
 ## Histórico de Versão
 
 | Data       | Versão | Descrição                 | Autor                                       |
@@ -175,3 +262,4 @@ Na próxima sprint, pretendo continuar contribuindo diretamente no MEPA Web, foc
 | 21/04/2026 | 1.0    | Versão inicial - Sprint 0 | [Ranni Heler](https://github.com/akaeranni) |
 | 10/05/2026 | 1.1    | Sprint 1                  | [Ranni Heler](https://github.com/akaeranni) |
 | 25/05/2026 | 1.2    | Sprint 2                  | [Ranni Heler](https://github.com/akaeranni) |
+| 08/06/2026 | 1.3    | Sprint 3                  | [Ranni Heler](https://github.com/akaeranni) |
