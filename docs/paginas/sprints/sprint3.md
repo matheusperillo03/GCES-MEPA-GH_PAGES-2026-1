@@ -113,8 +113,46 @@ Os principais arquivos e fluxos contemplados foram:
 
 ---
 
+## Issue 79
+
+Foi identificado que os módulos centrais da aplicação — `src/lib/errors`, `src/utils` e `src/hooks` — concentravam lógica de negócio crítica amplamente reutilizada em toda a aplicação, mas sem nenhuma cobertura de testes automatizados. A [Issue #79](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/work_items/79) foi aberta para mapear e cobrir esses módulos, e o [MR !89](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/89) foi criado para resolvê-la.
+
+### Core: Lib, Utils e Hooks
+
+Os módulos contemplados abrangem desde o tratamento padronizado de erros da API até a formatação de datas e valores monetários, passando pelo controle de estado de formulários com validação de datas.
+
+Os principais arquivos contemplados foram:
+
+- `src/lib/errors/error-parser.ts`
+- `src/utils/dateUtils.ts`
+- `src/utils/currency.ts`
+- `src/utils/pv-availability.ts`
+- `src/hooks/useDebounce.ts`
+- `src/hooks/useDateValidation.ts`
+
+**O que foi testado:** extração de mensagem de erro a partir de múltiplos formatos (`string`, `Error`, objetos de API com `.message`, `.error`, `.detail` e `.msg`); match por status HTTP com precedência sobre padrões textuais; categorização completa de erros e helpers de conveniência (`isAuthError`, `isConnectionError`, `isServerError`, `isValidationError`, `formatErrorMessage`, `formatErrorFull`); formatação de início e fim de dia para strings ISO e `dd/MM/yyyy`; cálculo de diferença em horas, validação de intervalo e lógica de zoom de gráfico com timers mockados via `vi.setSystemTime`; formatação de valores monetários e métricas com locale `pt-BR`; mapeamento de status de disponibilidade fotovoltaica; comportamento de debounce com cancelamento de chamadas intermediárias e cleanup ao desmontar; e controle de estado de erros por índice em `useDateValidation`.
+
+### Cobertura Obtida
+
+| Módulo | Stmts | Branch | Funcs | Lines | Antes |
+| ------- | ----- | ------ | ----- | ----- | ----- |
+| `src/utils/currency.ts` | 100% | 100% | 100% | 100% | 0% |
+| `src/utils/pv-availability.ts` | 100% | 100% | 100% | 100% | 0% |
+| `src/hooks/useDebounce.ts` | 100% | 100% | 100% | 100% | 0% |
+| `src/utils/dateUtils.ts` | 96,22% | 100% | 100% | 95,91% | 0% |
+| `src/lib/errors/error-parser.ts` | 94,73% | 84% | 100% | 93,87% | 0% |
+| `src/hooks/useDateValidation.ts` | 82,25% | 69,23% | 80% | 82,14% | 0% |
+| **Total do Escopo** | **92,38%** | **89,56%** | **92,72%** | **92,06%** | **0%** |
+
+> 💡 **Nota de Cobertura:** As linhas não cobertas correspondem a branches defensivos inalcançáveis no ambiente de testes: o bloco `catch` do `JSON.stringify` em `error-parser.ts` (linha 43) e o caminho `process.env.NODE_ENV === "development"` (linha 76), que nunca é atingido porque o ambiente `happy-dom` sempre expõe `window`; as linhas 17 e 51 de `dateUtils.ts`, referentes ao `return null` do caminho sem separador de data e ao `return String(error)` nunca alcançado após o bloco `try/catch`; e as funções `handleLocalBlur` (linhas 40–46) e `setLocalDateErrorAtIndex` (linhas 82–85) de `useDateValidation.ts`, que operam sobre o array interno de erros de subgráficos e não foram exercitadas nos cenários implementados.
+
+**Resultado:** os 6 arquivos passaram a contar com cobertura abrangente de testes automatizados, totalizando **67 testes**, todos passando. ✅
+
+---
+
 | Data     | Versão | Descrição             | Autor               |
 | -------- | ------ | --------------------- | ------------------  |
 | 05/06/2026 | 1.0  | Estruturando a Sprint 3 e adicionando a documentação da Issue 76 | [Matheus Perillo](https://github.com/matheusperillo03) |
 | 07/06/2026 | 1.1  | Adicionando a documentação da Issue 78 (Design System: UI + Skeletons) | [Vitor Hoffmann](https://github.com/vitor-hoffmann) |
 | 07/06/2026 | 1.2  | Adicionando a documentação da Issue 77 (Admin Components) | [Caio Sabino](https://github.com/caiomsabino) |
+| 08/06/2026 | 1.3  | Adicionando a documentação da Issue 79 (Core: Lib, Utils e Hooks) | [Ranni Heler](https://github.com/akaeranni) |
