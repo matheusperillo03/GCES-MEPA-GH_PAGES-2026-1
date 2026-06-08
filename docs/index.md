@@ -107,3 +107,4 @@ O projeto escolhido pelo grupo foi o **MEPA (Monitoramento de Energia em Platafo
 | 21/04/2026 | 1.4    | Se adiciona como integrante        | [Matheus Perillo](https://github.com/matheusperillo03)    |
 | 22/04/2026 | 1.5    | Se adiciona como integrante        | [Bruno Vasconcelos](https://github.com/brunocva)    |
 |22/04/2026  | 1.6    | Se adiciona como integrante        | [Jose Oliveira](https://github.com/Jose1277/)    |
+|22/04/2026  | 1.7    | Se adiciona como integrante        | [Gabriel Lima](https://github.com/gabriel-lima258/)    |
