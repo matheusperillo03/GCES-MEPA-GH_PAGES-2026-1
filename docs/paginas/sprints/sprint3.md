@@ -75,6 +75,22 @@ Os arquivos contemplados no MR !88 foram:
 
 ---
 
+### Utilitários do Painel Administrativo
+
+Complementando o escopo da Issue #77, foram identificados arquivos utilitários do módulo `src/app/admin/components` sem cobertura de testes: funções de formatação de datas, ordenação de opções de select e extração de mensagens de erro de formulário. O [MR referente à branch `37-admin-components-coverage`](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web) foi aberto para cobrir esses utilitários, aumentando a cobertura do módulo em ~20%.
+
+Os arquivos criados foram:
+
+- `date-input-format.test.ts` — 35 testes (formatação e conversão de datas no padrão BR)
+- `select-option-sorting.test.ts` — 18 testes (ordenação e geração de labels para selects)
+- `form-error-message.test.ts` — 12 testes (extração e priorização de mensagens de erro)
+
+**O que foi testado:** conversão e formatação de datas entre formatos ISO e `dd/MM/yyyy`; casos extremos como datas inválidas, meses e dias com zero-padding, e anos bissextos; ordenação alfabética e por critério de selects com labels dinâmicas; priorização de mensagens de erro provenientes de múltiplas fontes do formulário.
+
+**Resultado:** 65 novos testes em 3 arquivos — cobertura do módulo `admin/components` ampliada em **~20%** ✅
+
+---
+
 ## Issue 78
 
 Foi mapeado que os módulos que compõem o ecossistema do Design System — incluindo componentes de interface de usuário (`src/components/ui`) e carregamento estrutural (`src/components/skeletons`) — contavam com uma cobertura crítica inicial de apenas ~15%, totalizando 968 linhas instrumentáveis. Para solucionar essa defasagem, a suíte de testes foi expandida com a criação de **45 novos arquivos de teste** (43 para a UI e 2 para Skeletons), adicionando **411 novos casos de teste** totalmente integrados e validados.
@@ -156,3 +172,4 @@ Os principais arquivos contemplados foram:
 | 07/06/2026 | 1.1  | Adicionando a documentação da Issue 78 (Design System: UI + Skeletons) | [Vitor Hoffmann](https://github.com/vitor-hoffmann) |
 | 07/06/2026 | 1.2  | Adicionando a documentação da Issue 77 (Admin Components) | [Caio Sabino](https://github.com/caiomsabino) |
 | 08/06/2026 | 1.3  | Adicionando a documentação da Issue 79 (Core: Lib, Utils e Hooks) | [Ranni Heler](https://github.com/akaeranni) |
+| 08/06/2026 | 1.4  | Adicionando a documentação dos Utilitários do Painel Administrativo (Issue 77) | [Matheus Barros](https://github.com/Ninja-Haiyai) |
