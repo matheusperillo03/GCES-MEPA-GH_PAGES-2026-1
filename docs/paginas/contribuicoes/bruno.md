@@ -134,9 +134,53 @@ Quero acompanhar o feedback do time sobre o MR !78 e incorporar as sugestões de
 
 ---
 
+## Sprint 3
+
+Nesta sprint, o foco foi complementar a cobertura de testes dos relatórios PDF do MEPA Web, com atenção especial ao módulo de Relatório Técnico. A partir da Issue #73, identifiquei que o Relatório Financeiro já havia recebido cobertura em um MR anterior, então concentrei minha contribuição em um MR separado para o `technical-report`, mantendo o escopo pequeno e complementar.
+
+| Data | Atividade | Tipo | Referência | Status |
+|------|-----------|------|------------|--------|
+| 01/06 | Análise dos testes já existentes para o Relatório Financeiro | Estudo | Issue #73 / MR !75 | Concluído ✅ |
+| 03/06 | Comparação entre os módulos `financial-report` e `technical-report` | Estudo | Issue #73 | Concluído ✅ |
+| 04/06 | Ampliação dos testes de `buildTechnicalReportPdfData.ts` | Teste | Issue #73 | Concluído ✅ |
+| 08/06 | Criação de testes para helpers puros de nome de arquivo do Relatório Técnico | Teste | Issue #73 | Concluído ✅ |
+| 09/06 | Extração de helper puro para `technicalReportPdfFileName.ts` | Código/Teste | Issue #73 | Concluído ✅ |
+
+Maiores Avanços
+
+- Ampliei a suíte de testes do Relatório Técnico seguindo o padrão já usado no Relatório Financeiro;
+- Cobri cenários de montagem da estrutura de dados usada pelo PDF técnico;
+- Adicionei testes para formatação de datas, valores nulos, vazios, indefinidos e fallbacks textuais;
+- Testei a inclusão e omissão das seções opcionais de DHT, além da renumeração correta de tabelas e figuras;
+- Isolei os helpers puros de nome de arquivo em um módulo testável, evitando dependências de browser nos testes.
+
+Dificuldades
+
+A principal dificuldade foi manter o escopo pequeno sem deixar de cobrir os comportamentos mais importantes do Relatório Técnico. Algumas partes do fluxo de geração de PDF dependem de APIs de browser e de bibliotecas pesadas, como captura de imagens do DOM e geração real via `@react-pdf/renderer`, então optei por não testar diretamente esses trechos nesta etapa.
+
+Também foi necessário tomar cuidado para não duplicar o trabalho já realizado no MR !75, que cobre o Relatório Financeiro. Como o objetivo era criar uma contribuição complementar, foquei apenas no módulo `technical-report`.
+
+Aprendizados
+
+Aprendi melhor como reaproveitar padrões de teste já existentes no projeto sem copiar cegamente a implementação. Também ficou mais claro que, em módulos com dependências fortes de browser, a melhor estratégia é separar helpers puros e testar a transformação de dados, deixando fluxos de captura/renderização real para testes mais específicos ou futuras refatorações.
+
+Além disso, pratiquei uma abordagem de contribuição mais incremental: analisar o MR relacionado, identificar o que ainda estava descoberto e propor uma entrega pequena, focada e fácil de revisar.
+
+Plano Pessoal para a Próxima Sprint
+
+Quero validar os testes no ambiente completo do projeto com `pnpm run lint`, `pnpm run type-check` e `pnpm run test:coverage`, além de acompanhar possíveis comentários de revisão. Também pretendo observar se há espaço para aplicar a mesma estratégia de isolamento de helpers puros em outros fluxos de geração de PDF ou componentes com dependências de browser.
+
+### Referências
+
+- **Merge Request original (Relatório Financeiro – Issue #73):** [!75 - test: adiciona testes que satisfazem a issue #73 para a parte de relatórios financeiros](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/75)
+
+---
+
 ## Histórico de Versão
-| Data     | Versão | Descrição             | Autor               |
-| -------- | ------ | --------------------- | ------------------  |
-| 20/04/2026 | 1.0    | Versão inicial - Sprint 0        | [Bruno Vasconcelos](https://github.com/brunocva)    |
+
+| Data | Versão | Descrição | Autor |
+|------|--------|-----------|-------|
+| 20/04/2026 | 1.0 | Versão inicial - Sprint 0 | [Bruno Vasconcelos](https://github.com/brunocva) |
 | 11/05/2026 | 1.1 | Versão inicial - Sprint 1 | [Bruno Vasconcelos](https://github.com/brunocva) |
 | 25/05/2026 | 1.2 | Versão inicial - Sprint 2 | [Bruno Vasconcelos](https://github.com/brunocva) |
+| 09/06/2026 | 1.3 | Versão inicial - Sprint 3 | [Bruno Vasconcelos](https://github.com/brunocva) |
