@@ -166,6 +166,41 @@ Os principais arquivos contemplados foram:
 
 ---
 
+## Issue 73 (Complementar)
+
+Foi identificado que o módulo de relatórios PDF do MEPA Web possuía cobertura de testes incompleta, com atenção especial ao Relatório Técnico (`technical-report`). A [Issue #73](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/work_items/73) foi aberta e já havia recebido cobertura parcial para o Relatório Financeiro através do [MR !75](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/75). O restante do escopo, focado no módulo `technical-report`, foi resolvido através de um MR separado e complementar.
+
+### Relatório Técnico (technical-report)
+
+Os arquivos contemplados no MR complementar foram:
+
+- `buildTechnicalReportPdfData.ts` (ampliação da suíte de testes)
+- `technicalReportPdfFileName.ts` (criação do arquivo e testes)
+
+**O que foi testado:** montagem da estrutura de dados usada pelo PDF técnico; formatação de datas, valores nulos, vazios, indefinidos e fallbacks textuais; inclusão e omissão corretas das seções opcionais de DHT; renumeração correta de tabelas e figuras; extração de helper puro para nome de arquivo, eliminando dependências de browser nos testes.
+
+**Resultado:** os comportamentos mais importantes do Relatório Técnico foram cobertos, seguindo o mesmo padrão já consolidado no Relatório Financeiro.
+
+> 💡 Algumas partes do fluxo de geração de PDF dependem de APIs de browser e bibliotecas pesadas (captura de imagens do DOM, geração real via `@react-pdf/renderer`). Optou-se por não testar diretamente esses trechos nesta etapa, isolando helpers puros e testando a transformação de dados.
+
+---
+
+### Utilitários do Relatório Técnico
+
+Complementando o escopo da Issue #73, foi extraído e testado um helper puro responsável pela geração do nome do arquivo do Relatório Técnico, anteriormente embutido em um módulo com dependências de browser.
+
+Os arquivos criados/ampliados foram:
+
+- `technicalReportPdfFileName.test.ts` — testes para cenários de nome de arquivo
+- `buildTechnicalReportPdfData.test.ts` — ampliação com novos cenários de teste
+
+**O que foi testado:** geração correta do nome do arquivo do Relatório Técnico; tratamento de dados nulos, vazios e indefinidos na montagem da estrutura do PDF; fallbacks textuais para valores ausentes; lógica de inclusão/omissão de seções opcionais de DHT; renumeração automática de tabelas e figuras.
+
+**Resultado:** nova suíte de testes para o Relatório Técnico, seguindo o padrão já consolidado no módulo financeiro e isolando responsabilidades puras de dependências externas ✅
+
+---
+
+
 | Data     | Versão | Descrição             | Autor               |
 | -------- | ------ | --------------------- | ------------------  |
 | 05/06/2026 | 1.0  | Estruturando a Sprint 3 e adicionando a documentação da Issue 76 | [Matheus Perillo](https://github.com/matheusperillo03) |
@@ -173,3 +208,4 @@ Os principais arquivos contemplados foram:
 | 07/06/2026 | 1.2  | Adicionando a documentação da Issue 77 (Admin Components) | [Caio Sabino](https://github.com/caiomsabino) |
 | 08/06/2026 | 1.3  | Adicionando a documentação da Issue 79 (Core: Lib, Utils e Hooks) | [Ranni Heler](https://github.com/akaeranni) |
 | 08/06/2026 | 1.4  | Adicionando a documentação dos Utilitários do Painel Administrativo (Issue 77) | [Matheus Barros](https://github.com/Ninja-Haiyai) |
+| 08/06/2026 | 1.5  | Adicionando a documentação da Issue 73 (Relatório Técnico - PDF) | [Bruno Vasconcelos](https://github.com/brunocva) |
