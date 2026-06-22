@@ -139,34 +139,52 @@ Na próxima sprint, pretendo continuar contribuindo com a cobertura de testes do
 
 ---
 
-## Sprint 3 - Cobertura de Testes
-**Duração**: 05/06/2026
+## Sprint 3 - Cobertura de Testes (Core: Hooks, Utils, Lib e Services)
+**Duração**: 26/05/2026 - 08/06/2026
 
 ### Resumo da Sprint
 
-_(a preencher)_
+Nesta sprint dei continuidade à frente de testes automatizados do `mepa-web`, assumindo a [Issue #79](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/work_items/79) — guarda-chuva de cobertura das **camadas centrais** da aplicação: `src/hooks/`, `src/utils/`, `src/lib/` e `src/services/`. Esses módulos concentram a lógica reaproveitada por toda a aplicação (formatação de moeda/data, cálculo de disponibilidade fotovoltaica, requisições HTTP, estratégias de cache, parsing de erros e os hooks de dados), mas estavam quase sem testes dedicados — qualquer regressão neles se propagaria silenciosamente por várias telas. Implementei uma suíte com **Vitest + @testing-library/react** (ambiente happy-dom), criando **um arquivo de teste por arquivo-fonte** e cobrindo happy path e casos de erro/edge cases onde a lógica é não-trivial. Segui a convenção de mocks inline já adotada no projeto (`vi.mock` / `vi.stubGlobal`), sem introduzir a pasta `src/tests/mocks/` (inexistente no repositório), e isolei `fetch`, server actions, `next/cache` e o cliente `mepaAPI`.
 
 ### Atividades Realizadas
 
 | Data | Atividade | Tipo | Referência | Status |
 | ----- | --------- | ---- | ---------- | ------ |
-| | | | | |
+| 27/05 | Levantamento: execução da suíte (baseline de 58 arquivos / 455 testes) e mapeamento dos arquivos sem teste em hooks, utils, lib e services | Estudo | [Issue #79](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/work_items/79) | Concluído ✅ |
+| 29/05 | Testes dos utils puros: `currency`, `pv-availability`, `dateUtils`, `meter-display` e `meter-event-display` | Testes | branch `test/79-core-hooks-utils-lib-services` | Concluído ✅ |
+| 01/06 | Testes dos utils com mock (`status-mapper`, `fetcher`, `serverFetcher`) e da lib (`constants`, `errors/error-messages`, `errors/error-parser`, `cache-strategies`) | Testes | branch `test/79-core-hooks-utils-lib-services` | Concluído ✅ |
+| 03/06 | Teste de services (`meters.server`) e dos hooks puros (`useDebounce`, `usePerformance`, `useSingleData`, `useDateValidation`, `useChartFilters`, `useChartData`) | Testes | branch `test/79-core-hooks-utils-lib-services` | Concluído ✅ |
+| 05/06 | Testes dos hooks assíncronos (`useSummaryData`, `useMeterData`, `useMeters`, `useTechnicalReport`, `useEntityFavorites`, `useActiveMeterEvents`, `useEntityDetail`) | Testes | branch `test/79-core-hooks-utils-lib-services` | Concluído ✅ |
+| 08/06 | Validação da suíte completa (84 arquivos / 674 testes, sem warnings) e preparação do Merge Request | Integração | [Issue #79](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/work_items/79) | Concluído ✅ |
 
 ### Maiores Avanços
 
-- _(a preencher)_
+- **+26 arquivos de teste e +219 testes**, elevando a suíte de **58 → 84 arquivos** e de **455 → 674 testes** (todos verdes, sem nenhum `console.error`/`console.warn` relacionado aos novos arquivos), com ~2.133 linhas de teste adicionadas.
+- **Cobertura das quatro camadas-núcleo** com um arquivo de teste por fonte:
+  - **Utils (8):** `currency`, `pv-availability`, `dateUtils`, `meter-display`, `meter-event-display`, `status-mapper`, `fetcher`, `serverFetcher`;
+  - **Lib (4):** `constants`, `errors/error-messages`, `errors/error-parser`, `cache-strategies`;
+  - **Services (1):** `meters.server`;
+  - **Hooks (13):** `useDebounce`, `usePerformance`, `useSingleData`, `useDateValidation`, `useChartFilters`, `useChartData`, `useSummaryData`, `useMeterData`, `useMeters`, `useTechnicalReport`, `useEntityFavorites`, `useActiveMeterEvents`, `useEntityDetail`.
+- **Isolamento de dependências externas**: `fetch` mockado para os fetchers (`fetcher`, `serverFetcher`, `useSummaryData`); server actions mockadas por hook; `next/cache` mockado (`unstable_cache` → identidade, `revalidateTag` espionável) e o cliente `mepaAPI` substituído nos testes de `cache-strategies`.
+- **Cobertura de erros e edge cases** na lógica não-trivial: respostas 204/404/4xx/5xx e erro de rede nos fetchers; prioridade de status sobre texto e modo dev × produção no `error-parser`; branches do `cache-strategies` (filtro de tempo string × objeto, `categoryFilter "-"`, normalização de acrônimo, token ausente); estados de loading/erro, cancelamento no unmount, refetch e paginação nos hooks; reuso de **cache module-level (TTL/dedupe)** em `useActiveMeterEvents` e `useEntityDetail`.
 
 ### Dificuldades
 
-_(a preencher)_
+- **Determinismo de datas/timezone** no `dateUtils`: funções que serializam datas com offset fixo (`-03:00`) e dependem de `new Date()` exigiram asserções por padrão (regex/`startsWith`) e reconstrução do valor esperado, evitando testes frágeis que quebrariam em outro fuso.
+- **Mockar `next/cache` e o cliente `mepaAPI` (ky)**: foi necessário transformar `unstable_cache` em função identidade para executar a lógica interna diretamente e simular a cadeia `.get(...).json()` do `mepaAPI`, inclusive o `.catch()` encadeado.
+- **Caches module-level** em `useActiveMeterEvents` e `useEntityDetail`: como o estado vive fora do componente, isolei cada teste usando `entityId` distintos para evitar contaminação entre casos, além de validar explicitamente o reuso de cache dentro do TTL.
+- **Render de JSX em util** (`status-mapper`): testar `getStatusBadge` exigiu renderizar o componente `Badge` com `@testing-library/react` e mockar `getMeterStatusConfig` para controlar label e cor.
 
 ### Aprendizados
 
-_(a preencher)_
+- **Padrões de teste de hooks** com `renderHook` + `waitFor`/`act`, lidando com efeitos assíncronos, timers falsos (`vi.useFakeTimers`) e limpeza de estado entre casos.
+- **Categorização de erros em camada de rede**: validar que cada faixa de status e erro de conexão é mapeada para o tipo correto reforça a robustez da camada de dados.
+- **Teste de estratégias de cache e invalidação** sem acoplar ao runtime do Next, mockando `next/cache` e verificando as tags revalidadas.
+- **Evitar duplicação**: identifiquei que `useFinancialReportPdfData` já possuía teste e o mantive intacto, focando esforço apenas nas lacunas reais de cobertura.
 
 ### Plano Pessoal para a Próxima Sprint
 
-_(a preencher)_
+Acompanhar a revisão do Merge Request da Issue #79 e responder a eventuais ajustes dos mantenedores; e seguir ampliando a cobertura no `mepa-web`, avançando de testes unitários para cenários de integração entre hooks e componentes.
 
 ---
 
@@ -177,3 +195,4 @@ _(a preencher)_
 | 22/04/2026 | 1.0 | Versão inicial - Sprint 0 | [Gabriel Lima](https://github.com/gabriel-lima258) |
 | 09/05/2026 | 1.1 | Adiciona Sprint 1 | [Gabriel Lima](https://github.com/gabriel-lima258) |
 | 25/05/2026 | 1.2 | Adiciona Sprint 2 | [Gabriel Lima](https://github.com/gabriel-lima258) |
+| 08/06/2026 | 1.3 | Adiciona Sprint 3 | [Gabriel Lima](https://github.com/gabriel-lima258) |
