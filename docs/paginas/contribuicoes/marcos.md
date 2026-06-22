@@ -207,6 +207,41 @@ Os testes garantem que os componentes se comportem corretamente tanto em cenári
 - **Contribuir com a issue do pipeline do MEPA‑Infra**: Retomar a análise do erro de autenticação do Terraform e tentar elaborar uma solução ou issue detalhada.
 
 ---
+## Sprint 4 - Admin/Components (Continuação)
+**Duração**: 08/06/2026 - 22/06/2026
+
+**MR Aberto na Sprint**: [MR !85](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/85)
+
+### Resumo da Sprint
+
+Nesta sprint, dei continuidade à melhoria da cobertura de testes no módulo `admin/components`, focando especificamente nos componentes visuais de nós (nodes) integrados ao React Flow (`consumer-unit-node.tsx` e `meter-node.tsx`). O foco foi garantir a renderização correta de diferentes estados e dados atrelados aos nós da rede, além de testar detalhadamente as interações do usuário nesses elementos da interface gráfica.
+
+### Atividades Realizadas
+
+| Data | Atividade | Tipo | Referência | Status |
+|------|-----------|------|------------|--------|
+| 21/06 | Implementação de testes para `consumer-unit-node.tsx` | Código | `consumer-unit-node.test.tsx` | Concluído ✅ |
+| 21/06 | Implementação de testes para `meter-node.tsx` | Código | `meter-node.test.tsx` | Concluído ✅ |
+| 21/06 | Mock de dependências externas (`reactflow`, `lucide-react`) | Código | `meter-node.test.tsx` | Concluído ✅ |
+| 22/06 | Atualização do Diário de Bordo | Documentação | `marcos.md` | Concluído ✅ |
+
+### Maiores Avanços
+
+- `consumer-unit-node.tsx`: Foram validados cenários de renderização do nome da UC, número (incluindo estados vazios ou nulos), status (Ativa/Inativa) e a correta exibição das siglas ou nomes das distribuidoras. Além disso, garantiu-se que o botão "Ver UC" dispare o callback `onView` corretamente e evite a propagação do evento de clique para o nó pai.
+- `meter-node.tsx`: A cobertura garantiu a verificação do conteúdo principal (número de série e identificadores iterados), formatação do contexto, exibição correta dos badges ("Carga" vs "Gerador") e dos rótulos de tipo e modelo do medidor. Assim como no componente da UC, o callback `onView` e a interrupção da propagação de eventos no botão "Ver Medidor" foram rigorosamente testados em múltiplos cenários.
+
+### Aprendizados
+
+- **Testes de Interação e Delegação de Eventos**: Compreendi na prática a importância de testar explicitamente se o `stopPropagation` está operando conforme esperado. Isso assegura que cliques em botões internos de um nó não disparem acidentalmente interações na área de manipulação do React Flow.
+- **Criação de Factories de Props para Testes**: O desenvolvimento de funções construtoras auxiliares como a `makeNodeProps` demonstrou ser uma excelente prática. Elas instanciam os objetos complexos exigidos pelos testes, facilitando a substituição rápida de propriedades para simular fluxos de borda (ex: chaves não definidas ou campos de distribuidora nulos).
+
+### Plano Pessoal para a Próxima Sprint
+
+- Acompanhar a revisão do Merge Request atualizado e realizar os ajustes sugeridos pelos mantenedores.
+- Continuar mapeando componentes críticos da área de `admin` que ainda possuem baixa cobertura.
+- Revisitar sobre as falhas no pipeline do repositório MEPA-Infra e Web para eventualmente documentar uma issue de correção mais estruturada.
+
+---
 
 ## Histórico de Versão
 | Data     | Versão | Descrição             | Autor               |
@@ -215,3 +250,4 @@ Os testes garantem que os componentes se comportem corretamente tanto em cenári
 | 10/05/2026 | 1.1.0    | Sprint 1     | [Marcos Bezerra](https://github.com/marcoslbz)    |
 | 25/05/2026 | 1.2.0    | Sprint 2     | [Marcos Bezerra](https://github.com/marcoslbz)    |
 | 05/06/2026 | 1.3.0    | Sprint 3     | [Marcos Bezerra](https://github.com/marcoslbz)    |
+| 22/06/2026 | 1.4.0    | Sprint 4  | [Marcos Bezerra](https://github.com/marcoslbz)    |
