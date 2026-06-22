@@ -1,0 +1,32 @@
+:root {
+  --md-primary-fg-color: #0D3B66;
+  --md-primary-fg-color--light: #1F5A8A;
+  --md-primary-fg-color--dark: #0A2E4D;
+
+  --md-accent-fg-color: #F4A259;
+  --md-accent-fg-color--transparent: rgba(244, 162, 89, 0.1);
+}
+
+/* Fundo geral */
+.md-main {
+  background-color: #ffffff;
+}
+
+/* Cards (admonitions, etc) */
+.md-typeset .admonition {
+  border-radius: 10px;
+}
+
+/* Botões e links */
+.md-typeset a {
+  color: #F4A259;
+}
+
+.md-typeset a:hover {
+  color: #D9883D;
+}
+
+.md-typeset table th {
+  background-color: #0D3B66; /* tua cor */
+  color: white;
+}
