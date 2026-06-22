@@ -81,13 +81,13 @@ Complementando o escopo da Issue #77, foram identificados arquivos utilitários 
 
 Os arquivos criados foram:
 
-- `date-input-format.test.ts` — 35 testes (formatação e conversão de datas no padrão BR)
-- `select-option-sorting.test.ts` — 18 testes (ordenação e geração de labels para selects)
-- `form-error-message.test.ts` — 12 testes (extração e priorização de mensagens de erro)
+- `date-input-format.test.ts` com 35 testes de formatação e conversão de datas no padrão BR
+- `select-option-sorting.test.ts` com 18 testes de ordenação e geração de labels para selects
+- `form-error-message.test.ts` com 12 testes de extração e priorização de mensagens de erro
 
-**O que foi testado:** conversão e formatação de datas entre formatos ISO e `dd/MM/yyyy`; casos extremos como datas inválidas, meses e dias com zero-padding, e anos bissextos; ordenação alfabética e por critério de selects com labels dinâmicas; priorização de mensagens de erro provenientes de múltiplas fontes do formulário.
+**O que foi testado:** conversão e formatação de datas entre ISO e `dd/MM/yyyy`, cobrindo casos como datas inválidas, zero-padding e anos bissextos. Também foram contempladas a ordenação alfabética e por critério de selects com labels dinâmicas, além da priorização de mensagens de erro provenientes de múltiplas fontes do formulário.
 
-**Resultado:** 65 novos testes em 3 arquivos — cobertura do módulo `admin/components` ampliada em **~20%** ✅
+**Resultado:** 65 novos testes em 3 arquivos, com a cobertura do módulo `admin/components` ampliada em **~20%**.
 
 ---
 

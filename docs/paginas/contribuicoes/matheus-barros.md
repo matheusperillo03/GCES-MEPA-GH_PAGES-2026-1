@@ -21,11 +21,11 @@ Meu foco principal foi entender os processos de instalação e tecnologias envol
  
 | Data | Atividade | Tipo | Referência | Status |
 | ----- | --------- | ---- | ---------- | ------ |
-| 20/04 | Estudo da estrutura geral do projeto MEPA | Estudo | [Repositório MEPA](https://gitlab.com/lappis-unb/projetos-energia/mepa) | Concluído✅ |
-| 20/04 | Análise das tecnologias para configurar o ambiente | Estudo | [Repositório MEPA](https://gitlab.com/lappis-unb/projetos-energia/mepa) | Concluído✅ |
-| 21/04 | Levantamento e catálogo de documentação relativo a instalação e configuração local do projeto | Estudo/Doc | [Sprint 0](../sprints/sprint0.md) | Concluído✅ |
-| 21/04 | Organização do Documento | Doc | [Sprint 0](../sprints/sprint0.md) | Concluído✅ |
-| 21/04 | Documentação das issues selecionadas | Doc | [Sprint 0](../sprints/sprint0.md) | Concluído✅ |
+| 20/04 | Estudo da estrutura geral do projeto MEPA | Estudo | [Repositório MEPA](https://gitlab.com/lappis-unb/projetos-energia/mepa) | Concluído |
+| 20/04 | Análise das tecnologias para configurar o ambiente | Estudo | [Repositório MEPA](https://gitlab.com/lappis-unb/projetos-energia/mepa) | Concluído |
+| 21/04 | Levantamento e catálogo de documentação relativo a instalação e configuração local do projeto | Estudo/Doc | [Sprint 0](../sprints/sprint0.md) | Concluído |
+| 21/04 | Organização do Documento | Doc | [Sprint 0](../sprints/sprint0.md) | Concluído |
+| 21/04 | Documentação das issues selecionadas | Doc | [Sprint 0](../sprints/sprint0.md) | Concluído |
  
 ---
  
@@ -66,8 +66,8 @@ Nesta sprint, realizei minha primeira contribuição efetiva ao projeto MEPA, co
  
 | Data | Atividade | Tipo | Referência | Status |
 |------|-----------|------|------------|--------|
-| 10/05 | Análise de issues abertas e identificação de oportunidade de contribuição no `mepa-api` | Estudo | [Issue #docs](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-api/-/issues) | Concluído ✅ |
-| 11/05 | Correção do `README.md` e `CONTRIBUTING.md`, abertura de MR via fork | Doc | [MR](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-api/-/merge_requests) | Concluído ✅ |
+| 10/05 | Análise de issues abertas e identificação de oportunidade de contribuição no `mepa-api` | Estudo | [Issue #docs](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-api/-/issues) | Concluído |
+| 11/05 | Correção do `README.md` e `CONTRIBUTING.md`, abertura de MR via fork | Doc | [MR](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-api/-/merge_requests) | Concluído |
 ---
  
 ### Maiores Avanços
@@ -109,11 +109,11 @@ Nesta sprint, minha contribuição foi focada em **testes unitários para compon
  
 | Data | Atividade | Tipo | Referência | Status |
 |------|-----------|------|------------|--------|
-| 12/05 | Análise dos componentes sem cobertura de testes no módulo `pessoas` | Estudo | [Repositório MEPA Web](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web) | Concluído ✅ |
-| 18/05 | Implementação de testes para `ResendActivationButton` (8 testes) | Teste | [MR](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests) | Concluído ✅ |
-| 19/05 | Implementação de testes para `SendPasswordResetButton` (9 testes) | Teste | [MR](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests) | Concluído ✅ |
-| 21/05 | Implementação de testes para `BlockToggleButton` (12 testes) | Teste | [MR](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests) | Concluído ✅ |
-| 23/05 | Implementação de testes para `PeopleFeedbackToast` (7 testes) | Teste | [MR](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests) | Concluído ✅ |
+| 12/05 | Análise dos componentes sem cobertura de testes no módulo `pessoas` | Estudo | [Repositório MEPA Web](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web) | Concluído |
+| 18/05 | Implementação de testes para `ResendActivationButton` (8 testes) | Teste | [MR](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests) | Concluído |
+| 19/05 | Implementação de testes para `SendPasswordResetButton` (9 testes) | Teste | [MR](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests) | Concluído |
+| 21/05 | Implementação de testes para `BlockToggleButton` (12 testes) | Teste | [MR](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests) | Concluído |
+| 23/05 | Implementação de testes para `PeopleFeedbackToast` (7 testes) | Teste | [MR](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests) | Concluído |
  
 ---
  
@@ -162,40 +162,87 @@ Nesta sprint, minha contribuição foi focada em **testes unitários para funç�
 
 | Data | Atividade | Tipo | Referência | Status |
 |------|-----------|------|------------|--------|
-| 26/05 | Análise dos utilitários sem cobertura em `admin/components` | Estudo | [Repositório MEPA Web](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web) | Concluído ✅ |
-| 02/06 | Implementação de testes para `date-input-format` (35 testes) | Teste | [MR](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests) | Concluído ✅ |
-| 05/06 | Implementação de testes para `select-option-sorting` (18 testes) | Teste | [MR](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests) | Concluído ✅ |
-| 07/06 | Implementação de testes para `form-error-message` (12 testes) | Teste | [MR](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests) | Concluído ✅ |
-| 08/06 | Abertura do MR na branch `37-admin-components-coverage` | MR | [MR](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests) | Concluído ✅ |
+| 26/05 | Análise dos utilitários sem cobertura em `admin/components` | Estudo | [Repositório MEPA Web](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web) | Concluído |
+| 02/06 | Implementação de testes para `date-input-format` (35 testes) | Teste | [MR](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests) | Concluído |
+| 05/06 | Implementação de testes para `select-option-sorting` (18 testes) | Teste | [MR](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests) | Concluído |
+| 07/06 | Implementação de testes para `form-error-message` (12 testes) | Teste | [MR](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests) | Concluído |
+| 08/06 | Abertura do MR na branch `37-admin-components-coverage` | MR | [MR](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests) | Concluído |
 
 ---
 
 ### Maiores Avanços
 
-- **65 novos testes implementados** em 3 arquivos, aumentando a cobertura de `admin/components` em ~20%.
-- **`date-input-format`**: Cobertos formatação e conversão de datas entre ISO e `dd/MM/yyyy`, zero-padding, datas inválidas e anos bissextos (35 testes).
-- **`select-option-sorting`**: Cobertos ordenação alfabética, ordenação por critério e geração de labels dinâmicas para selects (18 testes).
-- **`form-error-message`**: Cobertos extração e priorização de mensagens de erro provenientes de múltiplas fontes do formulário (12 testes).
+- **65 novos testes implementados** em 3 arquivos, cobrindo formatação de datas, ordenação de selects e extração de erros de formulário do módulo `admin/components`.
+- **`date-input-format`**: testes de conversão entre ISO e `dd/MM/yyyy`, incluindo zero-padding, datas inválidas e anos bissextos (35 testes).
+- **`select-option-sorting`**: testes de ordenação alfabética, por critério e geração de labels dinâmicas (18 testes).
+- **`form-error-message`**: testes de extração e priorização de mensagens de erro provenientes de múltiplas fontes do formulário (12 testes).
 
 ---
 
 ### Dificuldades
 
-- **Testes de tratamento de data**: Os casos de borda envolvendo datas inválidas, fuso horário e conversão entre formatos exigiram um cuidado especial — foi a parte mais desafiadora da sprint, demandando mais iterações para garantir a cobertura correta sem falsos positivos.
+Os testes de tratamento de data foram a parte mais desafiadora da sprint. Os casos de borda envolvendo datas inválidas, fuso horário e conversão entre formatos exigiram várias iterações para garantir cobertura correta sem falsos positivos.
 
 ---
 
 ### Aprendizados
 
-- **Cobertura de utilitários puros**: Testar funções utilitárias sem dependências externas é mais direto, mas exige criatividade para mapear todos os casos de borda.
-- **Casos de borda em datas**: Aprendi a importância de cobrir explicitamente formatos inválidos, meses com zero-padding e comportamentos de localização ao testar utilitários de data.
+- **Cobertura de utilitários puros**: testar funções sem dependências externas é mais direto, mas exige criatividade para mapear todos os casos de borda relevantes.
+- **Casos de borda em datas**: aprendi a importância de cobrir explicitamente formatos inválidos, zero-padding e comportamentos de localização ao testar utilitários de data.
 
 ---
 
 ### Plano Pessoal para a Próxima Sprint
 
-- **Acompanhar o MR aberto**: Monitorar a revisão dos mantenedores e responder a eventuais pedidos de ajuste.
-- **Aumentar a cobertura**: Pretendo continuar acompanhando o MR e identificar oportunidades de expandir ainda mais a cobertura do módulo `admin/components`.
+Pretendo acompanhar o MR aberto, responder a eventuais pedidos de ajuste dos mantenedores e identificar oportunidades de expandir ainda mais a cobertura do módulo `admin/components`.
+
+---
+
+## Sprint 4 - Testes de Utilitários de Utils
+**Duração**: 09/06/2026 - 22/06/2026
+
+### Resumo da Sprint
+
+Nesta sprint, ampliei as contribuições de testes para o módulo `src/utils` do MEPA Web. Foram criados 5 arquivos de teste cobrindo utilitários puros de formatação monetária, disponibilidade fotovoltaica, datas e exibição de medidores, totalizando 107 novos testes. Junto com os 65 testes do ciclo anterior em `admin/components`, o MR reúne 172 testes no total, aguardando pipeline e aprovação.
+
+---
+
+### Atividades Realizadas
+
+| Data | Atividade | Tipo | Referência | Status |
+|------|-----------|------|------------|--------|
+| 09/06 | Análise dos utilitários sem cobertura em `src/utils` | Estudo | [Repositório MEPA Web](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web) | Concluído |
+| 12/06 | Implementação de testes para `currency` (8 testes) | Teste | [MR](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests) | Concluído |
+| 14/06 | Implementação de testes para `pv-availability` (18 testes) | Teste | [MR](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests) | Concluído |
+| 16/06 | Implementação de testes para `dateUtils` (26 testes) | Teste | [MR](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests) | Concluído |
+| 19/06 | Implementação de testes para `meter-display` (17 testes) | Teste | [MR](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests) | Concluído |
+| 20/06 | Implementação de testes para `meter-event-display` (28 testes) | Teste | [MR](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests) | Concluído |
+| 22/06 | Abertura do MR consolidado com 172 testes no total | MR | [MR](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests) | Concluído |
+
+---
+
+### Maiores Avanços
+
+- **107 novos testes em `src/utils`**, cobrindo formatação monetária, disponibilidade fotovoltaica, datas, atributos e eventos de medidores.
+- **MR consolidado com 172 testes**, reunindo o trabalho desta sprint e da anterior em uma contribuição única aguardando aprovação.
+
+---
+
+### Dificuldades
+
+Os testes de data continuaram sendo o ponto mais desafiador, especialmente ao lidar com fuso horário, formatos ISO e conversões entre padrões. Garantir cobertura completa dos casos de borda sem introduzir falsos positivos exigiu várias iterações.
+
+---
+
+### Aprendizados
+
+Testar utilitários puros reforçou a importância de pensar nos cenários extremos desde o início. Cada função exigiu cobrir valores nulos, entradas inválidas e diferentes formatos, o que aprofundou meu entendimento sobre qualidade e completude dos testes.
+
+---
+
+### Plano Pessoal para a Próxima Sprint
+
+Pretendo acompanhar o MR aberto, responder a eventuais pedidos de ajuste dos mantenedores e, após a aprovação, identificar novos módulos com cobertura baixa para continuar expandindo a suíte de testes do projeto.
 
 ---
 
@@ -207,4 +254,4 @@ Nesta sprint, minha contribuição foi focada em **testes unitários para funç�
 | 11/05/2026 | 1.1    | Adiciona Sprint 1 | [Matheus Barros](https://github.com/Ninja-Haiyai) |
 | 25/05/2026 | 1.2    | Adiciona Sprint 2 | [Matheus Barros](https://github.com/Ninja-Haiyai) |
 | 08/06/2026 | 1.3    | Adiciona Sprint 3 | [Matheus Barros](https://github.com/Ninja-Haiyai) |
- 
+| 22/06/2026 | 1.4    | Adiciona Sprint 4 | [Matheus Barros](https://github.com/Ninja-Haiyai) |
