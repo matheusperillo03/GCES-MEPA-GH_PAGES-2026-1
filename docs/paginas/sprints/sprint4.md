@@ -8,7 +8,7 @@ Foi identificado que os componentes de nós visuais utilizados na renderização
 
 ### Componentes de Nós (React Flow)
 
-Os arquivos contemplados no escopo de testes de nós gráficos foram:
+Os arquivos contemplados no escopo de testes de nós gráficos estão no MR 88  foram:
 
 - `consumer-unit-node.tsx`
 - `meter-node.tsx`
