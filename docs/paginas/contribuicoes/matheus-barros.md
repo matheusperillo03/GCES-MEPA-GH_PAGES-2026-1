@@ -149,11 +149,62 @@ Nesta sprint, minha contribuição foi focada em **testes unitários para compon
  
 ---
  
+## Sprint 3 - Utilitários de Admin/Components
+**Duração**: 26/05/2026 - 08/06/2026
+
+### Resumo da Sprint
+
+Nesta sprint, minha contribuição foi focada em **testes unitários para funções utilitárias do módulo `admin/components`** do MEPA Web, complementando o escopo da Issue #77. Foram criados 3 arquivos de teste cobrindo formatação de datas, ordenação de selects e extração de erros de formulário, aumentando a cobertura do módulo em ~20%.
+
+---
+
+### Atividades Realizadas
+
+| Data | Atividade | Tipo | Referência | Status |
+|------|-----------|------|------------|--------|
+| 26/05 | Análise dos utilitários sem cobertura em `admin/components` | Estudo | [Repositório MEPA Web](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web) | Concluído ✅ |
+| 02/06 | Implementação de testes para `date-input-format` (35 testes) | Teste | [MR](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests) | Concluído ✅ |
+| 05/06 | Implementação de testes para `select-option-sorting` (18 testes) | Teste | [MR](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests) | Concluído ✅ |
+| 07/06 | Implementação de testes para `form-error-message` (12 testes) | Teste | [MR](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests) | Concluído ✅ |
+| 08/06 | Abertura do MR na branch `37-admin-components-coverage` | MR | [MR](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests) | Concluído ✅ |
+
+---
+
+### Maiores Avanços
+
+- **65 novos testes implementados** em 3 arquivos, aumentando a cobertura de `admin/components` em ~20%.
+- **`date-input-format`**: Cobertos formatação e conversão de datas entre ISO e `dd/MM/yyyy`, zero-padding, datas inválidas e anos bissextos (35 testes).
+- **`select-option-sorting`**: Cobertos ordenação alfabética, ordenação por critério e geração de labels dinâmicas para selects (18 testes).
+- **`form-error-message`**: Cobertos extração e priorização de mensagens de erro provenientes de múltiplas fontes do formulário (12 testes).
+
+---
+
+### Dificuldades
+
+- **Testes de tratamento de data**: Os casos de borda envolvendo datas inválidas, fuso horário e conversão entre formatos exigiram um cuidado especial — foi a parte mais desafiadora da sprint, demandando mais iterações para garantir a cobertura correta sem falsos positivos.
+
+---
+
+### Aprendizados
+
+- **Cobertura de utilitários puros**: Testar funções utilitárias sem dependências externas é mais direto, mas exige criatividade para mapear todos os casos de borda.
+- **Casos de borda em datas**: Aprendi a importância de cobrir explicitamente formatos inválidos, meses com zero-padding e comportamentos de localização ao testar utilitários de data.
+
+---
+
+### Plano Pessoal para a Próxima Sprint
+
+- **Acompanhar o MR aberto**: Monitorar a revisão dos mantenedores e responder a eventuais pedidos de ajuste.
+- **Aumentar a cobertura**: Pretendo continuar acompanhando o MR e identificar oportunidades de expandir ainda mais a cobertura do módulo `admin/components`.
+
+---
+
 ## Histórico de Versão
- 
+
 | Data       | Versão | Descrição                 | Autor |
 | ---------- | ------ | ------------------------- | ----- |
 | 21/04/2026 | 1.0    | Versão inicial - Sprint 0 | [Matheus Barros](https://github.com/Ninja-Haiyai) |
 | 11/05/2026 | 1.1    | Adiciona Sprint 1 | [Matheus Barros](https://github.com/Ninja-Haiyai) |
 | 25/05/2026 | 1.2    | Adiciona Sprint 2 | [Matheus Barros](https://github.com/Ninja-Haiyai) |
+| 08/06/2026 | 1.3    | Adiciona Sprint 3 | [Matheus Barros](https://github.com/Ninja-Haiyai) |
  

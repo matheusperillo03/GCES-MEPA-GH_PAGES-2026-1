@@ -75,6 +75,22 @@ Os arquivos contemplados no MR !88 foram:
 
 ---
 
+### Utilitários do Painel Administrativo
+
+Complementando o escopo da Issue #77, foram identificados arquivos utilitários do módulo `src/app/admin/components` sem cobertura de testes: funções de formatação de datas, ordenação de opções de select e extração de mensagens de erro de formulário. O [MR referente à branch `37-admin-components-coverage`](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web) foi aberto para cobrir esses utilitários, aumentando a cobertura do módulo em ~20%.
+
+Os arquivos criados foram:
+
+- `date-input-format.test.ts` — 35 testes (formatação e conversão de datas no padrão BR)
+- `select-option-sorting.test.ts` — 18 testes (ordenação e geração de labels para selects)
+- `form-error-message.test.ts` — 12 testes (extração e priorização de mensagens de erro)
+
+**O que foi testado:** conversão e formatação de datas entre formatos ISO e `dd/MM/yyyy`; casos extremos como datas inválidas, meses e dias com zero-padding, e anos bissextos; ordenação alfabética e por critério de selects com labels dinâmicas; priorização de mensagens de erro provenientes de múltiplas fontes do formulário.
+
+**Resultado:** 65 novos testes em 3 arquivos — cobertura do módulo `admin/components` ampliada em **~20%** ✅
+
+---
+
 ## Issue 78
 
 Foi mapeado que os módulos que compõem o ecossistema do Design System — incluindo componentes de interface de usuário (`src/components/ui`) e carregamento estrutural (`src/components/skeletons`) — contavam com uma cobertura crítica inicial de apenas ~15%, totalizando 968 linhas instrumentáveis. Para solucionar essa defasagem, a suíte de testes foi expandida com a criação de **45 novos arquivos de teste** (43 para a UI e 2 para Skeletons), adicionando **411 novos casos de teste** totalmente integrados e validados.
@@ -150,9 +166,46 @@ Os principais arquivos contemplados foram:
 
 ---
 
+## Issue 73 (Complementar)
+
+Foi identificado que o módulo de relatórios PDF do MEPA Web possuía cobertura de testes incompleta, com atenção especial ao Relatório Técnico (`technical-report`). A [Issue #73](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/work_items/73) foi aberta e já havia recebido cobertura parcial para o Relatório Financeiro através do [MR !75](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/75). O restante do escopo, focado no módulo `technical-report`, foi resolvido através de um MR separado e complementar.
+
+### Relatório Técnico (technical-report)
+
+Os arquivos contemplados no MR complementar foram:
+
+- `buildTechnicalReportPdfData.ts` (ampliação da suíte de testes)
+- `technicalReportPdfFileName.ts` (criação do arquivo e testes)
+
+**O que foi testado:** montagem da estrutura de dados usada pelo PDF técnico; formatação de datas, valores nulos, vazios, indefinidos e fallbacks textuais; inclusão e omissão corretas das seções opcionais de DHT; renumeração correta de tabelas e figuras; extração de helper puro para nome de arquivo, eliminando dependências de browser nos testes.
+
+**Resultado:** os comportamentos mais importantes do Relatório Técnico foram cobertos, seguindo o mesmo padrão já consolidado no Relatório Financeiro.
+
+> 💡 Algumas partes do fluxo de geração de PDF dependem de APIs de browser e bibliotecas pesadas (captura de imagens do DOM, geração real via `@react-pdf/renderer`). Optou-se por não testar diretamente esses trechos nesta etapa, isolando helpers puros e testando a transformação de dados.
+
+---
+
+### Utilitários do Relatório Técnico
+
+Complementando o escopo da Issue #73, foi extraído e testado um helper puro responsável pela geração do nome do arquivo do Relatório Técnico, anteriormente embutido em um módulo com dependências de browser.
+
+Os arquivos criados/ampliados foram:
+
+- `technicalReportPdfFileName.test.ts` — testes para cenários de nome de arquivo
+- `buildTechnicalReportPdfData.test.ts` — ampliação com novos cenários de teste
+
+**O que foi testado:** geração correta do nome do arquivo do Relatório Técnico; tratamento de dados nulos, vazios e indefinidos na montagem da estrutura do PDF; fallbacks textuais para valores ausentes; lógica de inclusão/omissão de seções opcionais de DHT; renumeração automática de tabelas e figuras.
+
+**Resultado:** nova suíte de testes para o Relatório Técnico, seguindo o padrão já consolidado no módulo financeiro e isolando responsabilidades puras de dependências externas ✅
+
+---
+
+
 | Data     | Versão | Descrição             | Autor               |
 | -------- | ------ | --------------------- | ------------------  |
 | 05/06/2026 | 1.0  | Estruturando a Sprint 3 e adicionando a documentação da Issue 76 | [Matheus Perillo](https://github.com/matheusperillo03) |
 | 07/06/2026 | 1.1  | Adicionando a documentação da Issue 78 (Design System: UI + Skeletons) | [Vitor Hoffmann](https://github.com/vitor-hoffmann) |
 | 07/06/2026 | 1.2  | Adicionando a documentação da Issue 77 (Admin Components) | [Caio Sabino](https://github.com/caiomsabino) |
 | 08/06/2026 | 1.3  | Adicionando a documentação da Issue 79 (Core: Lib, Utils e Hooks) | [Ranni Heler](https://github.com/akaeranni) |
+| 08/06/2026 | 1.4  | Adicionando a documentação dos Utilitários do Painel Administrativo (Issue 77) | [Matheus Barros](https://github.com/Ninja-Haiyai) |
+| 08/06/2026 | 1.5  | Adicionando a documentação da Issue 73 (Relatório Técnico - PDF) | [Bruno Vasconcelos](https://github.com/brunocva) |
