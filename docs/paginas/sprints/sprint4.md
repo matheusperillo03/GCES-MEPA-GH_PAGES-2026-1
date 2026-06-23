@@ -37,7 +37,7 @@ Os arquivos criados foram:
 
 ---
 
-## Issue 80
+## Issue 76
 
 Foi identificado que o módulo `src/utils` concentrava funções utilitárias puras amplamente reutilizadas na aplicação, abrangendo formatação monetária, mapeamento de status fotovoltaico, manipulação de datas e exibição de dados de medidores, todas com cobertura de testes nula. O MR foi aberto na mesma branch `37-admin-components-coverage`, totalizando **172 novos testes** no conjunto das duas issues, aguardando pipeline e aprovação.
 
@@ -57,9 +57,51 @@ Os arquivos criados foram:
 
 ---
 
+## Issue 80
+
+Foi identificado que o módulo `src/app/instituicoes` — responsável pelo painel de instituições, pela visualização em grafo (React Flow) da hierarquia de entidades e medidores, pelas *server actions* de consumo da API e pelos utilitários de montagem da árvore de medidores — concentrava grande volume de código sem cobertura de testes. O MR referente a essa issue foi aberto para cobrir as *server actions*, os componentes de cliente (incluindo os grafos interativos) e os utilitários puros do módulo, estabelecendo como meta uma cobertura superior a **90%**.
+
+### Server Actions e Utilitários
+
+Os arquivos criados/ampliados foram:
+
+- `actions.ts` (raiz) — testes de busca de entidades, árvore, medidores, UCs, plantas FV, período de medição mais recente (com paginação e normalização) e mutações (criar/atualizar/patch/excluir) com revalidação de cache
+- `[instituicaoId]/actions.ts` — testes das *actions* de relatórios financeiros e de sustentabilidade
+- `institution-meter-tree.test.ts` — ampliação dos casos de enriquecimento da árvore de medidores
+
+**O que foi testado:** normalização dos diferentes formatos de resposta da API (`data` / `results` / `items` / array cru), tratamento de ausência de token de sessão, paginação completa, mapeamento de medidores de grafo e de entidade, resolução do período mais recente com tratamento de respostas `204`/`404` e datas inválidas, além da revalidação de tags de cache. Nos utilitários, foi coberta a resolução de entidades por `id` numérico, string e sigla, casos de referência ambígua e medidores sem correspondência.
+
+### Componentes de Cliente e Grafos (React Flow)
+
+Os arquivos criados foram:
+
+- `institution-flow-viewer.test.tsx` e `institution-meters-graph.test.tsx` — grafos interativos (busca/focalizador, zoom, centralização, tela cheia e tema por status do medidor)
+- `institution-master-detail.test.tsx` — árvore lateral, filtro, painel de detalhes, alertas por severidade, medidores diretos/indiretos e navegação entre sub-instituições
+- `institution-meters-graph-section.tsx`, `meters-map-section.tsx`, `institution-view-node`/`meter-view-node` (complementos), `institution-skeleton`, `entities-error-state`, `institution-flow-viewer-wrapper`
+- `page.tsx` (Painel raiz) — *skeleton* de carregamento, cards de métrica, gráfico mensal, *fallback* de período e modal de alertas
+- `error.tsx`, `loading.tsx`, páginas de *redirect* (`[instituicaoId]`, `grafo`, `hierarquia`) e `interactive`/`report`
+
+**O que foi testado:** renderização e estados dos componentes, propagação e *stopPropagation* de cliques nos nós, fluxo de abertura/seleção/fechamento do modal de alertas com navegação, resolução de período de *fallback*, ramificações de erro e estados vazios. A infraestrutura incluiu o isolamento completo de `reactflow` e `dagre`, mocks dos *hooks* de dados (`useEntityDetail`, `useActiveMeterEvents`, `useMeters`, `usePageTransition`), das *server actions* e dos componentes de UI atômicos, além do *stub* de APIs do DOM não implementadas pelo `happy-dom` (`scrollTo`, `requestAnimationFrame`, `window.print`).
+
+**Resultado:** mais de **130 novos testes** em 20 novos arquivos (157 testes no escopo de `instituicoes`, todos passando), elevando a cobertura de praticamente todos os grupos de **0–6%** para patamares acima de **90%** — com diversos arquivos atingindo **100%**. ✅
+
+| Grupo | Stmts (antes → depois) | Lines (antes → depois) |
+| --- | --- | --- |
+| `instituicoes` (raiz) | 0% → **94,87%** | 0% → **96,44%** |
+| `instituicoes/components` | 5,64% → **95,06%** | 6,04% → **97,66%** |
+| `[instituicaoId]` | 0% → **100%** | 0% → **100%** |
+| `[instituicaoId]/components` | 0% → **100%** | 0% → **100%** |
+| `instituicoes/grafo` | 0% → **100%** | 0% → **100%** |
+| `[instituicaoId]/grafo` | 0% → **100%** | 0% → **100%** |
+| `[instituicaoId]/hierarquia` | 0% → **100%** | 0% → **100%** |
+| `instituicoes/utils` | 85,33% → **97,33%** | 88,52% → **100%** |
+
+---
+
 ## Histórico de Versão
 
 | Data       | Versão | Descrição                                             | Autor                                                 |
 | ---------- | ------ | ----------------------------------------------------- | ----------------------------------------------------- |
 | 22/06/2026 | 1.0    | Criação da Sprint 4     | [Marcos Bezerra](https://github.com/marcoslbz)        |
-| 22/06/2026 | 1.1    | Adicionando Issues 77 (utilitários) e 80 (utils) | [Matheus Barros](https://github.com/Ninja-Haiyai) |
+| 22/06/2026 | 1.1    | Adicionando Issues 77 (utilitários) e 76 (utils) | [Matheus Barros](https://github.com/Ninja-Haiyai) |
+| 23/06/2026 | 1.2    | Adicionando Issue 80 | [Vitor Hoffmann](https://github.com/vitor-hoffmann) |
