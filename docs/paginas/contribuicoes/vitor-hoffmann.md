@@ -193,6 +193,57 @@ Com a robustez dos componentes base e do Design System muito bem estabelecida, o
 
 ---
 
+## Sprint 4 - Testes de Cobertura do Módulo de Instituições
+**Duração**: 08/06/2026 - 23/06/2026
+
+### Resumo da Sprint
+
+Nesta sprint, dei continuidade ao esforço de cobertura de testes do MEPA Web, desta vez atacando o módulo `src/app/instituicoes` (Issue 80) — um dos mais densos do repositório, por concentrar o painel de instituições, a visualização em grafo (React Flow) da hierarquia de entidades e medidores, as *server actions* de consumo da API e os utilitários de montagem da árvore de medidores. Praticamente todo o módulo estava sem cobertura.
+
+Mantive a abordagem metódica que vinha funcionando bem: **estudar cada arquivo e suas dependências**, **planejar a arquitetura de mocks** (especialmente para `reactflow`, `dagre`, hooks de dados e *server actions*) e só então **implementar as asserções**, iterando até garantir que os fluxos condicionais, estados de carregamento, erro e vazio estivessem cobertos. A meta estabelecida foi superar **90%** de cobertura no módulo.
+
+### Atividades Realizadas
+
+| Data  | Descrição da Atividade                                                                                          | Categoria    | Referência               | Status       |
+| ----- | --------------------------------------------------------------------------------------------------------------- | ------------ | ------------------------ | ------------ |
+| 17/06 | Estudo da estrutura do módulo `instituicoes` (painel, grafos, actions e utils) e dos padrões de teste vigentes  | Estudo       | MEPA Web (Issue 80)      | Concluído ✅  |
+| 18/06 | Levantamento da cobertura inicial por grupo e planejamento da estratégia de mocks                               | Planejamento | MEPA Web (Issue 80)      | Concluído ✅  |
+| 19/06 | Implementação dos testes das *server actions* (`actions.ts` raiz e de relatórios) e dos utilitários da árvore   | Testes       | Issue 80                 | Concluído ✅  |
+| 21/06 | Implementação dos testes dos componentes de cliente e grafos interativos (React Flow) e das páginas/redirects   | Testes       | Issue 80                 | Concluído ✅  |
+| 23/06 | Testes da `page` raiz (Painel), validação global de cobertura, lint, type-check e preparação do Merge Request   | Integração   | Execução Local / CLI     | Concluído ✅  |
+
+### Maiores Avanços
+
+- **Expansão da suíte de testes:** Criação de **20 novos arquivos de teste** (mais a ampliação do teste de utilitários da árvore de medidores), adicionando **mais de 130 novos casos de teste** ao módulo — chegando a 157 testes no escopo de `instituicoes`, todos passando.
+- **Salto de cobertura crítico:** Praticamente todos os grupos do módulo saíram de **0–6%** para patamares **acima de 90%**, com vários arquivos atingindo **100%**:
+  - `instituicoes` (raiz) — 0% → **96,44%** em linhas
+  - `instituicoes/components` — 6,04% → **97,66%** em linhas
+  - `instituicoes/utils` — 88,52% → **100%** em linhas
+  - `[instituicaoId]`, `[instituicaoId]/components`, `grafo`, `[instituicaoId]/grafo` e `[instituicaoId]/hierarquia` — **100%**
+- **Cobertura de fluxos complexos:** Testei os grafos interativos (busca/focalizador, zoom, centralização, tela cheia e tema por status do medidor), o painel mestre-detalhe (árvore, filtro, alertas por severidade, medidores diretos/indiretos) e o Painel raiz com seu *fallback* de período e modal de alertas.
+- **Garantia de qualidade:** Validei que a suíte completa do projeto continua passando, sem regressões, e que os novos arquivos passam no `lint` e no `type-check` exigidos pela pipeline.
+
+### Dificuldades
+
+A maior dificuldade foi testar a visualização em grafo, baseada em `reactflow` e `dagre`, que não se comportam bem fora de um navegador real. Foi necessário isolar completamente essas bibliotecas — simulando `Handle`, `Position`, `Panel`, `useReactFlow`, `useNodesState`/`useEdgesState` e o motor de layout do `dagre` — para conseguir renderizar e exercitar os controles interativos no ambiente `happy-dom`.
+
+Outro ponto delicado foram as *server actions*: como utilizam o cliente `ky` (cujo retorno é, ao mesmo tempo, uma `Promise` e expõe `.json()`), tive que construir um mock de resposta "híbrido" para cobrir paginação, normalização de medidores e o tratamento de respostas `204`/`404` na busca do período de medição mais recente.
+
+Por fim, a `page` raiz (Painel) concentrava muitos hooks de dados e componentes filhos; cobrir o fluxo de *fallback* de período e o modal de alertas exigiu mockar cada hook de forma a reproduzir estados específicos (sem dados no período vigente, com dados em período anterior, etc.) e ainda lidar com APIs do DOM não implementadas pelo `happy-dom`, como `scrollTo`, `requestAnimationFrame` e `window.print`.
+
+### Aprendizados
+
+- **Isolamento de bibliotecas de canvas/grafo:** Aprofundei a técnica de mockar bibliotecas que dependem de medições reais de layout, mantendo o componente testável sem acoplar o teste a detalhes internos de renderização.
+- **Mock de clientes HTTP "thenable":** Entendi como reproduzir fielmente o contrato do `ky` em testes, o que permitiu cobrir com segurança paginação, normalização e ramificações de erro das *server actions*.
+- **Teste de Server Components assíncronos:** Para páginas assíncronas do App Router (como a página do grafo), aprendi a resolver manualmente o conteúdo dentro do `Suspense` para exercitar a lógica sem depender de um renderizador de servidor.
+- **Disciplina de escopo:** Reforcei a importância de respeitar o recorte da issue — concentrei a cobertura nos grupos solicitados e deixei explícito o que ficou fora do escopo (as páginas de `relatorios/*`), evitando inflar métricas com mudanças não combinadas.
+
+### Plano Pessoal para a Próxima Sprint
+
+Com o módulo de instituições agora bem coberto, o foco para o encerramento do semestre é apoiar na revisão dos Merge Requests dos colegas, acompanhar a aprovação dos meus MRs na pipeline e realizar eventuais polimentos finais que restarem no repositório.
+
+---
+
 ## Histórico de Versão
 
 | Data       | Versão | Descrição                          | Autor                                                       |
@@ -201,3 +252,4 @@ Com a robustez dos componentes base e do Design System muito bem estabelecida, o
 | 11/05/2026 | 1.1    | Adiciona Sprint 1                  | [Vitor Hoffmann](https://github.com/vitor-hoffmann)         |
 | 25/05/2026 | 1.2    | Adiciona Sprint 2                  | [Vitor Hoffmann](https://github.com/vitor-hoffmann)         |
 | 07/06/2026 | 1.3    | Adiciona Sprint 3                  | [Vitor Hoffmann](https://github.com/vitor-hoffmann)         |
+| 23/06/2026 | 1.4    | Adiciona Sprint 4                  | [Vitor Hoffmann](https://github.com/vitor-hoffmann)         |
