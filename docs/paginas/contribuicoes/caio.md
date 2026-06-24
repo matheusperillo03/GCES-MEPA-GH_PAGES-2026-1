@@ -165,6 +165,67 @@ Aprendi a diferenciar quando uma branch não coberta representa de fato uma lacu
 
 Quero continuar contribuindo com testes em outros componentes que ainda têm baixa cobertura e ajudar na revisão dos MRs abertos pelo restante do grupo conforme o semestre se encerra.
 
+## Sprint 4 - Testes de Cobertura do Módulo de Performance de Entidades
+  **Duração**: 08/06/2026 - 23/06/2026
+  
+  ### Resumo da Sprint
+  
+  Nesta sprint, parti de uma etapa que ainda não tinha sido feita pelo time: cruzar o relatório de cobertura (`pnpm test:coverage`) com as issues 1 a 10 já
+  mapeadas, para identificar áreas do código que tinham ficado de fora do levantamento original. Essa análise revelou que
+  `src/app/entidades/[entidadeId]/performance` — a página de monitoramento de desempenho das plantas fotovoltaicas, com seus cards, gráficos
+  diários/mensais, alertas de medidores e exportação de relatórios — estava com **0% de cobertura** e havia surgido/crescido depois do mapeamento inicial,
+  ficando sem responsável. Abri a [Issue 81](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/work_items/81) para formalizar o escopo e a meta (cobertura de linhas ≥80%) e, em seguida, o [MR referente à branch est/81-entity-performance](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/101) para implementar a
+  cobertura.
+
+  Segui a mesma abordagem metódica das sprints anteriores: **mapear funções e fluxos críticos antes de escrever qualquer teste**, priorizando lógica de
+  cálculo/agregação sobre componentes puramente visuais, **planejar a estratégia de mocks** (server actions, hooks de navegação, bibliotecas de gráfico e
+  geração de PDF) e só então **implementar as asserções**, validando a cobertura incrementalmente arquivo a arquivo.
+
+  ### Atividades Realizadas
+  
+  | Data  | Descrição da Atividade | Categoria | Referência | Status |
+  | ----- | ---- | ---- | ---- | ---- |
+  | 22/06 | Análise do relatório de cobertura cruzado com as issues e MRs já abertos pelo grupo | Análise | MEPA Web | Concluído ✅ |
+  | 23/06 | Abertura da [Issue 81](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/work_items/81) com escopo, motivação e critérios de aceitação (cobertura ≥80% de linhas) | Planejamento | [Issue 81](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/work_items/81) | Concluído ✅ |
+  | 23/06 | Mapeamento das funções e fluxos críticos da pasta, priorizando lógica de cálculo/agregação  sobre componentes visuais | Estudo | [Issue 81](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/work_items/81) | Concluído ✅ |
+  | 23/06 | Implementação dos testes unitários da lógica de negócio (`performance.mappers.ts`, `actions.ts`) e dos cálculos internos do componente de gráfico | Testes | [MR 101](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/101) | Concluído ✅ |
+  | 23/06 | Implementação dos testes de integração/renderização dos componentes (página, alertas, filtro de data, seção de gráficos, *tooltip*) | Testes | [MR 101](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/101) | Concluído ✅ |
+  | 23/06 | Geração do relatório final de cobertura, documentação de um *bug* encontrado em produção (`buildDisabledLabelRanges`) e abertura do [MR 101](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/101) | Testes e Merge Request | [MR 101](https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/101) | Concluído ✅ |
+
+  ### Maiores Avanços
+
+  - **Expansão da suíte de testes:** Criação de **10 novos arquivos de teste**, adicionando **200 novos casos de teste** ao módulo, todos passando.
+  - **Salto de cobertura:** A pasta saiu de **0%** para **88,8%** de cobertura de linhas, superando a meta de 80% definida nos critérios de aceitação — com
+  `performance.mappers.ts`, `actions.ts`, `page.tsx` e `not-found.tsx` atingindo **100%**.
+  - **Cobertura de lógica densa:** Testei o componente de gráfico mais complexo do módulo (mais de 2.000 linhas), cobrindo agregação temporal por hora/dia/mês, janelas de zoom/filtro de data e geração de séries para exportação em CSV/PDF — expondo as funções puras internas via um objeto dedicado de teste para viabilizar asserções diretas sem depender só de renderização.
+  - **Achado relevante:** Identifiquei, documentei e reproduzi com um teste dedicado um *bug* real de *runtime* que afeta a renderização dos gráficos quando um medidor permanece indisponível até o fim do período filtrado comuniquei o achado sem ampliar o escopo do MR de cobertura.
+
+  ### Dificuldades
+  
+  A maior dificuldade foi fazer os componentes baseados em `recharts` (`ResponsiveContainer`) e em primitivas Radix (`Tooltip`, `Popover`, `DropdownMenu`)
+  se comportarem de forma previsível no `happy-dom`, que não calcula layout real — exigiu focar as asserções no comportamento em vez de pixels, e descobrir que textos visíveis ficam duplicados no DOM por conta de conteúdo oculto destinado a leitores de tela.
+  
+  Outro ponto delicado foram os filtros de data relativos ("Última hora", "Hoje", "Últimos 7 dias"), que dependem do relógio real do sistema (`new Date()`)
+  internamente — sem fixar o horário com `vi.setSystemTime`, os testes ficavam não-determinísticos e quebravam dependendo de quando eram executados, já que
+  as datas de exemplo eram fixas no passado. Tive ainda que evitar combinar `userEvent` com *fake timers* sem configuração específica, pois a combinação
+  travava os testes indefinidamente — nesses casos optei por `fireEvent`, que é síncrono.
+
+  ### Aprendizados
+
+  - **Exposição cirúrgica de helpers puros para teste:** Em arquivos muito densos, criar um único objeto exportado reunindo as funções internas de cálculo
+  (sem alterar a API pública dos componentes) foi a forma mais rápida e estável de atingir cobertura alta, evitando testes de renderização frágeis para
+  lógica que não depende de DOM.
+  - **Determinismo de tempo é obrigatório para filtros relativos:** Qualquer lógica que use `new Date()` para calcular janelas relativas precisa de
+  `vi.setSystemTime` nos testes, ou os resultados variam conforme a data em que a suíte é executada.
+  - **Mock de bibliotecas com import dinâmico:** Aprendi a diferença entre simular uma função comum e simular uma classe/construtor ao mockar dependências
+  carregadas via `import()` assíncrono.
+  - **Disciplina de escopo ao encontrar bugs:** Reforcei que encontrar um defeito real durante a escrita de testes não significa que ele deva ser corrigido no mesmo MR, documentar o achado com um teste que reproduz o problema (mesmo que hoje ele apenas comprove a falha) preserva o escopo do MR e ainda assim deixa rastro acionável para um *bugfix* futuro.
+
+  ### Plano Pessoal para a Próxima Sprint
+  
+  Com o módulo de performance agora coberto, o foco para o encerramento do semestre é abrir uma issue/MR dedicado para corrigir o *bug* encontrado em
+  `buildDisabledLabelRanges`, apoiar na revisão dos Merge Requests dos colegas, acompanhar a aprovação do na pipeline e realizar eventuais polimentos finais que restarem no repositório.
+
 ---
 
 ## Histórico de Versão
@@ -175,3 +236,4 @@ Quero continuar contribuindo com testes em outros componentes que ainda têm bai
 | 10/05/2026 | 1.2    | Contribuição Caio Sabino sprint 1| [Caio Sabino](https://github.com/caiomsabino)    |
 | 24/05/2026 | 1.2    | Contribuição Caio Sabino sprint 2| [Caio Sabino](https://github.com/caiomsabino)    |
 | 07/06/2026 | 1.2    | Contribuição Caio Sabino sprint 3| [Caio Sabino](https://github.com/caiomsabino)    |
+| 23/06/2026 | 1.2    | Contribuição Caio Sabino sprint 4| [Caio Sabino](https://github.com/caiomsabino)    |
