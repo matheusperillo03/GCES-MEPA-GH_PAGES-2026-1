@@ -176,6 +176,7 @@ Quero validar os testes no ambiente completo do projeto com `pnpm run lint`, `pn
 
 ---
 
+ 
 ## Histórico de Versão
 
 | Data | Versão | Descrição | Autor |
@@ -184,3 +185,4 @@ Quero validar os testes no ambiente completo do projeto com `pnpm run lint`, `pn
 | 11/05/2026 | 1.1 | Versão inicial - Sprint 1 | [Bruno Vasconcelos](https://github.com/brunocva) |
 | 25/05/2026 | 1.2 | Versão inicial - Sprint 2 | [Bruno Vasconcelos](https://github.com/brunocva) |
 | 09/06/2026 | 1.3 | Versão inicial - Sprint 3 | [Bruno Vasconcelos](https://github.com/brunocva) |
+| 01/07/2026 | 1.4 | Versão inicial - Sprint 4 | [Bruno Vasconcelos](https://github.com/brunocva) |
