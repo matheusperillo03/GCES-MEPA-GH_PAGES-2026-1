@@ -159,6 +159,18 @@ Foi identificado que o módulo src/app/entidades/[entidadeId]/performance — re
 
 ---
 
+### Análises e Calendário (MR !78)
+
+Complementando o escopo da Issue #77, foram identificados e corrigidos testes quebrados nos módulos de **Análises** e **Calendário** da área administrativa.
+
+**Arquivos corrigidos/criados:**
+- `calendario/page.test.tsx` — 3 testes de renderização e estados do calendário mensal
+- `analises/page.test.tsx` — 4 testes de análise de dados, filtros e exportação
+
+**O que foi testado:** renderização de estados vazio, erro e com dados no calendário mensal; correção de mocks de `mepaAPI.get` para `fetch` global (alinhando com a implementação real); validação do componente `ErrorMessage` genérico; fluxos de resumo, loading e erro em análises.
+
+**Resultado:** 7 testes corrigidos/validados, elevando a cobertura de `calendario/page.tsx` de **0% para 75,34%** e de `analises/page.tsx` de **0% para 54,54%**.
+
 ## Histórico de Versão
 
 | Data       | Versão | Descrição                                             | Autor                                                 |
@@ -167,3 +179,4 @@ Foi identificado que o módulo src/app/entidades/[entidadeId]/performance — re
 | 22/06/2026 | 1.1    | Adicionando Issues 77 (utilitários) e 76 (utils) | [Matheus Barros](https://github.com/Ninja-Haiyai) |
 | 23/06/2026 | 1.2    | Adicionando Issue 80 | [Vitor Hoffmann](https://github.com/vitor-hoffmann) |
 | 23/06/2026 | 1.3    | Adicionando Issue 81 | [Caio Sabino](https://github.com/caiomsabino) |
+| 01/07/2026 | 1.4    | Adicionando Análises/Calendário (MR !78) na Issue 77  | [Bruno Araújo](https://github.com/brunocva)           |
