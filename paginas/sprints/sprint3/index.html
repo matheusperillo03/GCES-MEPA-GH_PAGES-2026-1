@@ -1,0 +1,1659 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentação do projeto da disciplina GCES focado em contribuições ao software livre MEPA.">
+      
+      
+        <meta name="author" content="Grupo GCES">
+      
+      
+      
+        <link rel="prev" href="../sprint2/">
+      
+      
+        <link rel="next" href="../sprint4/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/favicoMEPA.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Sprint 3 - GCES - MEPA</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#objetivo" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../../.." title="GCES - MEPA" class="md-header__button md-logo" aria-label="GCES - MEPA" data-md-component="logo">
+      
+  <img src="../../../assets/favicoMEPA.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GCES - MEPA
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Sprint 3
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/matheusperillo03/GCES-MEPA-GH_PAGES-2026-1" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GCES MEPA - 2026.1
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="GCES - MEPA" class="md-nav__button md-logo" aria-label="GCES - MEPA" data-md-component="logo">
+      
+  <img src="../../../assets/favicoMEPA.png" alt="logo">
+
+    </a>
+    GCES - MEPA
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/matheusperillo03/GCES-MEPA-GH_PAGES-2026-1" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GCES MEPA - 2026.1
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Início
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprints
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sprints
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 3
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#issue-76" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 76
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Issue 76">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#componentes-raiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Componentes Raiz
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#charts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Charts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stories
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#issue-77" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 77
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Issue 77">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#componentes-do-painel-administrativo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Componentes do Painel Administrativo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utilitarios-do-painel-administrativo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Utilitários do Painel Administrativo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#issue-78" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 78
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Issue 78">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#design-system-ui-skeletons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design System: UI + Skeletons
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#issue-79" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 79
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Issue 79">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-lib-utils-e-hooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core: Lib, Utils e Hooks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cobertura-obtida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cobertura Obtida
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#issue-73-complementar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 73 (Complementar)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Issue 73 (Complementar)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#relatorio-tecnico-technical-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relatório Técnico (technical-report)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utilitarios-do-relatorio-tecnico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Utilitários do Relatório Técnico
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reuniões
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reuniões
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../atas/ata1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ata 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contribuições Individuais
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Contribuições Individuais
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribuicoes/marcos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marcos Bezerra
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribuicoes/caio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caio Sabino
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribuicoes/vitor-hoffmann/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vitor Hoffmann
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribuicoes/matheus-barros/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Matheus Barros
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribuicoes/matheus-perillo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Matheus Perillo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribuicoes/bruno/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bruno Vasconcelos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribuicoes/ranni/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ranni Heller
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribuicoes/gabriel-lima/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gabriel Lima da Silva
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#issue-76" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 76
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Issue 76">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#componentes-raiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Componentes Raiz
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#charts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Charts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stories
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#issue-77" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 77
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Issue 77">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#componentes-do-painel-administrativo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Componentes do Painel Administrativo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utilitarios-do-painel-administrativo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Utilitários do Painel Administrativo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#issue-78" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 78
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Issue 78">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#design-system-ui-skeletons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design System: UI + Skeletons
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#issue-79" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 79
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Issue 79">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-lib-utils-e-hooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core: Lib, Utils e Hooks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cobertura-obtida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cobertura Obtida
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#issue-73-complementar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 73 (Complementar)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Issue 73 (Complementar)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#relatorio-tecnico-technical-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relatório Técnico (technical-report)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utilitarios-do-relatorio-tecnico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Utilitários do Relatório Técnico
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="objetivo">Objetivo</h1>
+<p>A sprint 3 teve como objetivo continuar identificando oportunidades de abertura de issue no ramo de testes automatizados e resolvê-las, contribuindo assim com MRs que aumentassem a cobertura de testes do projeto.</p>
+<h2 id="issue-76">Issue 76</h2>
+<p>Foi identificado que os módulos de componentes raiz (<code>src/components</code>), gráficos (<code>src/components/charts</code>) e stories (<code>src/stories</code>) não possuíam cobertura adequada de testes automatizados — totalizando 1.086 linhas instrumentáveis com coberturas variando de 0% a 21%. Com isso, a <a href="https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/work_items/76">Issue #76</a> foi aberta e o <a href="https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/86">MR #86</a> foi criado para resolvê-la.</p>
+<h3 id="componentes-raiz">Componentes Raiz</h3>
+<p>O módulo <code>src/components</code> possuía cobertura de apenas 21%, com componentes críticos amplamente reutilizados na aplicação — como <code>ErrorBoundary</code>, <code>MetricCard</code> e <code>ReportsDateFilter</code> — sem nenhuma cobertura de teste.</p>
+<p>Os principais arquivos contemplados foram:</p>
+<ul>
+<li><code>ErrorBoundary</code> (componente de classe com lógica de retry)</li>
+<li><code>LoadingSuspense</code> (useState com timer)</li>
+<li><code>MetricCard</code></li>
+<li><code>ReportsDateFilter</code></li>
+</ul>
+<p><strong>O que foi testado:</strong> renderização dos componentes sem crash; lógica de retry do <code>ErrorBoundary</code>; comportamento do <code>LoadingSuspense</code> com timer; validação de datas futuras no <code>ReportsDateFilter</code>; mocks de <code>swr</code>, <code>next/navigation</code> e <code>next/router</code>.</p>
+<p><strong>Resultado:</strong> <code>src/components</code>: 0% → <strong>75,52%</strong> ✅ — Meta ≥70% atingida</p>
+<hr />
+<h3 id="charts">Charts</h3>
+<p>O módulo <code>src/components/charts</code> estava com 0% de cobertura e continha lógica complexa de normalização de séries temporais, algoritmos de zoom, polling em tempo real e renderização com <code>recharts</code>.</p>
+<p>Os principais arquivos contemplados foram:</p>
+<ul>
+<li><code>MonthlyEnergyChart</code> (494 linhas)</li>
+<li><code>ChartCard</code> (261 linhas)</li>
+</ul>
+<p><strong>O que foi testado:</strong> renderização dos gráficos com dados válidos e séries vazias; polling de dados e tratamento de falhas gracioso; lógica de zoom e normalização de séries temporais; mocks estratégicos do <code>recharts</code> e <code>swr</code>.</p>
+<p><strong>Resultado:</strong> <code>src/components/charts</code>: 0% → <strong>73,21%</strong> ✅ — Meta ≥70% atingida</p>
+<hr />
+<h3 id="stories">Stories</h3>
+<p>Os módulos de stories (<code>src/stories/blocks</code>, <code>src/stories/__fixtures__</code> e <code>src/stories/foundations/components</code>) estavam com 0% de cobertura. Eles funcionam como contratos visuais e fixtures compartilhadas de teste.</p>
+<p><strong>O que foi testado:</strong> smoke tests para 23 arquivos <code>.stories.tsx</code>; presença e montagem dos blocos, fixtures e componentes de fundação.</p>
+<p><strong>Resultado:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Módulo</th>
+<th>Antes</th>
+<th>Depois</th>
+<th>Meta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>src/stories/blocks</code></td>
+<td>0%</td>
+<td><strong>66,66%</strong></td>
+<td>≥60% ✅</td>
+</tr>
+<tr>
+<td><code>src/stories/__fixtures__</code></td>
+<td>0%</td>
+<td><strong>76%</strong></td>
+<td>≥60% ✅</td>
+</tr>
+<tr>
+<td><code>src/stories/foundations/components</code></td>
+<td>0%</td>
+<td><strong>100%</strong></td>
+<td>≥70% ✅</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="issue-77">Issue 77</h2>
+<p>Foi identificado que o módulo <code>src/app/admin/components</code> apresentava diversos arquivos com cobertura de testes baixa ou nula, abrangendo desde componentes de nós do diagrama até as telas de gestão do painel administrativo. A <a href="https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/work_items/77">Issue #77</a> foi aberta pelo Marcos, que resolveu parte dela através do <a href="https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/85">MR !85</a>, e o restante do escopo foi resolvido através do <a href="https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/88">MR !88</a>.</p>
+<h3 id="componentes-do-painel-administrativo">Componentes do Painel Administrativo</h3>
+<p>Os arquivos contemplados no MR !88 foram:</p>
+<ul>
+<li><code>entity-node.tsx</code></li>
+<li><code>canvas-controls.tsx</code></li>
+<li><code>admin-unified-page.tsx</code></li>
+<li><code>meters-management.tsx</code></li>
+</ul>
+<p><strong>O que foi testado:</strong> renderização condicional dos nós do diagrama (handles de conexão, contagem de filhos e medidores, fallback de tradução); navegação entre as abas do painel administrativo com sincronização da URL e preservação das abas já visitadas; zoom, criação de nós, undo e limpeza de histórico do canvas; busca, filtragem por aba e estados de carregamento/erro/vazio da listagem de medidores.</p>
+<p><strong>Resultado:</strong> os quatro arquivos saltaram de <strong>0%</strong> para praticamente <strong>100%</strong> de cobertura em statements, branches, functions e lines.</p>
+<blockquote>
+<p>💡 A única branch não coberta de <code>entity-node.tsx</code> (linha 186, <code>parentId ?? null</code>) é um fallback defensivo inalcançável, já que o bloco só é renderizado quando <code>parentId !== null &amp;&amp; parentId !== undefined</code>.</p>
+</blockquote>
+<hr />
+<h3 id="utilitarios-do-painel-administrativo">Utilitários do Painel Administrativo</h3>
+<p>Complementando o escopo da Issue #77, foram identificados arquivos utilitários do módulo <code>src/app/admin/components</code> sem cobertura de testes: funções de formatação de datas, ordenação de opções de select e extração de mensagens de erro de formulário. O <a href="https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web">MR referente à branch <code>37-admin-components-coverage</code></a> foi aberto para cobrir esses utilitários, aumentando a cobertura do módulo em ~20%.</p>
+<p>Os arquivos criados foram:</p>
+<ul>
+<li><code>date-input-format.test.ts</code> com 35 testes de formatação e conversão de datas no padrão BR</li>
+<li><code>select-option-sorting.test.ts</code> com 18 testes de ordenação e geração de labels para selects</li>
+<li><code>form-error-message.test.ts</code> com 12 testes de extração e priorização de mensagens de erro</li>
+</ul>
+<p><strong>O que foi testado:</strong> conversão e formatação de datas entre ISO e <code>dd/MM/yyyy</code>, cobrindo casos como datas inválidas, zero-padding e anos bissextos. Também foram contempladas a ordenação alfabética e por critério de selects com labels dinâmicas, além da priorização de mensagens de erro provenientes de múltiplas fontes do formulário.</p>
+<p><strong>Resultado:</strong> 65 novos testes em 3 arquivos, com a cobertura do módulo <code>admin/components</code> ampliada em <strong>~20%</strong>.</p>
+<hr />
+<h2 id="issue-78">Issue 78</h2>
+<p>Foi mapeado que os módulos que compõem o ecossistema do Design System — incluindo componentes de interface de usuário (<code>src/components/ui</code>) e carregamento estrutural (<code>src/components/skeletons</code>) — contavam com uma cobertura crítica inicial de apenas ~15%, totalizando 968 linhas instrumentáveis. Para solucionar essa defasagem, a suíte de testes foi expandida com a criação de <strong>45 novos arquivos de teste</strong> (43 para a UI e 2 para Skeletons), adicionando <strong>411 novos casos de teste</strong> totalmente integrados e validados.</p>
+<h3 id="design-system-ui-skeletons">Design System: UI + Skeletons</h3>
+<p>O escopo desta issue abrangeu 947 linhas do módulo <code>ui</code> e 21 linhas do módulo <code>skeletons</code>, garantindo a confiabilidade desde elementos primitivos até estruturas complexas de navegação e exibição de dados.</p>
+<p>Os principais arquivos e fluxos contemplados foram:</p>
+<ul>
+<li><strong>Componentes Primitivos:</strong> Garantia de comportamento e renderização de estados de componentes base (como <code>Badge</code>, <code>Button</code>, <code>Input</code>, <code>Switch</code>, entre outros).</li>
+<li><strong>Componentes Complexos de Interface:</strong></li>
+<li><code>Sidebar</code>: Comportamento de alternância responsiva (mobile/desktop/none), acionamento via atalhos de teclado e validação das propriedades do hook <code>useSidebar</code>.</li>
+<li><code>Chart</code>: Resolução de chaves de configuração nativas (<code>nameKey</code>, <code>labelKey</code>), tratamento de payloads customizados e integração estrutural com mocks adaptados para o <code>ResponsiveContainer</code> da biblioteca <code>recharts</code>.</li>
+<li><code>ConditionalLayout</code>: Validação dos fluxos lógicos e isolamento de renderização nas ramificações de autenticação (<code>auth</code>) e aplicação (<code>app</code>).</li>
+<li>Estruturas de controle e popovers avançados: <code>StandardDrawer</code>, <code>Form</code>, <code>Select</code>, <code>DropdownMenu</code>, <code>Calendar</code> e <code>DateFilterSelectPopover</code>.</li>
+<li><strong>Mocks e Infraestrutura:</strong> Configuração de mocks específicos para simular o comportamento de <code>pointer-capture</code> exigido pelo Radix UI, além do isolamento de dependências de <code>next/navigation</code>, <code>next/image</code> e <code>sonner</code>.</li>
+</ul>
+<p><strong>O que foi testado:</strong> Renderização rigorosa livre de falhas estruturais, fluxos condicionais defensivos, acionamento de callbacks internos, formatação e tratamento dinâmico de dados e respostas visuais de componentes de esqueleto.</p>
+<p><strong>Resultado:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Módulo</th>
+<th>Stmts</th>
+<th>Branch</th>
+<th>Funcs</th>
+<th>Lines</th>
+<th>Antes</th>
+<th>Meta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>src/components/ui</code></td>
+<td>98,93%</td>
+<td>90,20%</td>
+<td>98,95%</td>
+<td>99,07%</td>
+<td>~15%</td>
+<td>≥90% ✅</td>
+</tr>
+<tr>
+<td><code>src/components/skeletons</code></td>
+<td>100,00%</td>
+<td>100,00%</td>
+<td>100,00%</td>
+<td>100,00%</td>
+<td>~15%</td>
+<td>≥90% ✅</td>
+</tr>
+<tr>
+<td><strong>Total do Escopo</strong></td>
+<td><strong>98,95%</strong></td>
+<td><strong>90,40%</strong></td>
+<td><strong>99,00%</strong></td>
+<td><strong>99,08%</strong></td>
+<td><strong>~15%</strong></td>
+<td><strong>≥90% ✅</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>💡 <strong>Nota de Execução:</strong> Visando manter a árvore de configurações original do projeto intacta, o arquivo <code>vitest.config.mts</code> não foi modificado. Devido a isso, os arquivos <code>.stories.tsx</code> continuam sendo computados no relatório de cobertura padrão da aplicação. Para inspecionar o índice real e isolado dos componentes de código do Design System (desconsiderando os stories), pode-se executar o comando em linha:
+<code>bash
+pnpm exec vitest run --coverage \
+  --coverage.include='src/components/ui/**' \
+  --coverage.include='src/components/skeletons/**' \
+  --coverage.exclude='**/*.stories.tsx'</code></p>
+</blockquote>
+<hr />
+<h2 id="issue-79">Issue 79</h2>
+<p>Foi identificado que os módulos centrais da aplicação — <code>src/lib/errors</code>, <code>src/utils</code> e <code>src/hooks</code> — concentravam lógica de negócio crítica amplamente reutilizada em toda a aplicação, mas sem nenhuma cobertura de testes automatizados. A <a href="https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/work_items/79">Issue #79</a> foi aberta para mapear e cobrir esses módulos, e o <a href="https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/89">MR !89</a> foi criado para resolvê-la.</p>
+<h3 id="core-lib-utils-e-hooks">Core: Lib, Utils e Hooks</h3>
+<p>Os módulos contemplados abrangem desde o tratamento padronizado de erros da API até a formatação de datas e valores monetários, passando pelo controle de estado de formulários com validação de datas.</p>
+<p>Os principais arquivos contemplados foram:</p>
+<ul>
+<li><code>src/lib/errors/error-parser.ts</code></li>
+<li><code>src/utils/dateUtils.ts</code></li>
+<li><code>src/utils/currency.ts</code></li>
+<li><code>src/utils/pv-availability.ts</code></li>
+<li><code>src/hooks/useDebounce.ts</code></li>
+<li><code>src/hooks/useDateValidation.ts</code></li>
+</ul>
+<p><strong>O que foi testado:</strong> extração de mensagem de erro a partir de múltiplos formatos (<code>string</code>, <code>Error</code>, objetos de API com <code>.message</code>, <code>.error</code>, <code>.detail</code> e <code>.msg</code>); match por status HTTP com precedência sobre padrões textuais; categorização completa de erros e helpers de conveniência (<code>isAuthError</code>, <code>isConnectionError</code>, <code>isServerError</code>, <code>isValidationError</code>, <code>formatErrorMessage</code>, <code>formatErrorFull</code>); formatação de início e fim de dia para strings ISO e <code>dd/MM/yyyy</code>; cálculo de diferença em horas, validação de intervalo e lógica de zoom de gráfico com timers mockados via <code>vi.setSystemTime</code>; formatação de valores monetários e métricas com locale <code>pt-BR</code>; mapeamento de status de disponibilidade fotovoltaica; comportamento de debounce com cancelamento de chamadas intermediárias e cleanup ao desmontar; e controle de estado de erros por índice em <code>useDateValidation</code>.</p>
+<h3 id="cobertura-obtida">Cobertura Obtida</h3>
+<table>
+<thead>
+<tr>
+<th>Módulo</th>
+<th>Stmts</th>
+<th>Branch</th>
+<th>Funcs</th>
+<th>Lines</th>
+<th>Antes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>src/utils/currency.ts</code></td>
+<td>100%</td>
+<td>100%</td>
+<td>100%</td>
+<td>100%</td>
+<td>0%</td>
+</tr>
+<tr>
+<td><code>src/utils/pv-availability.ts</code></td>
+<td>100%</td>
+<td>100%</td>
+<td>100%</td>
+<td>100%</td>
+<td>0%</td>
+</tr>
+<tr>
+<td><code>src/hooks/useDebounce.ts</code></td>
+<td>100%</td>
+<td>100%</td>
+<td>100%</td>
+<td>100%</td>
+<td>0%</td>
+</tr>
+<tr>
+<td><code>src/utils/dateUtils.ts</code></td>
+<td>96,22%</td>
+<td>100%</td>
+<td>100%</td>
+<td>95,91%</td>
+<td>0%</td>
+</tr>
+<tr>
+<td><code>src/lib/errors/error-parser.ts</code></td>
+<td>94,73%</td>
+<td>84%</td>
+<td>100%</td>
+<td>93,87%</td>
+<td>0%</td>
+</tr>
+<tr>
+<td><code>src/hooks/useDateValidation.ts</code></td>
+<td>82,25%</td>
+<td>69,23%</td>
+<td>80%</td>
+<td>82,14%</td>
+<td>0%</td>
+</tr>
+<tr>
+<td><strong>Total do Escopo</strong></td>
+<td><strong>92,38%</strong></td>
+<td><strong>89,56%</strong></td>
+<td><strong>92,72%</strong></td>
+<td><strong>92,06%</strong></td>
+<td><strong>0%</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>💡 <strong>Nota de Cobertura:</strong> As linhas não cobertas correspondem a branches defensivos inalcançáveis no ambiente de testes: o bloco <code>catch</code> do <code>JSON.stringify</code> em <code>error-parser.ts</code> (linha 43) e o caminho <code>process.env.NODE_ENV === "development"</code> (linha 76), que nunca é atingido porque o ambiente <code>happy-dom</code> sempre expõe <code>window</code>; as linhas 17 e 51 de <code>dateUtils.ts</code>, referentes ao <code>return null</code> do caminho sem separador de data e ao <code>return String(error)</code> nunca alcançado após o bloco <code>try/catch</code>; e as funções <code>handleLocalBlur</code> (linhas 40–46) e <code>setLocalDateErrorAtIndex</code> (linhas 82–85) de <code>useDateValidation.ts</code>, que operam sobre o array interno de erros de subgráficos e não foram exercitadas nos cenários implementados.</p>
+</blockquote>
+<p><strong>Resultado:</strong> os 6 arquivos passaram a contar com cobertura abrangente de testes automatizados, totalizando <strong>67 testes</strong>, todos passando. ✅</p>
+<hr />
+<h2 id="issue-73-complementar">Issue 73 (Complementar)</h2>
+<p>Foi identificado que o módulo de relatórios PDF do MEPA Web possuía cobertura de testes incompleta, com atenção especial ao Relatório Técnico (<code>technical-report</code>). A <a href="https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/work_items/73">Issue #73</a> foi aberta e já havia recebido cobertura parcial para o Relatório Financeiro através do <a href="https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/merge_requests/75">MR !75</a>. O restante do escopo, focado no módulo <code>technical-report</code>, foi resolvido através de um MR separado e complementar.</p>
+<h3 id="relatorio-tecnico-technical-report">Relatório Técnico (technical-report)</h3>
+<p>Os arquivos contemplados no MR complementar foram:</p>
+<ul>
+<li><code>buildTechnicalReportPdfData.ts</code> (ampliação da suíte de testes)</li>
+<li><code>technicalReportPdfFileName.ts</code> (criação do arquivo e testes)</li>
+</ul>
+<p><strong>O que foi testado:</strong> montagem da estrutura de dados usada pelo PDF técnico; formatação de datas, valores nulos, vazios, indefinidos e fallbacks textuais; inclusão e omissão corretas das seções opcionais de DHT; renumeração correta de tabelas e figuras; extração de helper puro para nome de arquivo, eliminando dependências de browser nos testes.</p>
+<p><strong>Resultado:</strong> os comportamentos mais importantes do Relatório Técnico foram cobertos, seguindo o mesmo padrão já consolidado no Relatório Financeiro.</p>
+<blockquote>
+<p>💡 Algumas partes do fluxo de geração de PDF dependem de APIs de browser e bibliotecas pesadas (captura de imagens do DOM, geração real via <code>@react-pdf/renderer</code>). Optou-se por não testar diretamente esses trechos nesta etapa, isolando helpers puros e testando a transformação de dados.</p>
+</blockquote>
+<hr />
+<h3 id="utilitarios-do-relatorio-tecnico">Utilitários do Relatório Técnico</h3>
+<p>Complementando o escopo da Issue #73, foi extraído e testado um helper puro responsável pela geração do nome do arquivo do Relatório Técnico, anteriormente embutido em um módulo com dependências de browser.</p>
+<p>Os arquivos criados/ampliados foram:</p>
+<ul>
+<li><code>technicalReportPdfFileName.test.ts</code> — testes para cenários de nome de arquivo</li>
+<li><code>buildTechnicalReportPdfData.test.ts</code> — ampliação com novos cenários de teste</li>
+</ul>
+<p><strong>O que foi testado:</strong> geração correta do nome do arquivo do Relatório Técnico; tratamento de dados nulos, vazios e indefinidos na montagem da estrutura do PDF; fallbacks textuais para valores ausentes; lógica de inclusão/omissão de seções opcionais de DHT; renumeração automática de tabelas e figuras.</p>
+<p><strong>Resultado:</strong> nova suíte de testes para o Relatório Técnico, seguindo o padrão já consolidado no módulo financeiro e isolando responsabilidades puras de dependências externas ✅</p>
+<hr />
+<table>
+<thead>
+<tr>
+<th>Data</th>
+<th>Versão</th>
+<th>Descrição</th>
+<th>Autor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>05/06/2026</td>
+<td>1.0</td>
+<td>Estruturando a Sprint 3 e adicionando a documentação da Issue 76</td>
+<td><a href="https://github.com/matheusperillo03">Matheus Perillo</a></td>
+</tr>
+<tr>
+<td>07/06/2026</td>
+<td>1.1</td>
+<td>Adicionando a documentação da Issue 78 (Design System: UI + Skeletons)</td>
+<td><a href="https://github.com/vitor-hoffmann">Vitor Hoffmann</a></td>
+</tr>
+<tr>
+<td>07/06/2026</td>
+<td>1.2</td>
+<td>Adicionando a documentação da Issue 77 (Admin Components)</td>
+<td><a href="https://github.com/caiomsabino">Caio Sabino</a></td>
+</tr>
+<tr>
+<td>08/06/2026</td>
+<td>1.3</td>
+<td>Adicionando a documentação da Issue 79 (Core: Lib, Utils e Hooks)</td>
+<td><a href="https://github.com/akaeranni">Ranni Heler</a></td>
+</tr>
+<tr>
+<td>08/06/2026</td>
+<td>1.4</td>
+<td>Adicionando a documentação dos Utilitários do Painel Administrativo (Issue 77)</td>
+<td><a href="https://github.com/Ninja-Haiyai">Matheus Barros</a></td>
+</tr>
+<tr>
+<td>08/06/2026</td>
+<td>1.5</td>
+<td>Adicionando a documentação da Issue 73 (Relatório Técnico - PDF)</td>
+<td><a href="https://github.com/brunocva">Bruno Vasconcelos</a></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

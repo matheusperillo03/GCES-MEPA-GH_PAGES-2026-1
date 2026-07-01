@@ -1,0 +1,1833 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentação do projeto da disciplina GCES focado em contribuições ao software livre MEPA.">
+      
+      
+        <meta name="author" content="Grupo GCES">
+      
+      
+      
+        <link rel="prev" href="../../..">
+      
+      
+        <link rel="next" href="../sprint1/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/favicoMEPA.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Sprint 0 - GCES - MEPA</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#objetivo" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../../.." title="GCES - MEPA" class="md-header__button md-logo" aria-label="GCES - MEPA" data-md-component="logo">
+      
+  <img src="../../../assets/favicoMEPA.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GCES - MEPA
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Sprint 0
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/matheusperillo03/GCES-MEPA-GH_PAGES-2026-1" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GCES MEPA - 2026.1
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="GCES - MEPA" class="md-nav__button md-logo" aria-label="GCES - MEPA" data-md-component="logo">
+      
+  <img src="../../../assets/favicoMEPA.png" alt="logo">
+
+    </a>
+    GCES - MEPA
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/matheusperillo03/GCES-MEPA-GH_PAGES-2026-1" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GCES MEPA - 2026.1
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Início
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprints
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sprints
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 0
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objetivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sobre-o-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sobre o repositório
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sobre o repositório">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mepa-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MEPA API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mepa-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MEPA Web
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mepa-infra" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MEPA Infra
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-subir-o-ambiente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Como Subir o Ambiente
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Como Subir o Ambiente">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pré-requisitos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-faca-fork-dos-repositorios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Faça fork dos repositórios
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-clone-os-forks-localmente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Clone os forks localmente
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-configure-as-variaveis-de-ambiente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Configure as variáveis de ambiente
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-suba-os-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Suba os containers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-execute-as-migrations-somente-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Execute as migrations (somente API)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-crie-um-superusuario-somente-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Crie um superusuário (somente API)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#urls-de-acesso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        URLs de acesso
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-contribuir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Como contribuir
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Como contribuir">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frontend
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backend
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapa-de-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mapa de Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mapa de Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issues-faceis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issues Fáceis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issues-medias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issues Médias
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onboarding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Onboarding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#historico-de-versao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Histórico de Versão
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reuniões
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reuniões
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../atas/ata1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ata 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contribuições Individuais
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Contribuições Individuais
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribuicoes/marcos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marcos Bezerra
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribuicoes/caio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caio Sabino
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribuicoes/vitor-hoffmann/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vitor Hoffmann
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribuicoes/matheus-barros/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Matheus Barros
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribuicoes/matheus-perillo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Matheus Perillo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribuicoes/bruno/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bruno Vasconcelos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribuicoes/ranni/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ranni Heller
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribuicoes/gabriel-lima/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gabriel Lima da Silva
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objetivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sobre-o-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sobre o repositório
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sobre o repositório">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mepa-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MEPA API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mepa-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MEPA Web
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mepa-infra" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MEPA Infra
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-subir-o-ambiente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Como Subir o Ambiente
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Como Subir o Ambiente">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pré-requisitos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-faca-fork-dos-repositorios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Faça fork dos repositórios
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-clone-os-forks-localmente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Clone os forks localmente
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-configure-as-variaveis-de-ambiente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Configure as variáveis de ambiente
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-suba-os-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Suba os containers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-execute-as-migrations-somente-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Execute as migrations (somente API)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-crie-um-superusuario-somente-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Crie um superusuário (somente API)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#urls-de-acesso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        URLs de acesso
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-contribuir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Como contribuir
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Como contribuir">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frontend
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backend
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapa-de-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mapa de Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mapa de Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issues-faceis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issues Fáceis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issues-medias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issues Médias
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onboarding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Onboarding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#historico-de-versao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Histórico de Versão
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Sprint 0</h1>
+
+<h2 id="objetivo">Objetivo</h2>
+<p>A Sprint 0 teve como principal objetivo preparar o grupo para iniciar as contribuições no projeto MEPA, estabelecendo um ponto de partida para o entendimento tanto do sistema quanto do fluxo de trabalho utilizado pela equipe mantenedora.</p>
+<p>Durante essa sprint, buscamos inicialmente subir o ambiente de desenvolvimento na máquina de todos os integrantes do grupo, seguindo a <a href="https://gitlab.com/lappis-unb/projetos-energia/mepa">documentação oficial do projeto</a>, assim todos estariam prontos para contribuir e também já seria possível identificar possíveis dificuldades, inconsistências na documentação e dependências necessárias para novos contribuidores.</p>
+<p>Além disso, foi realizado um processo de onboarding com os mantenedores do repositório, com o intuito de entender como o projeto está organizado, quais tecnologias são utilizadas e como ele funciona.</p>
+<p>Foi feito o mapeamento do fluxo de contribuição adotado pelo projeto. Foram analisados aspectos como a criação de branches, abertura de Merge Requests, padrões de commits utilizados e boas práticas esperadas pelos mantenedores.</p>
+<p>Também foi realizada uma análise inicial das issues disponíveis no repositório, com o objetivo de identificar tarefas classificadas como mais simples ou adequadas para iniciantes e consequentemente para a disciplina. Esse mapeamento servirá como base para a definição das atividades individuais nas próximas sprints, permitindo que cada integrante contribua no projeto.</p>
+<hr />
+<h2 id="sobre-o-repositorio">Sobre o repositório</h2>
+<p>O projeto MEPA está organizado em um grupo no GitLab mantido pelo LabLivre, laboratório de software da Universidade de Brasília, que anteriormente era conhecido como LAPPIS. Esse grupo concentra os repositórios relacionados ao sistema, separando as responsabilidades entre <strong>Web, API e infraestrutura</strong>.</p>
+<p align="center">
+  <img src="../assets/MEPArepo.png" alt="Repositório GitLab MEPA" width="800">
+</p>
+
+<p>Essa organização em múltiplos repositórios ajuda a deixar o projeto mais modular e também permite que cada parte do sistema evolua de forma mais independente. Para a disciplina, isso é importante porque nos dá contato com uma estrutura real de software livre, onde não existe apenas uma aplicação isolada, mas sim um ecossistema de componentes que trabalham juntos.</p>
+<hr />
+<h3 id="mepa-api">MEPA API</h3>
+<p align ="center">
+    <img src="../assets/MEPAAPI.png" alt="Painel Web do MEPA">
+</p>
+
+<p>O grupo do MEPA é composto por três repositórios principais. O primeiro é o <strong>MEPA API</strong>, responsável pela camada de backend e pelo processamento das regras de negócio do sistema. Esse repositório utiliza Python, Django e Django REST Framework, e concentra as rotas, a autenticação, a integração com o banco de dados e a exposição dos dados consumidos pelo frontend.</p>
+<hr />
+<h3 id="mepa-web">MEPA Web</h3>
+<p align ="center">
+    <img src="../assets/MEPAweb.png" alt="Painel Web do MEPA">
+</p>
+
+<p>O segundo é o <strong>MEPA Web</strong>, que representa o <a href="https://mepaenergia.org">frontend da aplicação</a>.</p>
+<p align ="center">
+    <img src="../assets/MEPAfrontend.png" alt="Painel Web do MEPA">
+</p>
+
+<p>É nele que está a interface visual utilizada pelos usuários, desenvolvida com Next.js, React, TypeScript e Tailwind CSS. Esse repositório é o que mais se relaciona com a experiência de uso do sistema, já que é por meio dele que os dados energéticos são exibidos em painéis, gráficos e telas de navegação.</p>
+<hr />
+<h3 id="mepa-infra">MEPA Infra</h3>
+<p align ="center">
+    <img src="../assets/MEPAinfra.png" alt="Painel Web do MEPA">
+</p>
+
+<p>O terceiro é o <strong>MEPA Infra</strong>, que cuida da infraestrutura e do processo de deploy da aplicação. Esse repositório é responsável por automatizar a configuração do ambiente, o provisionamento da infraestrutura e a publicação dos serviços que compõem o sistema. Ele utiliza ferramentas como Terraform e Ansible, além de conter as configurações relacionadas ao Nginx, Docker e demais componentes de execução.</p>
+<hr />
+<h2 id="como-subir-o-ambiente">Como Subir o Ambiente</h2>
+<p>Durante a Sprint 0, todos os integrantes do grupo devem subir o ambiente de desenvolvimento localmente seguindo a documentação oficial do projeto. Esse processo é importante tanto para validar as instruções existentes quanto para identificar possíveis inconsistências e dependências que novos contribuidores possam encontrar.</p>
+<table>
+<thead>
+<tr>
+<th>Integrante</th>
+<th>Ambiente Subiu</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bruno Cunha Vasconcelos de Araújo</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Caio Lucas Messias Sabino</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Gabriel Lima da Silva</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>José Oliveira</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Lucas Heler Lopes</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Marcos Vinícius Lima Bezerra</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Matheus Barros do Nascimento</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Matheus Moreira Lopes Perillo</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Vitor Valerio Hoffmann</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pre-requisitos">Pré-requisitos</h3>
+<p>Antes de começar, certifique-se de ter instalado em sua máquina:</p>
+<ul>
+<li><a href="https://git-scm.com/">Git</a></li>
+<li><a href="https://docs.docker.com/get-docker/">Docker</a> v20+</li>
+<li><a href="https://docs.docker.com/compose/install/">Docker Compose</a> v2+</li>
+</ul>
+<hr />
+<h3 id="1-faca-fork-dos-repositorios">1. Faça fork dos repositórios</h3>
+<p>Acesse cada repositório no GitLab e clique em <strong>Fork</strong> para criar uma cópia na sua conta. Todo o trabalho de contribuição é feito a partir do seu fork.</p>
+<ul>
+<li><a href="https://gitlab.com/lappis-unb/projetos-energia/mec-energia/mec-energia-api">mec-energia-api</a></li>
+<li><a href="https://gitlab.com/lappis-unb/projetos-energia/mec-energia/mec-energia-web">mec-energia-web</a></li>
+</ul>
+<h3 id="2-clone-os-forks-localmente">2. Clone os forks localmente</h3>
+<pre><code class="language-bash"># API
+git clone https://gitlab.com/SEU_USUARIO/mec-energia-api.git
+cd mec-energia-api
+git remote add upstream https://gitlab.com/lappis-unb/projetos-energia/mec-energia/mec-energia-api.git
+</code></pre>
+<pre><code class="language-bash"># Frontend
+git clone https://gitlab.com/SEU_USUARIO/mec-energia-web.git
+cd mec-energia-web
+git remote add upstream https://gitlab.com/lappis-unb/projetos-energia/mec-energia/mec-energia-web.git
+</code></pre>
+<h3 id="3-configure-as-variaveis-de-ambiente">3. Configure as variáveis de ambiente</h3>
+<p>Em cada repositório, copie o arquivo de exemplo e ajuste os valores conforme necessário. Em desenvolvimento, os valores padrão do <code>.env.example</code> geralmente já funcionam sem alterações.</p>
+<pre><code class="language-bash"># Na API
+cp .env.example .env
+
+# No Web
+cp .env.example .env.local
+</code></pre>
+<h3 id="4-suba-os-containers">4. Suba os containers</h3>
+<pre><code class="language-bash">docker compose up
+</code></pre>
+<p>Para rodar em background sem travar o terminal:</p>
+<pre><code class="language-bash">docker compose up -d
+</code></pre>
+<p>Para acompanhar os logs em tempo real:</p>
+<pre><code class="language-bash">docker compose logs -f
+</code></pre>
+<h3 id="5-execute-as-migrations-somente-api">5. Execute as migrations (somente API)</h3>
+<p>Na primeira vez que subir a API, é necessário rodar as migrations para preparar o banco de dados:</p>
+<pre><code class="language-bash">docker compose run --rm api python manage.py migrate
+</code></pre>
+<h3 id="6-crie-um-superusuario-somente-api">6. Crie um superusuário (somente API)</h3>
+<p>Para acessar o painel administrativo do Django:</p>
+<pre><code class="language-bash">docker compose run --rm api python manage.py createsuperuser
+</code></pre>
+<h3 id="urls-de-acesso">URLs de acesso</h3>
+<p>Com o ambiente no ar, os serviços ficam disponíveis nos seguintes endereços:</p>
+<table>
+<thead>
+<tr>
+<th>Serviço</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>API</td>
+<td>http://localhost:8000</td>
+</tr>
+<tr>
+<td>Admin Django</td>
+<td>http://localhost:8000/admin</td>
+</tr>
+<tr>
+<td>Frontend</td>
+<td>http://localhost:3000</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="como-contribuir">Como contribuir</h2>
+<p>O projeto aceita contribuições no <a href="https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web">MEPA Web</a> (frontend) e no <a href="https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-api">MEPA API</a> (backend) — o repositório de infraestrutura não está aberto a contribuições externas. O ponto de entrada são as <strong>issues</strong> de cada repositório.</p>
+<p>O fluxo de contribuição é o mesmo para ambos:</p>
+<ol>
+<li>
+<p>Faça um fork e clone o repositório desejado, configurando o upstream:
+   <code>bash
+   git clone https://gitlab.com/seu-usuario/&lt;repositorio&gt;.git
+   git remote add upstream https://gitlab.com/lappis-unb/projetos-energia/mepa/&lt;repositorio&gt;.git</code></p>
+</li>
+<li>
+<p>Crie uma branch a partir da <code>main</code> seguindo o padrão <code>tipo/descricao-curta</code>:
+   <code>bash
+   git checkout -b feat/nome-da-feature</code></p>
+</li>
+<li>
+<p>Faça commits seguindo o padrão <a href="https://www.conventionalcommits.org/">Conventional Commits</a>:</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Quando usar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>feat</code></td>
+<td>nova funcionalidade</td>
+</tr>
+<tr>
+<td><code>fix</code></td>
+<td>correção de bug</td>
+</tr>
+<tr>
+<td><code>docs</code></td>
+<td>alterações em documentação</td>
+</tr>
+<tr>
+<td><code>refactor</code></td>
+<td>refatoração sem mudança de comportamento</td>
+</tr>
+<tr>
+<td><code>test</code></td>
+<td>adição ou ajuste de testes</td>
+</tr>
+<tr>
+<td><code>chore</code></td>
+<td>tarefas de manutenção (deps, config)</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Abra um <strong>Merge Request</strong> no repositório original referenciando a issue relacionada.</li>
+</ol>
+<h3 id="frontend">Frontend</h3>
+<p>Issues: <a href="https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-web/-/work_items">mepa-web/-/work_items</a></p>
+<h3 id="backend">Backend</h3>
+<p>Nesse repositório é especificado que existem algumas formas de contribuição:</p>
+<ul>
+<li>Abrir issues que reportam bugs;</li>
+<li>Fechando problemas reportados em issues existentes;</li>
+<li>Proposição de novas funcionalidades;</li>
+<li>Ajudando na qualidade do código e manutenção;</li>
+</ul>
+<p>Issues: <a href="https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-api/-/work_items">mepa-api/-/work_items</a></p>
+<p>Antes de contribuir, leia o <a href="https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-api/-/blob/development/README.md">README</a> e o <a href="https://gitlab.com/lappis-unb/projetos-energia/mepa/mepa-api/-/blob/development/CODE_OF_CONDUCT.md">Código de Conduta</a> do repositório.</p>
+<hr />
+<h2 id="mapa-de-issues">Mapa de Issues</h2>
+<p>Nesta sprint zero, foram selecionadas issues com foco em <strong>entrada progressiva no projeto</strong>, equilibrando tarefas rápidas com outras de complexidade intermediária.</p>
+<hr />
+<h3 id="issues-faceis">Issues Fáceis</h3>
+<p>Essas tarefas possuem baixa complexidade e são ideais para início no projeto:</p>
+<ul>
+<li>
+<p><strong>#28 - Implementar âncora para o gráfico</strong>
+  Melhora a navegação interna ao direcionar o usuário automaticamente ao gráfico ao interagir com o calendário, evitando confusão em páginas longas de análise.</p>
+</li>
+<li>
+<p><strong>#29 - Implementar mensagens de erro caso não tenha dados do calendário</strong>
+  Garante feedback adequado quando não houver retorno da API, evitando que a interface pareça quebrada ou sem resposta.</p>
+</li>
+<li>
+<p><strong>#54 - Conferir e ajustar renderização da página de login</strong>
+  Garante que a porta de entrada do sistema esteja polida.</p>
+</li>
+<li>
+<p><strong>#18 - Implementar design do menu de navegação (aba lateral)</strong>
+  Define a usabilidade de todo o projeto.</p>
+</li>
+<li>
+<p><strong>#17 - Loading genérico para páginas</strong>
+  Implementar o padrão de skeletons agora facilitará a percepção de performance nas próximas tarefas.</p>
+</li>
+</ul>
+<hr />
+<h3 id="issues-medias">Issues Médias</h3>
+<p>Essas tasks exigem maior entendimento do sistema e envolvem integração ou lógica mais elaborada:</p>
+<ul>
+<li>
+<p><strong>#45 - Fazer aba de análise - Importando contratos</strong>
+  Desenvolvimento da interface de análise com foco em visualização de dados, incluindo gráficos e indicadores para suporte à tomada de decisão.</p>
+</li>
+<li>
+<p><strong>#44 - Fazer aba de fatura - Importando contratos</strong>
+  Implementação de funcionalidades relacionadas à gestão de faturas, com integração ao backend e manipulação de dados financeiros.</p>
+</li>
+<li>
+<p><strong>#56 - Ajustes na aba de performance</strong>
+  Refinamento de componentes existentes, incluindo melhorias na exibição de dados, organização dos gráficos e ajustes visuais.</p>
+</li>
+<li>
+<p><strong>#62 - Mostrar tipo de contrato nos relatórios</strong>
+  Adiciona detalhamento aos relatórios ao incluir o tipo de contrato, melhorando a clareza e utilidade das informações apresentadas.</p>
+</li>
+<li>
+<p><strong>#46 - Fazer aba de contratos - Importando contratos</strong>
+  É o coração do dado; as outras abas dependem do que for feito aqui.</p>
+</li>
+<li>
+<p><strong>#58 - Adequação aba de alertas e eventos</strong>
+  Bom para padronizar o tratamento de estados de erro e avisos.</p>
+</li>
+<li>
+<p><strong>#61 - Criar testes unitários</strong>
+  Iniciar os testes neste bloco ajuda a garantir que a estrutura base do Next.js não quebre conforme o projeto escala.</p>
+</li>
+</ul>
+<hr />
+<h2 id="onboarding">Onboarding</h2>
+<iframe src="../../../assets/onboarding/onboarding.pdf" width="100%" height="600px" style="border: none;"></iframe>
+
+<hr />
+<h2 id="historico-de-versao">Histórico de Versão</h2>
+<table>
+<thead>
+<tr>
+<th>Data</th>
+<th>Versão</th>
+<th>Descrição</th>
+<th>Autor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>18/04/2026</td>
+<td>1.0</td>
+<td>Estruturando a Sprint</td>
+<td><a href="https://github.com/marcoslbz">Marcos Bezerra</a></td>
+</tr>
+<tr>
+<td>19/04/2026</td>
+<td>1.1</td>
+<td>Adicionando Objetivo e descrição dos repositórios MEPA</td>
+<td><a href="https://github.com/marcoslbz">Marcos Bezerra</a></td>
+</tr>
+<tr>
+<td>19/04/2026</td>
+<td>1.2</td>
+<td>Adicionando como subir o ambiente</td>
+<td><a href="https://github.com/Ninja-Haiyai">Matheus Barros do Nascimento</a> e <a href="https://github.com/matheusperillo03">Matheus Perillo</a></td>
+</tr>
+<tr>
+<td>20/04/2026</td>
+<td>1.3</td>
+<td>Adicionando como contribuir</td>
+<td><a href="https://github.com/caiomsabino">Caio Lucas Messias Sabino</a></td>
+</tr>
+<tr>
+<td>21/04/2026</td>
+<td>1.4</td>
+<td>Adicionando o mapa de issues</td>
+<td><a href="https://github.com/vitor-hoffmann">Vitor Hoffmann</a> e <a href="https://github.com/akaeranni">Ranni Heler</a></td>
+</tr>
+<tr>
+<td>22/04/2026</td>
+<td>1.5</td>
+<td>Corrigir padronização do histórico de versão</td>
+<td><a href="https://github.com/matheusperillo03">Matheus Perillo</a></td>
+</tr>
+<tr>
+<td>22/04/2026</td>
+<td>1.6</td>
+<td>Adicionar PDF de onboarding</td>
+<td><a href="https://github.com/matheusperillo03">Matheus Perillo</a></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

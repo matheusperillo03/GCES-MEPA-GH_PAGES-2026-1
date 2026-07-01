@@ -1,0 +1,1650 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentação do projeto da disciplina GCES focado em contribuições ao software livre MEPA.">
+      
+      
+        <meta name="author" content="Grupo GCES">
+      
+      
+      
+        <link rel="prev" href="../sprint1/">
+      
+      
+        <link rel="next" href="../sprint3/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/favicoMEPA.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Sprint 2 - GCES - MEPA</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#objetivo" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../../.." title="GCES - MEPA" class="md-header__button md-logo" aria-label="GCES - MEPA" data-md-component="logo">
+      
+  <img src="../../../assets/favicoMEPA.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GCES - MEPA
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Sprint 2
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/matheusperillo03/GCES-MEPA-GH_PAGES-2026-1" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GCES MEPA - 2026.1
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="GCES - MEPA" class="md-nav__button md-logo" aria-label="GCES - MEPA" data-md-component="logo">
+      
+  <img src="../../../assets/favicoMEPA.png" alt="logo">
+
+    </a>
+    GCES - MEPA
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/matheusperillo03/GCES-MEPA-GH_PAGES-2026-1" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GCES MEPA - 2026.1
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Início
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprints
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sprints
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 2
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#issue-73" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 73
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Issue 73">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#relatorio-financeiro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relatório Financeiro
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Relatório Financeiro">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#buildfinancialreportpdfdatats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        buildFinancialReportPdfData.ts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#financialreportpdfdocumenttsx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FinancialReportPdfDocument.tsx
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#financialreportpdfactionstsx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FinancialReportPdfActions.tsx
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#issue-74" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 74
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Issue 74">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#medidores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Medidores
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resultado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resultado:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#issue-75" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 75
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Issue 75">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mapa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mapa
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pessoas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pessoas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#painel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Painel
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#issue-78" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue - 78
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Issue - 78">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#decisoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decisões
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detalhes-por-relatorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detalhes por relatório
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detalhes por relatório">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#relatorio-financeiro_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relatório Financeiro
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relatorio-tecnico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relatório Técnico
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relatorio-de-sustentabilidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relatório de Sustentabilidade
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#observacoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Observações
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reuniões
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reuniões
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../atas/ata1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ata 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contribuições Individuais
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Contribuições Individuais
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribuicoes/marcos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marcos Bezerra
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribuicoes/caio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caio Sabino
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribuicoes/vitor-hoffmann/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vitor Hoffmann
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribuicoes/matheus-barros/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Matheus Barros
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribuicoes/matheus-perillo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Matheus Perillo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribuicoes/bruno/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bruno Vasconcelos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribuicoes/ranni/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ranni Heller
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribuicoes/gabriel-lima/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gabriel Lima da Silva
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#issue-73" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 73
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Issue 73">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#relatorio-financeiro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relatório Financeiro
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Relatório Financeiro">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#buildfinancialreportpdfdatats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        buildFinancialReportPdfData.ts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#financialreportpdfdocumenttsx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FinancialReportPdfDocument.tsx
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#financialreportpdfactionstsx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FinancialReportPdfActions.tsx
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#issue-74" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 74
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Issue 74">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#medidores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Medidores
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resultado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resultado:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#issue-75" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 75
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Issue 75">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mapa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mapa
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pessoas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pessoas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#painel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Painel
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#issue-78" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue - 78
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Issue - 78">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#decisoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decisões
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detalhes-por-relatorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detalhes por relatório
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detalhes por relatório">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#relatorio-financeiro_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relatório Financeiro
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relatorio-tecnico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relatório Técnico
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relatorio-de-sustentabilidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relatório de Sustentabilidade
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#observacoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Observações
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="objetivo">Objetivo</h1>
+<p>A sprint 2 teve como objetivo identificar oportunidades de abertura de issue no ramo de testes automatizados e resolvê-las, contribuindo assim com MRs que aumentassem a cobertura de testes do projeto.</p>
+<h2 id="issue-73">Issue 73</h2>
+<p>Foi identificado que não haviam testes automatizados para a geração de relatórios e dos geradores PDF do projeto. Com isso, foram divididas tarefas para os três tipos de relatórios presentes no repositório, a fim de elencar os testes a serem feitos, como fazer e suas motivações.</p>
+<h3 id="relatorio-financeiro">Relatório Financeiro</h3>
+<p>O relatório financeiro possui 3 arquivos principais para teste:</p>
+<ul>
+<li><code>buildFinancialReportPdfData</code></li>
+<li><code>FinancialReportPdfData</code></li>
+<li><code>FinancialReportPdfActions</code></li>
+</ul>
+<h4 id="buildfinancialreportpdfdatats"><code>buildFinancialReportPdfData.ts</code></h4>
+<p>Função pura responsável por transformar o payload da API (<code>FinancialReportApiData</code>) em uma estrutura tipada (<code>FinancialReportPdfData</code>) consumida pelo documento PDF. Ela concentra toda a lógica de formatação: moeda (pt-BR), datas ISO, fallbacks diferenciados para <code>null</code>/<code>undefined</code>/<code>""</code>, cálculo de percentuais de composição de custo, montagem das três tabelas de histórico (demanda, energia e totais) e inclusão condicional do glossário.</p>
+<p><strong>O que foi testado:</strong> montagem completa do payload; todos os helpers internos (<code>safeText</code>, <code>formatDateOrFallback</code>, <code>formatContractDemand</code>, <code>safePercent</code>, <code>formatMonthYearLabel</code>, <code>getHistoryTotalValue</code>, <code>buildFinancialWarnings</code>); fallbacks para cada tipo de ausência de dado; propagação de assets e chartImages; glossário condicional; zero-padding do mês.</p>
+<p><strong>Resultado:</strong> 25 testes  — LH ~90% · Branches ~82%</p>
+<hr />
+<h4 id="financialreportpdfdocumenttsx"><code>FinancialReportPdfDocument.tsx</code></h4>
+<p>Componente React que recebe a <code>FinancialReportPdfData</code> e renderiza a árvore do documento PDF usando <code>@react-pdf/renderer</code> (capa, introdução, tabela de medidores, linhas de contrato, info items de custo/economia, subsection de composição com figura e Tabela 3, tabelas de histórico e glossário).</p>
+<p><strong>O que foi testado:</strong> renderização sem crash com stub DOM-safe do <code>@react-pdf/renderer</code>; presença dos elementos estruturais (<code>Document</code>, <code>Page</code>); conteúdo de capa (título, entidade, universidade, UC); parágrafos de introdução e linhas de contrato; info items financeiros; snapshot completo da árvore HTML gerada pelo mock.</p>
+<p><strong>Resultado:</strong> 5 testes  + 1 snapshot versionado — LH ~100% · Branches ~95%</p>
+<hr />
+<h4 id="financialreportpdfactionstsx"><code>FinancialReportPdfActions.tsx</code></h4>
+<p>Componente React client-side que orquestra a geração e o download/preview do PDF. Internamente captura o gráfico de composição via <code>html-to-image</code>, monta o payload com <code>buildFinancialReportPdfData</code>, gera o blob com <code>@react-pdf/renderer</code> e dispara o download ou abre uma nova aba. Exporta dois helpers puros: <code>sanitizeFileName</code> (normalização NFD, remoção de caracteres reservados, colapso de espaços/dashes) e <code>buildPdfFileName</code> (nome final do arquivo com mês zero-padded e fallback de entidade).</p>
+<p><strong>O que foi testado:</strong> apenas os dois helpers puros exportados. O componente em si e os helpers assíncronos de DOM (<code>captureFigure</code>, <code>waitForChartRender</code>, <code>captureAllFigures</code>) não foram cobertos pois dependem de <code>requestAnimationFrame</code>, <code>document.fonts.ready</code>, <code>URL.createObjectURL</code> e <code>window.open</code> — APIs de browser fora do escopo desta MR.</p>
+<p><strong>Resultado:</strong> 9 testes  — LH ~22% · Branches ~18% (A cobertura do FinancialReportActions é baixa pois o arquivo exporta dois helpers puros, sanitizeFileName e buildPdfFileName, que são as únicas funções testadas nesta MR. Esses helpers concentram toda a lógica de negócio relevante do arquivo: normalização de nomes de arquivo com diacríticos, remoção de caracteres reservados de filesystem e montagem do nome final do PDF com mês zero-padded e fallback de entidade.)</p>
+<hr />
+<h2 id="issue-74">Issue 74</h2>
+<p>Foi identificado que o módulo de Medidores não possuía cobertura adequada de testes automatizados em páginas, eventos e ficha técnica, acumulando 536 linhas sem cobertura. A issue foi dividida entre integrantes da equipe para ampliar a confiabilidade dos fluxos principais do módulo.</p>
+<h3 id="medidores">Medidores</h3>
+<p>Os testes implementados contemplaram principalmente:</p>
+<ul>
+<li>páginas base de medidores</li>
+<li>layout e loading states</li>
+<li>fluxo de relatório técnico</li>
+<li>componentes de eventos</li>
+<li>tabelas, filtros e summaries</li>
+<li>error boundaries</li>
+<li>interações principais do usuário</li>
+</ul>
+<p>Os arquivos contemplados incluem:</p>
+<p>actions.test.ts
+layout.test.tsx
+loading.test.tsx
+page.test.tsx
+technical-report-client.test.tsx
+event-list.test.tsx
+event-summary.test.tsx
+event-table.test.tsx
+correlated-events.test.tsx
+filter.test.tsx
+events-card.test.tsx</p>
+<p>Também foram adicionados mocks reutilizáveis para módulos do Next.js (<code>next/navigation</code>, <code>next/image</code>, <code>next/link</code>, <code>next/cache</code> e <code>next/headers</code>) para estabilizar a execução dos testes no Vitest.</p>
+<h3 id="resultado">Resultado:</h3>
+<ul>
+<li>14 novos arquivos de teste adicionados</li>
+<li>cobertura expandida para páginas e componentes críticos do módulo</li>
+<li>validação de loading, erro, estados vazios e interações</li>
+<li>estabilização da suíte de testes do módulo de Medidores</li>
+</ul>
+<hr />
+<h2 id="issue-75">Issue 75</h2>
+<p>Foi identificado que os módulos de Pessoas, Mapa e Painel não possuíam cobertura adequada de testes automatizados — com 954 linhas instrumentáveis e coberturas variando de 0% a 49%. Com isso, as tarefas foram divididas entre três integrantes, cada um responsável por um módulo distinto.</p>
+<h3 id="mapa">Mapa</h3>
+<p>O módulo de Mapa possuía cobertura de 49% no módulo principal e 21% nos componentes, com três arquivos pesados (<code>map-explorer</code>, <code>map-explorer-markers</code> e <code>map-explorer-sidebar</code>) praticamente sem testes.</p>
+<p>Os arquivos contemplados foram:</p>
+<ul>
+<li><code>entity-icons.ts</code></li>
+<li><code>page.tsx</code></li>
+<li><code>map-explorer-sidebar.tsx</code></li>
+<li><code>map-explorer.tsx</code></li>
+<li><code>map-explorer-markers.tsx</code></li>
+</ul>
+<p><strong>O que foi testado:</strong> callbacks de marcadores (<code>onMarkerClick</code>, <code>onMeterClick</code>); renderização do mapa e da sidebar; alternância de visualizações; mock do Leaflet com exports nomeados e default simultâneos; mock de <code>next/dynamic</code> com resolução assíncrona; rollback otimista e tratamento de erros.</p>
+<p><strong>Resultado:</strong> 63 novos testes em 5 arquivos — Mapa (total): 49% → <strong>91%</strong> ✅ · Mapa/components (total): 21% → <strong>78%</strong> ✅ — Metas atingidas (mapa ≥80%, mapa/components ≥70%)</p>
+<h3 id="pessoas">Pessoas</h3>
+<p>O módulo de Pessoas apresentava cobertura de 27% nos componentes, com 4 arquivos sem nenhum teste. A contribuição focou em cobrir esses componentes restantes, elevando a confiabilidade do módulo e reduzindo o risco de regressões em fluxos críticos de gerenciamento de usuários.</p>
+<p>Os arquivos contemplados foram:</p>
+<ul>
+<li><code>ResendActivationButton.tsx</code></li>
+<li><code>SendPasswordResetButton.tsx</code></li>
+<li><code>BlockToggleButton.tsx</code></li>
+<li><code>PeopleFeedbackToast.tsx</code></li>
+</ul>
+<p><strong>O que foi testado:</strong></p>
+<ul>
+<li><code>ResendActivationButton</code>: renderização condicional por status, chamada da action e toast de sucesso/erro com mensagens padrão (8 testes).</li>
+<li><code>SendPasswordResetButton</code>: guarda das condições <code>active + email</code>, chamada da action e toast de sucesso/erro com mensagens padrão (9 testes).</li>
+<li><code>BlockToggleButton</code>: <code>isSelf</code>, status inválido, bloquear/desbloquear, confirm dialog, actions e toasts de sucesso/erro (12 testes).</li>
+<li><code>PeopleFeedbackToast</code>: <code>emitPeopleToast</code> (evento + sessionStorage), exibição de toast, fechamento e restauração ao montar (7 testes).</li>
+</ul>
+<p><strong>Resultado:</strong> 36 novos testes em 4 arquivos — pessoas/components: <strong>27% → ~47%</strong> ✅</p>
+<h3 id="painel">Painel</h3>
+<p>O módulo Painel apresentava cobertura muito baixa, especialmente nos componentes de interface e nas actions que fazem a ponte com a API. A falta de testes dificultava a manutenção e aumentava o risco de regressões em funcionalidades críticas, como exibição de métricas, gráfico de energia mensal, favoritos e alertas de medidores.</p>
+<p>Os arquivos criados foram:</p>
+<ul>
+<li><code>action.test.ts</code></li>
+<li><code>alerts-modal-content.test.tsx</code></li>
+<li><code>loading.test.tsx</code></li>
+<li><code>page.test.tsx</code></li>
+<li><code>painel-skeleton.test.tsx</code></li>
+</ul>
+<p><strong>Resultado:</strong><br />
+- 5 novos arquivos de teste adicionados<br />
+- Cobertura do módulo Painel: <strong>0% → 76,8%</strong> ✅<br />
+- Cobertura do módulo painel/components: <strong>0% → 100%</strong> ✅</p>
+<hr />
+<h2 id="issue-78">Issue - 78</h2>
+<p>Foi adicionado cobertura automatizada. A ideia foi proteger principalmente a montagem dos dados, a renderização dos documentos e parte da lógica de exportação, reduzindo o risco de regressão nessas telas que geram PDF. Como esses fluxos têm bastante regra de negócio e dependem de renderização de PDF, a proposta foi separar o que dá para testar de forma confiável em unit tests e o que depende de APIs reais de browser.</p>
+<h3 id="decisoes">Decisões</h3>
+<ul>
+<li>Cobrir primeiro a lógica de transformação de dados dos relatórios.</li>
+<li>Testar a renderização dos documentos PDF com mocks seguros para <code>@react-pdf/renderer</code>.</li>
+<li>Cobrir apenas os helpers puros das Actions quando a parte restante dependia de APIs de browser.</li>
+<li>Evitar testes frágeis em trechos que dependem de comportamento nativo do navegador, como captura de imagem, abertura de janela e geração de blob.</li>
+</ul>
+<h3 id="detalhes-por-relatorio">Detalhes por relatório</h3>
+<h4 id="relatorio-financeiro_1">Relatório Financeiro</h4>
+<p>Arquivos cobertos:
+- <code>buildFinancialReportPdfData</code>
+- <code>FinancialReportPdfDocument</code>
+- <code>FinancialReportPdfActions</code></p>
+<p>O que foi testado:
+- <code>buildFinancialReportPdfData</code>
+  - 25 testes
+  - cerca de 90% de LH
+  - cerca de 82% de branches
+  - valida a transformação completa do payload
+  - cobre helpers internos, fallbacks e montagem das tabelas
+- <code>FinancialReportPdfDocument</code>
+  - 5 testes
+  - 100% de LH
+  - cerca de 95% de branches
+  - valida a estrutura renderizada do documento
+  - inclui 1 snapshot versionado
+- <code>FinancialReportPdfActions</code>
+  - 9 testes
+  - cerca de 22% de LH
+  - cerca de 18% de branches
+  - cobre apenas os helpers puros exportados</p>
+<h4 id="relatorio-tecnico">Relatório Técnico</h4>
+<p>Arquivos cobertos:
+- <code>buildTechnicalReportPdfData</code>
+- <code>TechnicalReportPdfDocument</code>
+- <code>TechnicalReportPdfActions</code></p>
+<p>O que foi testado:
+- transformação dos dados do relatório técnico em estrutura tipada para PDF
+- renderização do documento com <code>@react-pdf/renderer</code>
+- validação da árvore final gerada
+- cobertura parcial das Actions, priorizando o que é realmente testável sem browser real</p>
+<h4 id="relatorio-de-sustentabilidade">Relatório de Sustentabilidade</h4>
+<p>Arquivos cobertos:
+- <code>buildSustainabilityReportPdfData</code>
+- <code>SustainabilityReportPdfDocument</code>
+- <code>SustainabilityReportPdfActions</code></p>
+<p>O que foi testado:
+- montagem dos dados do relatório de sustentabilidade
+- renderização do documento PDF
+- validação da estrutura final gerada
+- cobertura parcial das Actions, na mesma linha do relatório técnico</p>
+<h3 id="observacoes">Observações</h3>
+<ul>
+<li>As Actions não foram cobertas por completo de propósito, porque parte da lógica depende de APIs de browser como <code>requestAnimationFrame</code>, <code>document.fonts.ready</code>, <code>URL.createObjectURL</code> e <code>window.open</code>.</li>
+<li>A cobertura adicionada protege o que mais importa nesses fluxos: transformação dos dados, estrutura do PDF e helpers de exportação.</li>
+<li>O relatório financeiro foi o mais completo nesta rodada, com validação de dados, documento e helpers de exportação.</li>
+</ul>
+<hr />
+<table>
+<thead>
+<tr>
+<th>Data</th>
+<th>Versão</th>
+<th>Descrição</th>
+<th>Autor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>24/05/2026</td>
+<td>1.0</td>
+<td>Estruturando a Sprint e adicioando a colaboração</td>
+<td><a href="https://github.com/caiomsabino">Caio Sabino</a></td>
+</tr>
+<tr>
+<td>24/05/2026</td>
+<td>1.1</td>
+<td>Adiciona documentação da Issue 75 (parte Mapa)</td>
+<td><a href="https://github.com/matheusperillo03">Matheus Perillo</a></td>
+</tr>
+<tr>
+<td>25/05/2026</td>
+<td>1.2</td>
+<td>Adiciona documentação da Issue 74</td>
+<td><a href="https://github.com/akaeranni">Ranni Heler</a></td>
+</tr>
+<tr>
+<td>25/05/2026</td>
+<td>1.3</td>
+<td>Adiciona documentação da Issue 78</td>
+<td><a href="https://github.com/brunocva">Bruno Vasconcelos</a></td>
+</tr>
+<tr>
+<td>25/05/2026</td>
+<td>1.4</td>
+<td>Adiciona documentação da Issue 75 (parte Pessoas)</td>
+<td><a href="https://github.com/Ninja-Haiyai">Matheus Barros</a></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
